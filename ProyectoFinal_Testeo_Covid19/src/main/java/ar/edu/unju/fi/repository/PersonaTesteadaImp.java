@@ -24,7 +24,8 @@ public class PersonaTesteadaImp implements IPersonaTesteada{
 		// TODO Auto-generated method stub
 		LOG.info("se guardo el testeo del DNI" + personaTesteada.getDocumento());
 	}
-
+  
+	
 	@Override
 	public void eliminar() {
 		// TODO Auto-generated method stub
