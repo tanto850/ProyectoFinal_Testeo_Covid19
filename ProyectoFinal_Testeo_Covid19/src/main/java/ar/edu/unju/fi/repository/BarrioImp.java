@@ -14,13 +14,13 @@ import ar.edu.unju.fi.trackpersonas.model.Barrio;
  */
 @Repository
 public class BarrioImp implements IBarrio{
-   @Autowired
-	Barrio barrio;
+  // @Autowired
+	//Barrio barrio;
    public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
 @Override
 public void guardar() {
 	// TODO Auto-generated method stub
-	LOG.info("se guardaron los datos del barrio" + barrio.getNombre());
+	LOG.info("se guardaron los datos del barrio");
 }
 
 @Override
@@ -39,7 +39,7 @@ public void modificar() {
 @Override
 public Barrio mostrar() {
 	// TODO Auto-generated method stub
-	LOG.info("Mostrando" +  barrio.getNombre());	
-	return barrio;
+	LOG.info("Mostrando");	
+	return null;
 }
 }

@@ -6,8 +6,21 @@ public class PersonaTesteada {
 	private String apellido;
 	private String nombres;
 	private String resultadoTesteo;
+	public PersonaTesteada() {}
 	
-	
+	/**
+	 * @param documento
+	 * @param apellido
+	 * @param nombres
+	 * @param resultadoTesteo
+	 */
+	public PersonaTesteada(String documento, String apellido, String nombres, String resultadoTesteo) {
+		this.documento = documento;
+		this.apellido = apellido;
+		this.nombres = nombres;
+		this.resultadoTesteo = resultadoTesteo;
+	}
+
 	/** Metodo que permite obtener el documento guardado.
 	 * @return el documento guardado en la variable miembro de la clase PersonaTesteada.
 	 */

@@ -2,7 +2,7 @@
  * 
  */
 package ar.edu.unju.fi.repository;
-import java.util.List;
+//import java.util.List;
 import java.util.Optional;
 import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 
@@ -15,6 +15,6 @@ public interface IPersonaTesteada {
 	public void eliminar();
 	public void modificar();
  	public PersonaTesteada mostrar();
-  public List<PersonaTesteada> mostrarTodos();
+ // public List<PersonaTesteada> mostrarTodos();
   
 }
