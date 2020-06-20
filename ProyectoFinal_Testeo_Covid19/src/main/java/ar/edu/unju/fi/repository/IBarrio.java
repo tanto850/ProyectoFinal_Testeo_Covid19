@@ -11,5 +11,4 @@ public interface IBarrio {
 	public void eliminar();
 	public void modificar();
 	public Barrio mostrar();
-
 }

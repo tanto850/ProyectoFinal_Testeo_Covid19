@@ -23,6 +23,7 @@ public class PersonaTesteadaImp implements IPersonaTesteada{
 	public void guardar() {
 		// TODO Auto-generated method stub
 		LOG.info("se guardo el testeo del DNI" + personaTesteada.getDocumento());
+		
 	}
   
 	

@@ -27,6 +27,7 @@ UnidadHabitacional unidadHabitacional;
 	public void eliminar() {
 		// TODO Auto-generated method stub
 		LOG.info("Unidad habitacional eliminada");
+		
 	}
 
 	@Override

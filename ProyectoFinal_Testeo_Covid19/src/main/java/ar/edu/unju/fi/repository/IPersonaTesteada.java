@@ -16,4 +16,5 @@ public interface IPersonaTesteada {
 	public void modificar();
  	public PersonaTesteada mostrar();
   public List<PersonaTesteada> mostrarTodos();
+  
 }

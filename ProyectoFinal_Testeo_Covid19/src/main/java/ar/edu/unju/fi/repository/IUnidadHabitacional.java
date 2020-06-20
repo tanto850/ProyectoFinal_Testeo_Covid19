@@ -14,4 +14,5 @@ public interface IUnidadHabitacional {
 	public void eliminar();
 	public void modificar();
 	public UnidadHabitacional mostrar();
+	
 }

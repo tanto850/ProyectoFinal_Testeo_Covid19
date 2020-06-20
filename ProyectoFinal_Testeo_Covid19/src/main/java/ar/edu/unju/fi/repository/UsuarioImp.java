@@ -28,6 +28,7 @@ public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Apl
 	public void eliminar() {
 		// TODO Auto-generated method stub
 		LOG.info("usuario eliminado");
+		
 	}
 
 	@Override

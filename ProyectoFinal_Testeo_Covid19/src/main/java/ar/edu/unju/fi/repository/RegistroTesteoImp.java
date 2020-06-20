@@ -27,6 +27,7 @@ public void guardar() {
 public void eliminar() {
 	// TODO Auto-generated method stub
 	LOG.info("Testeo eliminado");
+	
 }
 
 @Override
