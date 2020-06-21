@@ -13,15 +13,15 @@ import ar.edu.unju.fi.tracking.model.Usuario;
  */
 @Repository
 public class UsuarioImp implements IUsuario {
-//@Autowired
-	//Usuario usuario;
+@Autowired
+	Usuario usuario;
 
 public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
 
 	@Override
 	public void guardar() {
 		// TODO Auto-generated method stub
-		LOG.info("Usuario nuevo registrado");
+		LOG.info("Usuario nuevo registrado" + usuario.getNombreUsuario());
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Apl
 	public Usuario mostrar() {
 		// TODO Auto-generated method stub
 		LOG.info("Mostrando datos del usuario");
-		return null;//usuario;
+		return usuario;
 	}
 
 }

@@ -1,5 +1,8 @@
 package ar.edu.unju.fi.tracking.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Usuario {
 	
 	private String nombreUsuario;
@@ -7,7 +10,29 @@ public class Usuario {
 	private String nombreReal;
 	private String apellidoReal;
 	private String tipoUsuario; //consultor-registrador-bd
+	/**
+	 * constructor por defecto.
+	 */
+	public Usuario() {}
 	
+	
+	/**
+	 * constructor sobrecarcado
+	 * @param nombreUsuario
+	 * @param password
+	 * @param nombreReal
+	 * @param apellidoReal
+	 * @param tipoUsuario
+	 */
+	public Usuario(String nombreUsuario, String password, String nombreReal, String apellidoReal, String tipoUsuario) {
+		this.nombreUsuario = nombreUsuario;
+		this.password = password;
+		this.nombreReal = nombreReal;
+		this.apellidoReal = apellidoReal;
+		this.tipoUsuario = tipoUsuario;
+	}
+
+
 	/**Método para acceder a la variable nombreUsuario;
 	 * @return nombreUsuario.
 	 */

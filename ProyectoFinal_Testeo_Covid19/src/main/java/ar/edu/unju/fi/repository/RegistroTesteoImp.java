@@ -14,8 +14,8 @@ import ar.edu.unju.fi.testeos.model.RegistroTesteo;
  */
 @Repository
 public class RegistroTesteoImp implements IRegistroTesteo {
-//@Autowired	
-//RegistroTesteo registroTesteo;
+@Autowired	
+RegistroTesteo registroTesteo;
 public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
 @Override
 public void guardar() {

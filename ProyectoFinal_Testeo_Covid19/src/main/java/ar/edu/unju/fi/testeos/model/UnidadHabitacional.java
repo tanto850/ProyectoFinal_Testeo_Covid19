@@ -12,6 +12,23 @@ public class UnidadHabitacional {
 	@Autowired
 	private Barrio barrio;
 	
+	/**
+	 * constructor por defecto.
+	 */
+	public UnidadHabitacional() {
+		
+	}
+	
+	/**
+	 * constructor sobrecargado
+	 * @param direccion
+	 * @param barrio
+	 */
+	public UnidadHabitacional(String direccion, Barrio barrio) {
+		this.direccion = direccion;
+		this.barrio = barrio;
+	}
+
 	/**Método para obtener la variable direccion.
 	 * @return direccion, variable de la clase UnidadHabitacional.
 	 */

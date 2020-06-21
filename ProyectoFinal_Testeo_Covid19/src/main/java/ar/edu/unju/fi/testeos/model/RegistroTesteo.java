@@ -4,14 +4,32 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Component;
+@Component
 public class RegistroTesteo {
 	
 	public LocalDateTime fechaHora;
 	@Autowired
 	public UnidadHabitacional unidadHabitacional;
 	public List<PersonaTesteada> personasTesteadas;
+	/**
+	 * constructor por defecto.
+	 */
+	public RegistroTesteo() {}
 	
+	/**
+	 * constructor sobrecargado.
+	 * @param fechaHora
+	 * @param unidadHabitacional
+	 * @param personasTesteadas
+	 */
+	public RegistroTesteo(LocalDateTime fechaHora, UnidadHabitacional unidadHabitacional,
+			List<PersonaTesteada> personasTesteadas) {
+		this.fechaHora = fechaHora;
+		this.unidadHabitacional = unidadHabitacional;
+		this.personasTesteadas = personasTesteadas;
+	}
+
 	/**Metodo para obtener la fecha y hora del testeo.
 	 * @return fechaHora, variable de la clase RegistroTesteo.
 	 */

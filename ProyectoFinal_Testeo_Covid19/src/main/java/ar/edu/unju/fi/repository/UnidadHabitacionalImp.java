@@ -14,8 +14,8 @@ import ar.edu.unju.fi.testeos.model.UnidadHabitacional;
  */
 @Repository
 public class UnidadHabitacionalImp implements IUnidadHabitacional{
-	//@Autowired
-//UnidadHabitacional unidadHabitacional;
+	@Autowired
+UnidadHabitacional unidadHabitacional;
 	public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
 	@Override
 	public void guardar() {

@@ -1,11 +1,17 @@
 package ar.edu.unju.fi.testeos.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PersonaTesteada {
 
 	private String documento;
 	private String apellido;
 	private String nombres;
 	private String resultadoTesteo;
+	/**
+	 * constructor por defecto.
+	 */
 	public PersonaTesteada() {}
 	
 	/**

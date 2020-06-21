@@ -6,6 +6,26 @@ import org.springframework.stereotype.Component;
 public class Barrio {
 	
 	private String nombre;
+    
+	/**
+	 * Constructor por defecto sin parametros.
+	 */
+	public Barrio()
+	{
+		
+	}
+	
+	
+	
+	/**
+	 * constructor sobrecargado
+	 * @param nombre
+	 */
+	public Barrio(String nombre) {
+		this.nombre = nombre;
+	}
+
+
 
 	/** Método para obtener la variable nombre.
 	 * @return nombre, variable que gaurda el nombre del barrio.
