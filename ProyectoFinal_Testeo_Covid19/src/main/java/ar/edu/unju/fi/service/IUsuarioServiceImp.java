@@ -26,7 +26,7 @@ public class IUsuarioServiceImp implements IUsuarioService {
 		}
 
 		@Override
-		public void eliminar() {
+		 public void eliminar() {
 			iusuario.eliminar();
 		}
 

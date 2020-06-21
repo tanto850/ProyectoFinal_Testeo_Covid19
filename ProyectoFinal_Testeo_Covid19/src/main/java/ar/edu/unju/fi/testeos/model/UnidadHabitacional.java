@@ -15,7 +15,7 @@ public class UnidadHabitacional {
 	/**
 	 * constructor por defecto.
 	 */
-	public UnidadHabitacional() {
+	 public UnidadHabitacional() {
 		
 	}
 	

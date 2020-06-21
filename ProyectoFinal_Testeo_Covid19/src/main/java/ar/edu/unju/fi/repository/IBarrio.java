@@ -7,7 +7,7 @@ import ar.edu.unju.fi.trackpersonas.model.Barrio;
   * Se definiran que metodos se realizaran sobre el objeto con la que asociamos la interface
  */
 public interface IBarrio {
-	public void guardar();
+	 public void guardar();
 	public void eliminar();
 	public void modificar();
 	public Barrio mostrar();

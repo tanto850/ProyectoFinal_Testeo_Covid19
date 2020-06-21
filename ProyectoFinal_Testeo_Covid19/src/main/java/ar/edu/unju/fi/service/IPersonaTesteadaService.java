@@ -13,5 +13,5 @@ public interface IPersonaTesteadaService {
 	public void guardar();
 	public void eliminar();
 	public void modificar();
- 	public PersonaTesteada mostrar();
+ 	 public PersonaTesteada mostrar();
 }

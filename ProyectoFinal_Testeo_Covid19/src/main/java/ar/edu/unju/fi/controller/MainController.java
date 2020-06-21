@@ -20,7 +20,7 @@ public class MainController {
 	
 	@RequestMapping("inicio")
 	public String getInicio(Model model) {
-		model.addAttribute("usuario", usuarioService.mostrar().getNombreUsuario());
+		 model.addAttribute("usuario", usuarioService.mostrar().getNombreUsuario());
 		return "inicio";
 	}
 	

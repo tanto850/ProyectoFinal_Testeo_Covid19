@@ -27,7 +27,8 @@ public IBarrio ibarrio;
 	@Override
 	public void eliminar() {
 		// TODO Auto-generated method stub
-		ibarrio.eliminar();
+	ibarrio.eliminar();
+	
 	}
 
 	@Override

@@ -14,4 +14,5 @@ public interface IBarrioService {
 	public void eliminar();
 	public void modificar();
 	public Barrio mostrar();
+
 }

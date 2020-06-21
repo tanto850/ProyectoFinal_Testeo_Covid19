@@ -13,5 +13,5 @@ public interface IUsuarioService {
 	public void guardar();
 	public void eliminar();
 	public void modificar();
-	public Usuario mostrar();
+	 public Usuario mostrar();
 }

@@ -14,7 +14,7 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 public interface IPersonaTesteada {
 	public void guardar();
 	public void eliminar();
-	public void modificar();
+	 public void modificar();
  	public PersonaTesteada mostrar();
  // public List<PersonaTesteada> mostrarTodos();
   

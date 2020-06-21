@@ -9,5 +9,5 @@ import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 public interface IRegistroTesteoService {
 	public void guardar();
 	public void eliminar();
-	public RegistroTesteo mostrar();
+	 public RegistroTesteo mostrar();
 }

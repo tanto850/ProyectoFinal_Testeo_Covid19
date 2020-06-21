@@ -16,6 +16,7 @@ public class ProyectoFinalTesteoCovid19Aplication implements CommandLineRunner{
  @Autowired
  Usuario usuario;
  
+ 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalTesteoCovid19Aplication.class, args);
 	}

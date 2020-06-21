@@ -21,7 +21,7 @@ public IRegistroTesteo iregistro;
 @Override
 	public void guardar() {
 		// TODO Auto-generated method stub
-        iregistro.guardar();
+         iregistro.guardar();
 	}
 
 	@Override

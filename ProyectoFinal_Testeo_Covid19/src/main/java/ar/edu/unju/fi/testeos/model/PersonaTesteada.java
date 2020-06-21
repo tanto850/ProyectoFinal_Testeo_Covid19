@@ -12,7 +12,7 @@ public class PersonaTesteada {
 	/**
 	 * constructor por defecto.
 	 */
-	public PersonaTesteada() {}
+	 public PersonaTesteada() {}
 	
 	/**
 	 * @param documento

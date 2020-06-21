@@ -10,7 +10,7 @@ public class Barrio {
 	/**
 	 * Constructor por defecto sin parametros.
 	 */
-	public Barrio()
+	 public Barrio()
 	{
 		
 	}

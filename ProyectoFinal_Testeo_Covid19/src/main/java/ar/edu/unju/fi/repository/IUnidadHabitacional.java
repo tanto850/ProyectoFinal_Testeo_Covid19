@@ -13,6 +13,6 @@ public interface IUnidadHabitacional {
 	public void guardar();
 	public void eliminar();
 	public void modificar();
-	public UnidadHabitacional mostrar();
+	 public UnidadHabitacional mostrar();
 	
 }

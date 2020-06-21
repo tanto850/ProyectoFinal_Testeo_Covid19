@@ -16,7 +16,7 @@ import ar.edu.unju.fi.trackpersonas.model.Barrio;
 public class BarrioImp implements IBarrio{
    @Autowired
 	Barrio barrio;
-   public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
+    public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
 @Override
 public void guardar() {
 	// TODO Auto-generated method stub

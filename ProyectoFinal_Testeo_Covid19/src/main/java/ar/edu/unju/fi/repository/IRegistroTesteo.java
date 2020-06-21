@@ -12,7 +12,7 @@ import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 public interface IRegistroTesteo {
 public void guardar();
 public void eliminar();
-public RegistroTesteo mostrar();
+ public RegistroTesteo mostrar();
 
 
 }

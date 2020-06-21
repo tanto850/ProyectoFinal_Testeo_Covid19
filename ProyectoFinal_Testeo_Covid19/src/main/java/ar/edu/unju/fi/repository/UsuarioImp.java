@@ -32,7 +32,7 @@ public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Apl
 	}
 
 	@Override
-	public void modificar() {
+	 public void modificar() {
 		// TODO Auto-generated method stub
 		LOG.info("User modificado");
 	}

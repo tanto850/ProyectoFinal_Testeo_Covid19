@@ -23,7 +23,7 @@ public class RegistroTesteo {
 	 * @param unidadHabitacional
 	 * @param personasTesteadas
 	 */
-	public RegistroTesteo(LocalDateTime fechaHora, UnidadHabitacional unidadHabitacional,
+	 public RegistroTesteo(LocalDateTime fechaHora, UnidadHabitacional unidadHabitacional,
 			List<PersonaTesteada> personasTesteadas) {
 		this.fechaHora = fechaHora;
 		this.unidadHabitacional = unidadHabitacional;

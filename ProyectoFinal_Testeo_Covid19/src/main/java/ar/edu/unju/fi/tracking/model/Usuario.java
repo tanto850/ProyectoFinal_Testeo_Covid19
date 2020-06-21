@@ -24,7 +24,7 @@ public class Usuario {
 	 * @param apellidoReal
 	 * @param tipoUsuario
 	 */
-	public Usuario(String nombreUsuario, String password, String nombreReal, String apellidoReal, String tipoUsuario) {
+	 public Usuario(String nombreUsuario, String password, String nombreReal, String apellidoReal, String tipoUsuario) {
 		this.nombreUsuario = nombreUsuario;
 		this.password = password;
 		this.nombreReal = nombreReal;

@@ -19,7 +19,7 @@ public class IPersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	public IPersonaTesteada ipersona;
 	
 	@Override
-	public void guardar() {
+	 public void guardar() {
 		// TODO Auto-generated method stub
 		ipersona.guardar();
 	}

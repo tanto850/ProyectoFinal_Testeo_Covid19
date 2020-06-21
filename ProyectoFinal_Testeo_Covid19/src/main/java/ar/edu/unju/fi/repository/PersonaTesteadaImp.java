@@ -15,7 +15,7 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 @Repository
 public class PersonaTesteadaImp implements IPersonaTesteada{
 @Autowired
-	PersonaTesteada  persona;
+	 PersonaTesteada  persona;
 	@Override
 	public void guardar() {
 		// TODO Auto-generated method stub

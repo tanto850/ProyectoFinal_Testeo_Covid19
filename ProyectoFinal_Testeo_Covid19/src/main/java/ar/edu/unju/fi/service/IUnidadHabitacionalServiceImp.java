@@ -32,7 +32,7 @@ public class IUnidadHabitacionalServiceImp implements IUnidadHabitacionalService
 	@Override
 	public void modificar() {
 		// TODO Auto-generated method stub
-		iunidad.modificar();
+		 iunidad.modificar();
 	}
 
 	@Override
