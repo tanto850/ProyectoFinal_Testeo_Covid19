@@ -12,34 +12,34 @@ import javax.validation.constraints.Size;
 import org.springframework.stereotype.Component;
 
 @Component
-@Entity
-@Table(name = "usuario")
+//@Entity
+//@Table(name = "usuario")
 public class Usuario {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(nullable=true)
+	//@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Column(nullable=true)
 	private long id;
 	
-	@Column
-	@NotBlank
+	//@Column
+	//@NotBlank
 	private String nombreUsuario;
 	
-	@Column
-	@NotBlank
-	@Size(min=8, message="Su contraseña debe tener como minimo 8 caracteres.")
+	//@Column
+	//@NotBlank
+	//@Size(min=8, message="Su contraseña debe tener como minimo 8 caracteres.")
 	private String password;
 	
-	@Column
-	@NotBlank
+	//@Column
+	//@NotBlank
 	private String nombreReal;
 	
-	@Column
-	@NotBlank
+	//@Column
+	//@NotBlank
 	private String apellidoReal;
 	
-	@Column
-	@NotBlank
+	//@Column
+	//@NotBlank
 	private String tipoUsuario; //consultor-registrador-bd
 	
 	

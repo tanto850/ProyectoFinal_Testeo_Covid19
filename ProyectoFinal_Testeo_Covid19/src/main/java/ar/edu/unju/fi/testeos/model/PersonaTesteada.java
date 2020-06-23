@@ -2,12 +2,16 @@ package ar.edu.unju.fi.testeos.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,7 +25,7 @@ public class PersonaTesteada {
 	private long id;
 	
 	@Column
-	@NotBlank
+    @NotBlank
 	private String documento;
 	
 	@Column
@@ -34,6 +38,11 @@ public class PersonaTesteada {
 	
 	@Column
 	private String resultadoTesteo;
+	
+	@Autowired
+	@ManyToOne( fetch  = FetchType.LAZY )
+	@JoinColumn( name = "ID_REGISTRO")
+	private RegistroTesteo registroTesteo;
 	
 	/**
 	 * constructor por defecto.
@@ -129,6 +138,20 @@ public class PersonaTesteada {
 	public String toString() {
 		return "PersonaTesteada [documento=" + documento + ", apellido=" + apellido + ", nombres=" + nombres
 				+ ", resultadoTesteo=" + resultadoTesteo + "]";
+	}
+
+	/**
+	 * @return the registroTesteo
+	 */
+	public RegistroTesteo getRegistroTesteo() {
+		return registroTesteo;
+	}
+
+	/**
+	 * @param registroTesteo the registroTesteo to set
+	 */
+	public void setRegistroTesteo(RegistroTesteo registroTesteo) {
+		this.registroTesteo = registroTesteo;
 	}
 	
 	

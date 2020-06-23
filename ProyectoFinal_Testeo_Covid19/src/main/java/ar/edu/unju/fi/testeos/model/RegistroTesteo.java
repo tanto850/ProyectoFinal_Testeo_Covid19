@@ -6,10 +6,12 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -20,24 +22,24 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name = "registro_testeo")
+@Table( name = "registro_testeo")
 public class RegistroTesteo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(nullable=true)
+	@Column( name = "ID")//, nullable=true)
 	private long id;
 	
-	@Column
-	@NotBlank
+	@Column( name = "FECHAHORA")
+//	@NotBlank
 	private LocalDateTime fechaHora;
 	
 	@Autowired
-	@OneToMany(mappedBy = "registroTesteo", cascade = CascadeType.ALL)
-	@JoinColumn(name = "UNIDAD_HABITACIONAL_ID")
+	@ManyToOne( fetch  = FetchType.LAZY )//( mappedBy = "registroTesteo", cascade = CascadeType.ALL)
+	@JoinColumn( name = "unidadHabitacional_ID" )
 	private UnidadHabitacional unidadHabitacional;
 	
-	
+	@OneToMany(mappedBy ="registroTesteo", cascade = CascadeType.ALL)
 	private List<PersonaTesteada> personasTesteadas;
 	
 	/**
@@ -57,7 +59,7 @@ public class RegistroTesteo {
 		this.id = id;
 		this.fechaHora = fechaHora;
 		this.unidadHabitacional = unidadHabitacional;
-		this.personasTesteadas = personasTesteadas;
+		//this.personasTesteadas = personasTesteadas;
 	}
 	 
 	/**Método para acceder a la variable id;
@@ -105,21 +107,21 @@ public class RegistroTesteo {
 	/**Metodo para acceder a la lista de personas testeadas.
 	 * @return personasTesteadas
 	 */
-	public List<PersonaTesteada> getPersonasTesteadas() {
-		return personasTesteadas;
-	}
+	//public List<PersonaTesteada> getPersonasTesteadas() {
+		//return personasTesteadas;
+	//}
 	
 	/**
 	 * @param personasTesteadas the personasTesteadas to set
 	 */
-	public void setPersonasTesteadas(List<PersonaTesteada> personasTesteadas) {
-		this.personasTesteadas = personasTesteadas;
-	}
+	//Public void setPersonasTesteadas(List<PersonaTesteada> personasTesteadas) {
+	//	this.personasTesteadas = personasTesteadas;
+//	}
 
-	@Override
-	public String toString() {
-		return "RegistroTesteo [fechaHora=" + fechaHora + ", unidadHabitacional=" + unidadHabitacional
-				+ ", personasTesteadas=" + personasTesteadas + "]";
-	}
+	//@Override
+//	public String toString() {
+		//return "RegistroTesteo [fechaHora=" + fechaHora + ", unidadHabitacional=" + unidadHabitacional
+		//		+ ", personasTesteadas=" + personasTesteadas + "]";
+	//}
 
 }

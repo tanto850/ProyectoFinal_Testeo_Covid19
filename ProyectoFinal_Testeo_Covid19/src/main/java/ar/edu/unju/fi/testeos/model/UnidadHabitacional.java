@@ -1,13 +1,19 @@
 package ar.edu.unju.fi.testeos.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,25 +23,28 @@ import ar.edu.unju.fi.testeos.model.Barrio;
 
 @Component
 @Entity
-@Table(name = "unidad_habitacional")
+@Table( name = "unidadVhabitacional")
 public class UnidadHabitacional {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(nullable=true)
+	@Column( name = "ID")
 	private long id;
 	
-	@Column(nullable = true)
+	@Column( name = "DIRECCION")
 	private String direccion;
 	
 	
 	@Autowired
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne( cascade =  CascadeType.ALL  )
+	@JoinColumn( name = "BARRIO_ID")//(fetch = FetchType.LAZY)
 	private Barrio barrio;
 	
-	@ManyToOne( fetch = FetchType.LAZY)
-	@JoinColumn(name = "REGISTRO_ID")
-	private RegistroTesteo registroTesteo;
+	//@OneToMany( mappedBy = "unidadHabitacional" , cascade = CascadeType.ALL )
+    //@JoinColumn( name = "REGISTRO_ID") 
+   // @Autowired
+	@OneToMany(mappedBy ="unidadHabitacional", cascade = CascadeType.ALL)
+	private List<RegistroTesteo> registroTesteo = new ArrayList<RegistroTesteo>();
 	
 	/**
 	 * constructor por defecto.
@@ -106,15 +115,17 @@ public class UnidadHabitacional {
 	/**
 	 * @return the registroTesteo
 	 */
-	public RegistroTesteo getRegistroTesteo() {
+	public List<RegistroTesteo> getRegistroTesteo() {
 		return registroTesteo;
 	}
 
 	/**
 	 * @param registroTesteo the registroTesteo to set
 	 */
-	public void setRegistroTesteo(RegistroTesteo registroTesteo) {
+	public void setRegistroTesteo(List<RegistroTesteo> registroTesteo) {
 		this.registroTesteo = registroTesteo;
 	}
+
+
 	
 }
