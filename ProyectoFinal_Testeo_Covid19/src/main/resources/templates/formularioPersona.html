@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario de registro de persona testeada</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+	
+	<!-- Los iconos tipo Solid de Fontawesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+	
+	<!-- DATA TABLE -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+	<!-- No funciona el link, debo preguntar a la profe -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#userList').DataTable();
+    } );
+</script>
+
+</head>
+<body>
+	<div th:insert="layout/headercuenta :: headercuenta"></div>
+
+	<!-- Pestañas de Lista y Formulario -->
+	<div class="container">
+		<div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
+			<ul class="nav nav-tabs justify-content-end">
+				<li class="nav-item"><a class="nav-link active" id="list-tab"
+					data-toggle="tab" href="#list" role="tab" aria-controls="list"
+					aria-selected="false">Lista</a></li>
+				<li class="nav-item"><a class="nav-link" id="form-tab"
+					data-toggle="tab" href="#form" role="tab" aria-controls="form"
+					aria-selected="true">Formulario</a></li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="list" role="tabpanel"
+					aria-labelledby="list-tab">
+
+					<!-- Card de lista -->
+					<div class="card">
+						<div class="card-header">
+							<h4>Listado de personas testeadas</h4>
+						</div>
+						<div class="card-body">
+							<!-- Lista de usuarios-->
+							<div class="table-responsive">
+	<table id="userList" class="table table-bordered table-hover table-striped">
+		<thead class="thead-light">
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">DNI</th>
+			<th scope="col">Direccion</th>
+			<th scope="col">Barrio</th>
+			<th scope="col">Resultado Testeo</th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td>Ruiz</td>
+			<td>Cristian</td>
+			<td>42125123</td>
+			<td>Rios las Pierdas 45</td>
+			<td>23 de Agosto</td>
+			<td>Negativo</td>
+			<td>
+				<a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">2</th>
+			<td>Ocampo</td>
+			<td>Enzo</td>
+			<td>42125123</td>
+			<td>Colon 12</td>
+			<td>25 de Mayo</td>
+			<td>Negativo</td>
+			<td>
+				<a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td>Castillo</td>
+			<td>Juan</td>
+			<td>42125123</td>
+			<td>Catamarca 315</td>
+			<td>9 de Julio</td>
+			<td>Negativo</td>
+			<td>
+				<a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+						</div>
+					</div>
+
+
+
+				</div>
+				<div class="tab-pane fade" id="form" role="tabpanel"
+					aria-labelledby="form-tab">
+
+					<!-- Card del formulario -->
+					<div class="card">
+						<div class="card-header">
+							<h4>Registro de persona testeada</h4>
+						</div>
+						<div class="card-body">
+							<!-- Formulario de usuarios-->
+
+							<form class="container">
+							
+								<div class="form-group row">
+									<label for="idapellido" class="col-md-3 col-form-label">Apellido/s</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control " id="idapellido"
+											required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="idnombreCompleto" class="col-md-3 col-form-label">Nombre
+										Completo</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control " id="idnombreCompleto"
+											required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="iddni" class="col-md-3 col-form-label">N°
+										DNI</label>
+									<div class="col-md-8">
+										<input type="number" class="form-control " id="iddni" required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="iddireccion" class="col-md-3 col-form-label">Direccion(calle)</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control " id="iddireccion"
+											required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="idbarrio" class="col-md-3 col-form-label">Barrio</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control " id="idbarrio"
+											required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-md-12 text-center">
+										<button type="submit" class="btn btn-primary">Registrar</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div th:insert="layout/footer :: footer"></div>
+</body>
+</html>

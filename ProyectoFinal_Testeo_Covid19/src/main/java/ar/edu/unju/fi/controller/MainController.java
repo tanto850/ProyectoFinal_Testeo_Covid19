@@ -22,5 +22,9 @@ public class MainController {
 		return "cuenta";
 	}
 	
+	@RequestMapping("/formulario")
+	public String getFormulario(Model model) {
+		return "formularioPersona";
+	}
 
 }
