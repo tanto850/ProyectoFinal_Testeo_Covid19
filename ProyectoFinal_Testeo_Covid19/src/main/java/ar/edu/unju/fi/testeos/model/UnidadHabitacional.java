@@ -3,11 +3,12 @@ package ar.edu.unju.fi.testeos.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import ar.edu.unju.fi.trackpersonas.model.Barrio;
+import ar.edu.unju.fi.testeos.model.Barrio;
 
 @Component
 public class UnidadHabitacional {
 
+	private long id;
 	private String direccion;
 	@Autowired
 	private Barrio barrio;
@@ -21,12 +22,28 @@ public class UnidadHabitacional {
 	
 	/**
 	 * constructor sobrecargado
+	 * @param id
 	 * @param direccion
 	 * @param barrio
 	 */
-	public UnidadHabitacional(String direccion, Barrio barrio) {
+	public UnidadHabitacional(long id, String direccion, Barrio barrio) {
+		this.id = id;
 		this.direccion = direccion;
 		this.barrio = barrio;
+	}
+	
+	/**Método para acceder a la variable id;
+	* @return id.
+	*/
+	 public long getId() {
+		 return this.id;
+	}
+		 
+	/**Metodo que permite modificar la variable id.
+	* @param id, variable de la clase UnidadHabitacional.
+	*/
+	public void setId(long id) {
+			this.id = id;
 	}
 
 	/**Método para obtener la variable direccion.

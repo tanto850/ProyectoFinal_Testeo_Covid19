@@ -1,6 +1,6 @@
 package ar.edu.unju.fi.repository;
 
-import ar.edu.unju.fi.trackpersonas.model.Barrio;
+import ar.edu.unju.fi.testeos.model.Barrio;
 /**
  * 
  * @author Fabian

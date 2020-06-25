@@ -14,7 +14,7 @@ import ar.edu.unju.fi.testeos.model.RegistroTesteo;
  *
  */
 @Service
-public class IRegistroTesteoServiceImp implements IRegistroTesteoService {
+public class RegistroTesteoServiceImp implements IRegistroTesteoService {
 @Autowired	
 public IRegistroTesteo iregistro;
 

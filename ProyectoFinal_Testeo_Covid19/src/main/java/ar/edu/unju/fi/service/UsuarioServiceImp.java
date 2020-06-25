@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.repository.IUsuario;
-import ar.edu.unju.fi.tracking.model.Usuario;
+import ar.edu.unju.fi.testeos.model.Usuario;
 
 /**
  * @author Aucachi Fabian
  *
  */
 @Service
-public class IUsuarioServiceImp implements IUsuarioService {
+public class UsuarioServiceImp implements IUsuarioService {
 	@Autowired
 	public IUsuario iusuario;
 

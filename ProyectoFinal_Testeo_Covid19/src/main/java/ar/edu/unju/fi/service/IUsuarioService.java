@@ -3,7 +3,7 @@
  */
 package ar.edu.unju.fi.service;
 
-import ar.edu.unju.fi.tracking.model.Usuario;
+import ar.edu.unju.fi.testeos.model.Usuario;
 
 /**
  * @author Aucachi Fabian

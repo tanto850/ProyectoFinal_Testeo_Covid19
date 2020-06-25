@@ -8,10 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class RegistroTesteo {
 	
-	public LocalDateTime fechaHora;
+	private long id;
+	private LocalDateTime fechaHora;
 	@Autowired
-	public UnidadHabitacional unidadHabitacional;
-	public List<PersonaTesteada> personasTesteadas;
+	private UnidadHabitacional unidadHabitacional;
+	private List<PersonaTesteada> personasTesteadas;
+	
 	/**
 	 * constructor por defecto.
 	 */
@@ -19,15 +21,31 @@ public class RegistroTesteo {
 	
 	/**
 	 * constructor sobrecargado.
+	 * @param id
 	 * @param fechaHora
 	 * @param unidadHabitacional
 	 * @param personasTesteadas
 	 */
-	 public RegistroTesteo(LocalDateTime fechaHora, UnidadHabitacional unidadHabitacional,
+	 public RegistroTesteo(long id, LocalDateTime fechaHora, UnidadHabitacional unidadHabitacional,
 			List<PersonaTesteada> personasTesteadas) {
+		this.id = id;
 		this.fechaHora = fechaHora;
 		this.unidadHabitacional = unidadHabitacional;
 		this.personasTesteadas = personasTesteadas;
+	}
+	 
+	/**Método para acceder a la variable id;
+	* @return id.
+	*/
+	 public long getId() {
+		 return this.id;
+	}
+		 
+	/**Metodo que permite modificar la variable id.
+	* @param id, variable de la clase RegistroTesteo.
+	*/
+	public void setId(long id) {
+			this.id = id;
 	}
 
 	/**Metodo para obtener la fecha y hora del testeo.

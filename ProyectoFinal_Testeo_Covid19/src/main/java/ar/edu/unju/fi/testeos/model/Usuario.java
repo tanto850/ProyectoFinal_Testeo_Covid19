@@ -1,10 +1,11 @@
-package ar.edu.unju.fi.tracking.model;
+package ar.edu.unju.fi.testeos.model;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class Usuario {
 	
+	private long id;
 	private String nombreUsuario;
 	private String password;
 	private String nombreReal;
@@ -18,18 +19,35 @@ public class Usuario {
 	
 	/**
 	 * constructor sobrecarcado
+	 * @param id
 	 * @param nombreUsuario
 	 * @param password
 	 * @param nombreReal
 	 * @param apellidoReal
 	 * @param tipoUsuario
 	 */
-	 public Usuario(String nombreUsuario, String password, String nombreReal, String apellidoReal, String tipoUsuario) {
+	 public Usuario(long id,String nombreUsuario, String password, String nombreReal, String apellidoReal, String tipoUsuario) {
+		this.id = id;
 		this.nombreUsuario = nombreUsuario;
 		this.password = password;
 		this.nombreReal = nombreReal;
 		this.apellidoReal = apellidoReal;
 		this.tipoUsuario = tipoUsuario;
+	}
+	 
+	 
+	/**Método para acceder a la variable id;
+	* @return id.
+	*/
+	 public long getId() {
+			return this.id;
+	}
+	 
+	/**Metodo que permite modificar la variable id.
+	* @param id, variable de la clase Usuario.
+	*/
+	public void setId(long id) {
+			this.id = id;
 	}
 
 

@@ -14,7 +14,7 @@ import ar.edu.unju.fi.testeos.model.UnidadHabitacional;
  *
  */
 @Service
-public class IUnidadHabitacionalServiceImp implements IUnidadHabitacionalService {
+public class UnidadHabitacionalServiceImp implements IUnidadHabitacionalService {
 @Autowired
 	public IUnidadHabitacional iunidad;
 	@Override

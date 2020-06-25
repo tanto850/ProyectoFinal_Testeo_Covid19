@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import ar.edu.unju.fi.service.IUsuarioService;
-import ar.edu.unju.fi.tracking.model.Usuario;
+import ar.edu.unju.fi.testeos.model.Usuario;
 
 @SpringBootApplication
 public class ProyectoFinalTesteoCovid19Aplication implements CommandLineRunner{

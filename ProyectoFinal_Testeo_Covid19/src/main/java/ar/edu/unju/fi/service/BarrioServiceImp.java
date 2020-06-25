@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.repository.IBarrio;
-import ar.edu.unju.fi.trackpersonas.model.Barrio;
+import ar.edu.unju.fi.testeos.model.Barrio;
 
 /**
  * @author Aucachi Fabian
  *
  */
 @Service
-public class IBarrioServiceImp implements IBarrioService{
+public class BarrioServiceImp implements IBarrioService{
 @Autowired
 public IBarrio ibarrio;
 

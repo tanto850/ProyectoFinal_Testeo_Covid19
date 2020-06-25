@@ -14,7 +14,7 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
  *
  */
 @Service
-public class IPersonaTesteadaServiceImp implements IPersonaTesteadaService{
+public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	@Autowired
 	public IPersonaTesteada ipersona;
 	

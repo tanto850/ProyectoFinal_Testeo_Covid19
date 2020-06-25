@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ar.edu.unju.fi.ProyectoFinalTesteoCovid19Aplication;
-import ar.edu.unju.fi.trackpersonas.model.Barrio;
+import ar.edu.unju.fi.testeos.model.Barrio;
 
 /**
  * @author Aucachi Fabian

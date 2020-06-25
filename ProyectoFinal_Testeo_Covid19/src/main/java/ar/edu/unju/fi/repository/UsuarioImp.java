@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ar.edu.unju.fi.ProyectoFinalTesteoCovid19Aplication;
-import ar.edu.unju.fi.tracking.model.Usuario;
+import ar.edu.unju.fi.testeos.model.Usuario;
 /**
  * @author Aucachi Fabian
  *  implementacion. se escriben las acciones que realizaran los metodos de la interfaz asociada.

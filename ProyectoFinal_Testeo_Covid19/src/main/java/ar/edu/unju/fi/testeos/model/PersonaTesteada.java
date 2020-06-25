@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PersonaTesteada {
 
+	private long id;
 	private String documento;
 	private String apellido;
 	private String nombres;
@@ -15,16 +16,32 @@ public class PersonaTesteada {
 	 public PersonaTesteada() {}
 	
 	/**
+	 * @param id
 	 * @param documento
 	 * @param apellido
 	 * @param nombres
 	 * @param resultadoTesteo
 	 */
-	public PersonaTesteada(String documento, String apellido, String nombres, String resultadoTesteo) {
+	public PersonaTesteada(long id, String documento, String apellido, String nombres, String resultadoTesteo) {
+		this.id = id;
 		this.documento = documento;
 		this.apellido = apellido;
 		this.nombres = nombres;
 		this.resultadoTesteo = resultadoTesteo;
+	}
+	
+	/**Método para acceder a la variable id;
+	* @return id.
+	*/
+	 public long getId() {
+			return this.id;
+	}
+	 
+	/**Metodo que permite modificar la variable id.
+	* @param id, variable de la clase PersonaTesteada.
+	*/
+	public void setId(long id) {
+			this.id = id;
 	}
 
 	/** Metodo que permite obtener el documento guardado.
