@@ -17,14 +17,14 @@ public class MainController {
 	@Autowired
 	private UsuarioServiceImp usuarioService;
 	
-	@RequestMapping("/index")
+	@RequestMapping("/registroUsuario")
 	public String getIndex(Model model) {
 		model.addAttribute("usuarioformulario", new Usuario());
 		model.addAttribute("listaUsuario", usuarioService.listarUsuario());
-		return "inicio";
+		return "registroUsuario";
 	}
 	
-	@PostMapping("/index")
+	@PostMapping("/registroUsuario")
 	public String crearUsuario(@ModelAttribute("usuarioformulario") Usuario usuario, ModelMap model) {
 		//try {
 			usuarioService.guardar(usuario);
@@ -33,17 +33,17 @@ public class MainController {
 		//} catch (Exception e) {
 			
 		//}
-		return "inicio";
+		return "registroUsuario";
 	}
 	
 	
-	@RequestMapping("inicio")
-	public String getInicio(Model model) {
+	//@RequestMapping("inicio")
+	//public String getInicio(Model model) {
 		 //model.addAttribute("usuario", usuarioService.listarUsuario().getNombreUsuario());
-		return "inicio";
-	}
+//		return "registroUsuario";
+//	}
 	
-	@RequestMapping("cuenta")
+	@RequestMapping("/")
 	public String getCuenta(Model model) {
 		return "cuenta";
 	}

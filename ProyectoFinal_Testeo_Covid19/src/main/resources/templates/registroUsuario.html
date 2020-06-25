@@ -7,7 +7,6 @@
 </head>
 <body>
 <div th:insert="layout/header :: header"></div>
-<div id="welcome"><h5 th:text=" 'Usuario : '  + ${usuario}  "></h5></div>
 	<div class="row border-top border-bottom w-100">
 		<section class="col-md-8">
 			
@@ -61,7 +60,7 @@
 	
 		<aside class="col-md-4 bg-light">
 			<h3><center>Registro de usuario</center></h3>
-			<form th:object="${usuarioformulario}" th:action="@{/index}" method="post">
+			<form th:object="${usuarioformulario}" th:action="@{/registroUsuario}" method="post">
 				  <div class="form-group row">
 				    <label for="idnombreUsuario" class="col-md-3 col-form-label">Usuario</label>
 				    <div class="col-md-8">
