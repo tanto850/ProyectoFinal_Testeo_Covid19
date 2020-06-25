@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import ar.edu.unju.fi.service.IUsuarioService;
+import ar.edu.unju.fi.service.UsuarioServiceImp;
 import ar.edu.unju.fi.testeos.model.Usuario;
 
 @Controller
 public class MainController {
 	@Autowired
-	private IUsuarioService iusuarioService;
+	private UsuarioServiceImp usuarioService;
 	
 	@RequestMapping("/registroUsuario")
 	public String getIndex(Model model) {
 		model.addAttribute("usuarioformulario", new Usuario());
-		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());
+		model.addAttribute("listaUsuario", usuarioService.listarUsuario());
 		return "registroUsuario";
 	}
 	
 	@PostMapping("/registroUsuario")
 	public String crearUsuario(@ModelAttribute("usuarioformulario") Usuario usuario, ModelMap model) {
 		//try {
-			iusuarioService.guardar(usuario);
+			usuarioService.guardar(usuario);
 			model.addAttribute("usuarioformulario", new Usuario());
 			//model.addAttribute("lisTab", "active");
 		//} catch (Exception e) {
@@ -53,4 +53,16 @@ public class MainController {
 		return "formularioPersona";
 	}
 
+	@RequestMapping("/registroBarrio")
+	public String getBarrio(Model model) {
+		return "registroBarrio";
+	}
+	
+	@RequestMapping("/usuarioBM")
+	public String getusuarioBM(Model model) {
+		return "usuarioBM";
+	}
+
+	
+	
 }
