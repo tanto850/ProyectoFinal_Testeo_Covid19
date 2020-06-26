@@ -2,11 +2,30 @@ package ar.edu.unju.fi.testeos.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 @Component
+@Entity
+@Table(name = "barrio")
 public class Barrio {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable=true)
 	private long id;
+	
+	@Column(nullable=true)
 	private String nombre;
+	
+	@OneToMany(mappedBy = "barrio", cascade = CascadeType.ALL)
+	private UnidadHabitacional unidadHabitacional;
     
 	/**
 	 * Constructor por defecto sin parametros.
@@ -56,6 +75,24 @@ public class Barrio {
 	@Override
 	public String toString() {
 		return "Barrio [nombre=" + nombre + "]";
+	}
+
+
+
+	/**
+	 * @return the unidadHabitacional
+	 */
+	public UnidadHabitacional getUnidadHabitacional() {
+		return unidadHabitacional;
+	}
+
+
+
+	/**
+	 * @param unidadHabitacional the unidadHabitacional to set
+	 */
+	public void setUnidadHabitacional(UnidadHabitacional unidadHabitacional) {
+		this.unidadHabitacional = unidadHabitacional;
 	}
 	
 	

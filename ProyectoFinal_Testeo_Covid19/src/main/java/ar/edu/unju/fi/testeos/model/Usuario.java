@@ -1,16 +1,48 @@
 package ar.edu.unju.fi.testeos.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
+@Table(name = "usuario")
 public class Usuario {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable=true)
 	private long id;
+	
+	@Column
+	@NotBlank
 	private String nombreUsuario;
+	
+	@Column
+	@NotBlank
+	@Size(min=8, message="Su contraseña debe tener como minimo 8 caracteres.")
 	private String password;
+	
+	@Column
+	@NotBlank
 	private String nombreReal;
+	
+	@Column
+	@NotBlank
 	private String apellidoReal;
+	
+	@Column
+	@NotBlank
 	private String tipoUsuario; //consultor-registrador-bd
+	
+	
 	/**
 	 * constructor por defecto.
 	 */

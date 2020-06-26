@@ -3,15 +3,41 @@ package ar.edu.unju.fi.testeos.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+
 @Component
+@Entity
+@Table(name = "registro_testeo")
 public class RegistroTesteo {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable=true)
 	private long id;
+	
+	@Column
+	@NotBlank
 	private LocalDateTime fechaHora;
+	
 	@Autowired
+	@OneToMany(mappedBy = "registroTesteo", cascade = CascadeType.ALL)
+	@JoinColumn(name = "UNIDAD_HABITACIONAL_ID")
 	private UnidadHabitacional unidadHabitacional;
+	
+	
 	private List<PersonaTesteada> personasTesteadas;
 	
 	/**

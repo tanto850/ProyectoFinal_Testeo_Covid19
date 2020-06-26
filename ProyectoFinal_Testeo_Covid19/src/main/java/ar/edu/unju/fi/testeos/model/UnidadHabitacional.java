@@ -1,17 +1,41 @@
 package ar.edu.unju.fi.testeos.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.testeos.model.Barrio;
 
 @Component
+@Entity
+@Table(name = "unidad_habitacional")
 public class UnidadHabitacional {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable=true)
 	private long id;
+	
+	@Column(nullable = true)
 	private String direccion;
+	
+	
 	@Autowired
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Barrio barrio;
+	
+	@ManyToOne( fetch = FetchType.LAZY)
+	@JoinColumn(name = "REGISTRO_ID")
+	private RegistroTesteo registroTesteo;
 	
 	/**
 	 * constructor por defecto.
@@ -77,6 +101,20 @@ public class UnidadHabitacional {
 	@Override
 	public String toString() {
 		return "UnidadHabitacional [direccion=" + direccion + ", barrio=" + barrio + "]";
+	}
+
+	/**
+	 * @return the registroTesteo
+	 */
+	public RegistroTesteo getRegistroTesteo() {
+		return registroTesteo;
+	}
+
+	/**
+	 * @param registroTesteo the registroTesteo to set
+	 */
+	public void setRegistroTesteo(RegistroTesteo registroTesteo) {
+		this.registroTesteo = registroTesteo;
 	}
 	
 }

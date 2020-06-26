@@ -1,15 +1,40 @@
 package ar.edu.unju.fi.testeos.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
+@Table(name = "persona_testeada")
 public class PersonaTesteada {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable=true)
 	private long id;
+	
+	@Column
+	@NotBlank
 	private String documento;
+	
+	@Column
+	@NotBlank(message="El apellido no puede quedar en blanco")
 	private String apellido;
+	
+	@Column
+	@NotBlank
 	private String nombres;
+	
+	@Column
 	private String resultadoTesteo;
+	
 	/**
 	 * constructor por defecto.
 	 */
