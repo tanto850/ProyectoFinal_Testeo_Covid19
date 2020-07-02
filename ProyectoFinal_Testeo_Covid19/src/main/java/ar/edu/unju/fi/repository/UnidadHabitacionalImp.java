@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.repository;
+/*package ar.edu.unju.fi.repository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,9 +11,9 @@ import ar.edu.unju.fi.testeos.model.UnidadHabitacional;
 /**
  * @author Aucachi Fabian
  *  implementacion. se escriben las acciones que realizaran los metodos de la interfaz asociada.
- */
+ *
 @Repository
-public class UnidadHabitacionalImp implements IUnidadHabitacional{
+public class UnidadHabitacionalImp implements IUnidadHabitacionalRepository{
 	@Autowired
  UnidadHabitacional unidadHabitacional;
 	public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
@@ -43,3 +43,4 @@ public class UnidadHabitacionalImp implements IUnidadHabitacional{
 		return null;
 	}
 }
+*/

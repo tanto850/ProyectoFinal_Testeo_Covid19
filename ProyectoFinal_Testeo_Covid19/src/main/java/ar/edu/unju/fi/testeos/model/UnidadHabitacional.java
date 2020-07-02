@@ -23,7 +23,7 @@ import ar.edu.unju.fi.testeos.model.Barrio;
 
 @Component
 @Entity
-@Table( name = "unidadVhabitacional")
+@Table( name = "unidadHabitacional")
 public class UnidadHabitacional {
 
 	@Id

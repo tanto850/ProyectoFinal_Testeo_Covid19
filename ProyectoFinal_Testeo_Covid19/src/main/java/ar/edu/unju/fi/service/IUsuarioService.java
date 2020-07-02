@@ -10,8 +10,8 @@ import ar.edu.unju.fi.testeos.model.Usuario;
  *
  */
 public interface IUsuarioService {
-	public void guardar();
-	public void eliminar();
+	public void guardar(Usuario unUsuario);
+	public void eliminar(long id);
 	public void modificar();
-	 public Usuario mostrar();
+	public Usuario mostrar();
 }

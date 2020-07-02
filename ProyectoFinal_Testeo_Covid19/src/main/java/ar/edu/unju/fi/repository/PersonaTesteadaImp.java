@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *
 package ar.edu.unju.fi.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +11,9 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 /**
  * @author Aucachi
  *
- */
+ *
 @Repository
-public class PersonaTesteadaImp implements IPersonaTesteada{
+public class PersonaTesteadaImp implements IPersonaTesteadaRepository{
 @Autowired
 	 PersonaTesteada  persona;
 	@Override
@@ -40,4 +40,4 @@ public class PersonaTesteadaImp implements IPersonaTesteada{
 		return null;
 	}
 
-}
+}*/

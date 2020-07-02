@@ -6,7 +6,7 @@ package ar.edu.unju.fi.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.repository.IBarrio;
+import ar.edu.unju.fi.repository.IBarrioRepository;
 import ar.edu.unju.fi.testeos.model.Barrio;
 
 /**
@@ -16,32 +16,32 @@ import ar.edu.unju.fi.testeos.model.Barrio;
 @Service
 public class BarrioServiceImp implements IBarrioService{
 @Autowired
-public IBarrio ibarrio;
+public IBarrioRepository ibarrio;
 
 	@Override
 	public void guardar() {
 		// TODO Auto-generated method stub
-		ibarrio.guardar();
+		//ibarrio.guardar();
 	}
 
 	@Override
 	public void eliminar() {
 		// TODO Auto-generated method stub
-	ibarrio.eliminar();
+	//ibarrio.eliminar();
 	
 	}
 
 	@Override
 	public void modificar() {
 		// TODO Auto-generated method stub
-		ibarrio.modificar();
+		//ibarrio.modificar();
 	}
 
 	@Override
 	public Barrio mostrar() {
 		// TODO Auto-generated method stub
-		Barrio barrio = ibarrio.mostrar();
-		return barrio;
+		//Barrio barrio = ibarrio.mostrar();
+		return null;
 	}
 
 }

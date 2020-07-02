@@ -24,12 +24,12 @@ public class ProyectoFinalTesteoCovid19Aplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		usuario.setApellidoReal("Aucachi");
+		/*usuario.setApellidoReal("Aucachi");
 		usuario.setNombreReal("Fabian");
 		usuario.setNombreUsuario("aucachi99");
 		usuario.setTipoUsuario("Registrador");
 		usuario.setPassword("12345.com");
-		usuarioService.mostrar();
+		usuarioService.mostrar();*/
 	}
 
 }

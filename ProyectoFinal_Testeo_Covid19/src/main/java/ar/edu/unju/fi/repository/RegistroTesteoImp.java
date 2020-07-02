@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.repository;
+/*package ar.edu.unju.fi.repository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,9 +11,9 @@ import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 /**
  * @author Aucachi Fabian
  *  implementacion. se escriben las acciones que realizaran los metodos de la interfaz asociada.
- */
+ *
 @Repository
-public class RegistroTesteoImp implements IRegistroTesteo {
+public class RegistroTesteoImp implements IRegistroTesteoRepository {
 @Autowired	
 RegistroTesteo registroTesteo;
 public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
@@ -34,4 +34,4 @@ public void eliminar() {
 public RegistroTesteo mostrar() {
 	return null;
 }
-}
+}*/

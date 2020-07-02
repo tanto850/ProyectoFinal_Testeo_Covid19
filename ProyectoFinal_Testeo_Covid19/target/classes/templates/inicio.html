@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org)" >
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Testeos Covid 19</title>
 <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
 			      <div class="carousel-caption d-none d-md-block">
 			      <div class="text-white">
 			        <h1><strong>CovidTest</strong></h1>
-			        <h3>Servicio disponible unicamente para la provincia de jujuy</h3>
+			        <h3>Servicio disponible unicamente para la provincia de Jujuy</h3>
 			      </div>
 			      </div>
 			    </div>
@@ -61,45 +61,45 @@
 	
 		<aside class="col-md-4 bg-light">
 			<h3><center>Registro de usuario</center></h3>
-			<form>
+			<form th:object="${usuarioformulario}" th:action="@{/index}" method="post">
 				  <div class="form-group row">
 				    <label for="idnombreUsuario" class="col-md-3 col-form-label">Usuario</label>
 				    <div class="col-md-8">
-				      <input type="text" class="form-control " id="idnombreUsuario" required>
+				      <input type="text" class="form-control " id="idnombreUsuario" required th:field="${usuarioformulario.nombreUsuario}">
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="idnombreReal" class="col-md-3 col-form-label">Nombre real</label>
 				    <div class="col-md-8">
-				      <input type="text" class="form-control " id="idnombreReal" required>
+				      <input type="text" class="form-control " id="idnombreReal" required th:field="${usuarioformulario.nombreReal}">
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="idapellidoReal" class="col-md-3 col-form-label">Apellido Real</label>
 				    <div class="col-md-8">
-				      <input type="text" class="form-control " id="idapellidoReal" required>
+				      <input type="text" class="form-control " id="idapellidoReal" required th:field="${usuarioformulario.apellidoReal}">
 				    </div>
 				  </div>
     				  <fieldset class="form-group">
 				    <div class="row">
 				      <legend class="col-md-2 pt-0 col-form-label">Tipo</legend>
 				      <div class="col-sm-10">
-				        <div class="form-check">
-				          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+				        <!--<div class="form-check">
+				          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked th:field="${usuarioformulario.tipoUsuario}">
 				          <label class="form-check-label" for="gridRadios1">
 				            bd
 				          </label>
-				        </div>
+				        </div>-->
 				        <div class="form-check">
-				          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+				          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" th:field="${usuarioformulario.tipoUsuario}">
 				          <label class="form-check-label" for="gridRadios2">
-				            registrador
+				            Registrador
 				          </label>
 				        </div>
 				        <div class="form-check disabled">
-				          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+				          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" th:field="${usuarioformulario.tipoUsuario}">
 				          <label class="form-check-label" for="gridRadios3">
-				            consultor
+				            Consultor
 				          </label>
 				        </div>
 				      </div>
@@ -108,13 +108,13 @@
 				   <div class="form-group row">
 				    <label for="inputPassword" class="col-md-3 col-form-label">Password</label>
 				    <div class="col-md-8">
-				      <input type="password" class="form-control" id="inputPassword" required>
+				      <input type="password" class="form-control" id="inputPassword" required th:field="${usuarioformulario.password}">
 				    </div>
 				  </div>
 				  
 				  <div class="form-group row">
 				    <div class="col-md-10">
-				      <button type="submit" class="btn btn-primary">Registrar</button>
+				      <input type="submit" value="Guardar" class="btn btn-sucess"/>
 				    </div>
 				  </div>
 				</form>

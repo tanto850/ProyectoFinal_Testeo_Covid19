@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.repository;
+/*package ar.edu.unju.fi.repository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,9 +11,9 @@ import ar.edu.unju.fi.testeos.model.Barrio;
 /**
  * @author Aucachi Fabian
  *  implementacion. se escriben las acciones que realizaran los metodos de la interfaz asociada.
- */
+ *
 @Repository
-public class BarrioImp implements IBarrio{
+public class BarrioImp implements IBarrioRepository{
    @Autowired
 	Barrio barrio;
     public static Logger LOG = LoggerFactory.getLogger(ProyectoFinalTesteoCovid19Aplication.class);
@@ -42,4 +42,4 @@ public Barrio mostrar() {
 	LOG.info("Mostrando");	
 	return null;
 }
-}
+}*/
