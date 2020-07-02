@@ -10,9 +10,9 @@ import ar.edu.unju.fi.testeos.model.Barrio;
  *
  */
 public interface IBarrioService {
-	public void guardar();
-	public void eliminar();
+	public void guardar(Barrio barrio);
+	public void eliminar(long id);
 	public void modificar();
-	public Barrio mostrar();
+	public Iterable<Barrio> listarBarrios();
 
 }

@@ -10,8 +10,8 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
  *
  */
 public interface IPersonaTesteadaService {
-	public void guardar();
+	public void guardar(PersonaTesteada personaTesteada);
 	public void eliminar();
 	public void modificar();
- 	 public PersonaTesteada mostrar();
+ 	public Iterable<PersonaTesteada> listarPersonasTesteadas();
 }

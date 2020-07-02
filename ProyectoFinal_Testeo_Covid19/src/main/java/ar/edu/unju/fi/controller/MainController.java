@@ -20,6 +20,7 @@ public class MainController {
 	@RequestMapping("/index")
 	public String getIndex(Model model) {
 		model.addAttribute("usuarioformulario", new Usuario());
+		model.addAttribute("listaUsuario", usuarioService.listarUsuario());
 		return "inicio";
 	}
 	
@@ -28,7 +29,7 @@ public class MainController {
 		//try {
 			usuarioService.guardar(usuario);
 			model.addAttribute("usuarioformulario", new Usuario());
-			model.addAttribute("lisTab", "active");
+			//model.addAttribute("lisTab", "active");
 		//} catch (Exception e) {
 			
 		//}
@@ -38,7 +39,7 @@ public class MainController {
 	
 	@RequestMapping("inicio")
 	public String getInicio(Model model) {
-		 model.addAttribute("usuario", usuarioService.mostrar().getNombreUsuario());
+		 //model.addAttribute("usuario", usuarioService.listarUsuario().getNombreUsuario());
 		return "inicio";
 	}
 	

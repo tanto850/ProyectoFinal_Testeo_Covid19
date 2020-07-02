@@ -20,9 +20,10 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	public IPersonaTesteadaRepository ipersona;
 
 	@Override
-	public void guardar() {
-		// TODO Auto-generated method stub
+	public void guardar(PersonaTesteada personaTesteada) {
 		
+		ipersona.save(personaTesteada);
+		System.out.println("La persona de apellido "+ personaTesteada.getApellido()+ " ha sido resgistrada en la base de datos.");
 	}
 
 	@Override
@@ -38,9 +39,9 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	}
 
 	@Override
-	public PersonaTesteada mostrar() {
+	public Iterable<PersonaTesteada> listarPersonasTesteadas() {
 		// TODO Auto-generated method stub
-		return null;
+		return ipersona.findAll();
 	}
 
 }

@@ -16,17 +16,18 @@ import ar.edu.unju.fi.testeos.model.UnidadHabitacional;
 @Service
 public class UnidadHabitacionalServiceImp implements IUnidadHabitacionalService {
 @Autowired
-	public IUnidadHabitacionalRepository iunidad;
+	public IUnidadHabitacionalRepository iUnidadHabitacional;
 	@Override
-	public void guardar() {
+	public void guardar(UnidadHabitacional unidadHabitacional) {
 		// TODO Auto-generated method stub
-		//iunidad.guardar();
+		iUnidadHabitacional.save(unidadHabitacional);
+		System.out.println("La unidad habitacional se guardo correctamente.");
 	}
 
 	@Override
-	public void eliminar() {
+	public void eliminar(long id) {
 		// TODO Auto-generated method stub
-		//iunidad.eliminar();
+		iUnidadHabitacional.deleteById(id);;
 	}
 
 	@Override
@@ -36,10 +37,10 @@ public class UnidadHabitacionalServiceImp implements IUnidadHabitacionalService 
 	}
 
 	@Override
-	public UnidadHabitacional mostrar() {
+	public Iterable<UnidadHabitacional> listarUnidadHabitacional() {
 		// TODO Auto-generated method stub
 		//UnidadHabitacional unidad = iunidad.mostrar();
-		return null;
+		return iUnidadHabitacional.findAll();
 	}
 
 }

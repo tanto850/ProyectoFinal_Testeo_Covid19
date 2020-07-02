@@ -11,7 +11,7 @@ import ar.edu.unju.fi.testeos.model.Usuario;
  */
 public interface IUsuarioService {
 	public void guardar(Usuario unUsuario);
-	public void eliminar(long id);
+	public void eliminar(long dni);
 	public void modificar();
-	public Usuario mostrar();
+	public Iterable<Usuario> listarUsuario();
 }

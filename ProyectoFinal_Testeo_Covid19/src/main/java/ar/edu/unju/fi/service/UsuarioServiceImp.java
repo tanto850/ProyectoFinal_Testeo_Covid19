@@ -16,32 +16,31 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 @Service
 public class UsuarioServiceImp implements IUsuarioService {
 	@Autowired
-	public IUsuarioRepository iusuario;
+	public IUsuarioRepository iUsuario;
 
 		@Override
 		public void guardar(Usuario unUsuario) {
 			
 			System.out.println("El usuario " + unUsuario.getApellidoReal() + "ha sido guardado.");
-			iusuario.save(unUsuario);
+			iUsuario.save(unUsuario);
 			
 		}
 
 		@Override
-		 public void eliminar(long id) {
-			iusuario.deleteById(id);;
+		 public void eliminar(long dni) {
+			iUsuario.deleteById(dni);;
 		}
 
 
 		@Override
 		public void modificar() {
 			// TODO Auto-generated method stub
-			//iusuario.modificar();	
+			//iUsuario.modificar();	
 		}
 
 		@Override
-		public Usuario mostrar() {
-			// TODO Auto-generated method stub
-			   //Usuario usuario= iusuario.mostrar();
-				return null;
+		public Iterable<Usuario> listarUsuario() {
+			
+			return iUsuario.findAll();
 		}
 }

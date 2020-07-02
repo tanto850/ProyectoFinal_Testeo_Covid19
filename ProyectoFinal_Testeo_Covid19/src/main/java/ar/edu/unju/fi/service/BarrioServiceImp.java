@@ -16,18 +16,18 @@ import ar.edu.unju.fi.testeos.model.Barrio;
 @Service
 public class BarrioServiceImp implements IBarrioService{
 @Autowired
-public IBarrioRepository ibarrio;
+public IBarrioRepository iBarrio;
 
 	@Override
-	public void guardar() {
-		// TODO Auto-generated method stub
-		//ibarrio.guardar();
+	public void guardar(Barrio barrio) {
+		iBarrio.save(barrio);
+		System.out.println("El barrio " + barrio.getNombre() + " ha sido guardado.");
 	}
 
 	@Override
-	public void eliminar() {
+	public void eliminar(long id) {
 		// TODO Auto-generated method stub
-	//ibarrio.eliminar();
+		iBarrio.deleteById(id);
 	
 	}
 
@@ -38,10 +38,10 @@ public IBarrioRepository ibarrio;
 	}
 
 	@Override
-	public Barrio mostrar() {
+	public Iterable<Barrio> listarBarrios() {
 		// TODO Auto-generated method stub
-		//Barrio barrio = ibarrio.mostrar();
-		return null;
+		
+		return iBarrio.findAll();
 	}
 
 }

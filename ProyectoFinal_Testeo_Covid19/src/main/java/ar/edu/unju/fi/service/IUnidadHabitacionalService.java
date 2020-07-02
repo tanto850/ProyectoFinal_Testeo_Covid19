@@ -10,9 +10,9 @@ import ar.edu.unju.fi.testeos.model.UnidadHabitacional;
  *
  */
 public interface IUnidadHabitacionalService {
-	public void guardar();
-	public void eliminar();
+	public void guardar(UnidadHabitacional unidadHabitacional);
+	public void eliminar(long id);
 	public void modificar();
-	 public UnidadHabitacional mostrar();
+	public Iterable<UnidadHabitacional> listarUnidadHabitacional();
 	
 }

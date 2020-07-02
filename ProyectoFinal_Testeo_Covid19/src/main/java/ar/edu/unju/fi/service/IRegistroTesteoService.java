@@ -1,5 +1,7 @@
 package ar.edu.unju.fi.service;
 
+import java.util.Optional;
+
 import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 /**
  * 
@@ -7,7 +9,7 @@ import ar.edu.unju.fi.testeos.model.RegistroTesteo;
  *
  */
 public interface IRegistroTesteoService {
-	public void guardar();
-	public void eliminar();
-	 public RegistroTesteo mostrar();
+	public void guardar(RegistroTesteo resgistroTesteo);
+	public void eliminar(long id);
+	public Optional<RegistroTesteo> mostrar(long id);
 }
