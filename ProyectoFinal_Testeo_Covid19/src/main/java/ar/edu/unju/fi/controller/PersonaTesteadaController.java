@@ -6,24 +6,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import ar.edu.unju.fi.service.PersonaTesteadaServiceImp;
+import ar.edu.unju.fi.service.IPersonaTesteadaService;
 import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 
 public class PersonaTesteadaController {
 	
-	private PersonaTesteadaServiceImp personaTesteadaService;
+	private IPersonaTesteadaService ipersonaTesteadaService;
 
 	@RequestMapping("/formulario")
 	public String getIndex(Model model) {
 		model.addAttribute("personaformulario", new PersonaTesteada());
-		model.addAttribute("listaPersonaTesteada", personaTesteadaService.listarPersonasTesteadas());
+		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
 		return "formularioPersona";
 	}
 	
 	@PostMapping("/guardarPersona")
 	public String crearUsuario(@ModelAttribute("usuarioformulario") PersonaTesteada personaTesteada, ModelMap model) {
 		//try {
-			personaTesteadaService.guardar(personaTesteada);
+			ipersonaTesteadaService.guardar(personaTesteada);
 			model.addAttribute("personaformulario", new PersonaTesteada());
 			//model.addAttribute("lisTab", "active");
 		//} catch (Exception e) {
