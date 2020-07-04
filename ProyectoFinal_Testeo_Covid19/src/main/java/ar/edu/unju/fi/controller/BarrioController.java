@@ -18,7 +18,7 @@ public class BarrioController {
 	@Autowired
 	private IBarrioService ibarrioService;
 
-	@RequestMapping("/registrobarrio")
+	@RequestMapping("/registroBarrio")
 	public String getIndex(Model model) {
 		model.addAttribute("barrioformulario", new Barrio());
 		model.addAttribute("listaBarrio", ibarrioService.listarBarrios());

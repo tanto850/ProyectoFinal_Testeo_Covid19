@@ -18,7 +18,7 @@ public class MainController {
 	@Autowired
 	private IUsuarioService iusuarioService;
 	
-	@RequestMapping("/registrousuario")
+	@RequestMapping("/registroUsuario")
 	public String getIndex(Model model) {
 		model.addAttribute("usuarioformulario", new Usuario());
 		//model.addAttribute("listaUsuario", iusuarioService.listarUsuario());
@@ -60,12 +60,31 @@ public class MainController {
 	public String getBarrio(Model model) {
 		return "registroBarrio";
 	}
+	*/
 	
 	@RequestMapping("/usuarioBM")
 	public String getusuarioBM(Model model) {
 		return "usuarioBM";
-	}*/
+	}
 
+	
+	@RequestMapping("/consultaBarrio")
+	public String getform(Model model) {
+		//model.addAttribute("usuario",usuarioService.Mostrar().getNombre());
+		return "consultaBarrio";
+}
+	
+	@RequestMapping("/consultaDNI")
+	public String getform2(Model model) {
+		//model.addAttribute("usuario",usuarioService.Mostrar().getNombre());
+		return "consultaDNI";
+}
+	
+	@RequestMapping("/consultaApellido")
+	public String getform3(Model model) {
+		//model.addAttribute("usuario",usuarioService.Mostrar().getNombre());
+		return "consultaApellido";
+}
 	
 	
 }
