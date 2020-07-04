@@ -2,86 +2,74 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<title>Registro de persona testeadas</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
 
-	<!-- Los iconos tipo Solid de Fontawesome-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-	
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
 </head>
-<body >
+<body>
 
-<div th:insert="layout/headerBD :: headerBD"></div>
+	<div th:insert="layout/headerBD :: headerBD"></div>
 
-<div class=" border-top border-bottom w-100">
-<div class="mb-5 mt-5">
-<div class="card col-md-5 container">
-	<h3 class="card-title text-center">Registrar Barrio</h3>
-<div class="card-body">
-	
-<form>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom01">Nombre del Barrio</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Nombre Barrio" required>
-      <div class="valid-feedback">
-      </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Guardar</button>
-  </div>
-</form>
-	
-		</div>
-</div>
-</div>
-</div>
+	<div class=" border-top border-bottom w-100">
+		<div class="mb-5 mt-5">
+			<div class="card col-md-5 container">
+				<h3 class="card-title text-center">Registrar Barrio</h3>
+				<div class="card-body">
 
-<div style="clear: both; width: 100%;">
-<div   class="card">
-						<div class="card-header">
-							<h4>Listado de los barrios Registrados</h4>
+					<form th:object="${barrioformulario}" th:action="@{/guardarBarrio}" method="POST">
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+								<label for="validationCustom01">Nombre del Barrio</label> 
+									<input type="text" class="form-control" id="validationCustom01"
+										value="Nombre Barrio" required th:field="*{nombre}">
+								<div class="valid-feedback"></div>
+							</div>
+							<button class="btn btn-primary" type="submit">Guardar</button>
 						</div>
-						<div class="card-body">
-<!-- Lista de usuarios-->
-							<div class="table-responsive">
-	<table id="userList" class="table table-bordered table-hover table-striped">
-		<thead class="thead-light">
-		<tr>
-			<th scope="col">ID</th>
-			<th scope="col">NOMBRE</th>
-			<th scope="col">ACCION</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Ruiz</td>
-			<td>
-				<a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>Ocampo</td>
-			<td>
-				<a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">3</th>
-			<td>Castillo</td>
-			<td>
-				<a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
-			</td>
-		</tr>
-		</tbody>
-	</table>
-</div>    
-</div>
-</div>
-</div>
+					</form>
 
-<div th:insert="layout/footer :: footer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="clear: both; width: 100%;">
+		<div class="card">
+			<div class="card-header">
+				<h4>Listado de los barrios Registrados</h4>
+			</div>
+			<div class="card-body">
+				<!-- Lista de usuarios-->
+				<div class="table-responsive">
+					<table id="userList"
+						class="table table-bordered table-hover table-striped">
+						<thead class="thead-light">
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">NOMBRE</th>
+								<th scope="col">ACCION</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="barrio : ${listaBarrio}">
+								<td th:text="${barrio.id}"></td>
+								<td th:text="${barrio.nombre}"></td>
+								<td><a href="#"><i class="fas fa-edit"></i></a> | <a
+									href="#"><i class="fas fa-user-times"></i></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div th:insert="layout/footer :: footer"></div>
 </body>
 </html>
