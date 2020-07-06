@@ -95,6 +95,7 @@ public class UsuarioController {
 		return "usuarioBM";
 	}
 	
+	
 	@GetMapping("/eliminarUsuario/{id}")
 	public String eliminarUsuario(Model model, @PathVariable(name="id") Long id) {
 		try {
@@ -112,3 +113,5 @@ public class UsuarioController {
 		return "usuarioBM";
 	}
 }
+
+

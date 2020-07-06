@@ -20,6 +20,7 @@ public interface IPersonaTesteadaService {
  	public Iterable<PersonaTesteada> listarPersonasTesteadas();
  	public Optional<PersonaTesteada> listarPersonaId(long id);
  	public List<PersonaTesteada> listarPersonaApellido(String apellido);
+ 	
 	public List<PersonaTesteada> listarPersonaDocumento(long dni);
  	
 }
