@@ -4,8 +4,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Busqueda Apellido</title>
-<link rel="stylesheet" type="text/css"
-	href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
 
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
@@ -15,7 +14,7 @@
 <body>
 	<div th:insert="layout/headerCons :: headerCons"></div>
 	<h1
-		style="text-align: center; font-style: oblique; color: white; background-color: #343a40; border-top: 2px groove white;">
+		style=" text-align: center; font-style: oblique; color: white; background-color: #343a40; border-top: 2px groove white;">
 		BUSQUEDA POR BARRIO</h1>
 	<!-- Pestañas de Lista y Formulario -->
 	<div class="container">

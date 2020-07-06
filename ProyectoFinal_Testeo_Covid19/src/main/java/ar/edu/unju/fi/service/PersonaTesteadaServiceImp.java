@@ -3,6 +3,7 @@
  */
 package ar.edu.unju.fi.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,6 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 
 	@Override
 	public void guardar(PersonaTesteada personaTesteada) {
-		
 		ipersona.save(personaTesteada);
 		System.out.println("La persona de apellido "+ personaTesteada.getApellido()+ " ha sido resgistrada en la base de datos.");
 	}
@@ -50,6 +50,18 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	public Optional<PersonaTesteada> listarPersonaId(long id) {
 		
 		return ipersona.findById(id);
+	}
+
+	@Override
+	public List<PersonaTesteada> listarPersonaApellido(String apellido) {
+		// TODO Auto-generated method stub
+		return ipersona.findByApellido(apellido);
+	}
+
+	@Override
+	public List<PersonaTesteada> listarPersonaDocumento(long dni) {
+		// TODO Auto-generated method stub
+		return ipersona.findByDocumento(dni);
 	}
 	
 

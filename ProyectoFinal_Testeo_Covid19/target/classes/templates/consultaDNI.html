@@ -4,8 +4,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css"
-	href="webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
 
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
@@ -53,12 +52,12 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="usuario : ${listaUsuario}">
-								<td th:text="${usuario.id}"></td>
-								<td th:text="${usuario.nombreUsuario}"></td>
-								<td th:text="${usuario.nombreReal}"></td>
-								<td th:text="${usuario.apellidoReal}"></td>
-								<td th:text="${usuario.tipoUsuario}"></td>
+						<tr th:each="usuario : ${listaPersonas}">
+								<td th:text="${usuario.documento}"></td>
+								<td th:text="${usuario.nombres}"></td>
+								<td th:text=" ${usuario.apellido}"></td>
+								<td th:text="${usuario.resultadoTesteo}"></td>
+								<td th:text="${usuario.registroTesteo}"></td>
 						</tr>
 					</tbody>
 				</table>

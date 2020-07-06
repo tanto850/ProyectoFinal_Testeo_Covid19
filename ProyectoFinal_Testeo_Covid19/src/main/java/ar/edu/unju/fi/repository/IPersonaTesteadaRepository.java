@@ -5,6 +5,8 @@ package ar.edu.unju.fi.repository;
 //import java.util.List;
 //import java.util.Optional;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import ar.edu.unju.fi.testeos.model.PersonaTesteada;
@@ -25,5 +27,7 @@ public interface IPersonaTesteada {
 
 public interface IPersonaTesteadaRepository extends JpaRepository<PersonaTesteada,Long>{
 	
-	//public List<PersonaTesteada> findAllList();
+	public List<PersonaTesteada> findByApellido(String apellido);
+	public List<PersonaTesteada> findByDocumento(Long dni);
+	
 }
