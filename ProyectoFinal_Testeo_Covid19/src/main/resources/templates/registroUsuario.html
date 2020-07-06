@@ -64,7 +64,10 @@
 	
 		<aside class="col-md-4 bg-light">
 			<h3><center>Registro de usuario</center></h3>
-			<form th:object="${usuarioformulario}" th:action="@{/registroUsuario}" method="post">
+			<form th:object="${usuarioformulario}" th:action="${editMode}?@{/editarUsuario}:@{/agregarUsuario}" method="post">
+				  <!-- input class="form-control" type=hidden th:field="${usuarioformulario.id}" th:if="${editMode}"/>
+				  <input class="form-control" type=hidden th:field="${usuarioformulario.password}" th:if="${editMode}"/>
+				  <input class="form-control" type=hidden th:field="${usuarioformulario.tipo}" th:if="${editMode}"/-->
 				  <div class="form-group row">
 				    <label for="idnombreUsuario" class="col-md-3 col-form-label">Usuario</label>
 				    <div class="col-md-8">
@@ -84,7 +87,7 @@
 				    </div>
 				  </div>
     				  <fieldset class="form-group">
-				    <div class="row">
+				    <div class="row" th:if="${editMode==null or editMode==false}">
 				      <legend class="col-md-2 pt-0 col-form-label">Tipo</legend>
 				      <div class="col-sm-10">
 				        <!--<div class="form-check">
@@ -108,7 +111,7 @@
 				      </div>
 				    </div>
 				  </fieldset>
-				   <div class="form-group row">
+				   <div class="form-group row" th:if="${editMode==null or editMode==false}">
 				    <label for="inputPassword" class="col-md-3 col-form-label">Password</label>
 				    <div class="col-md-8">
 				      <input type="password" class="form-control" id="inputPassword" required th:field="${usuarioformulario.password}">
@@ -117,7 +120,7 @@
 				  
 				  <div class="form-group row">
 				    <div class="col-md-10">
-				      <input style="background-color: rgb(0,0,255,0.5);" type="submit" value="Guardar" class="btn btn-sucess"/>
+				      <input style="background-color: rgb(0,0,255,0.5);" type="submit" class="btn btn-sucess" th:value="${editMode}?'Guardar Usuario':'Crear Usuario'"/>
 				    </div>
 				  </div>
 				</form>

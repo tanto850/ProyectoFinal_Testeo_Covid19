@@ -12,6 +12,7 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 public interface IUsuarioService {
 	public void guardar(Usuario unUsuario);
 	public void eliminar(long dni);
-	public void modificar();
+	public Usuario modificar(Usuario usuario) throws Exception;
 	public Iterable<Usuario> listarUsuario();
+	public Usuario encontrarUsuario(Long id) throws Exception;
 }

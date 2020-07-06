@@ -1,11 +1,15 @@
 package ar.edu.unju.fi.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -43,4 +47,18 @@ public class PersonaTesteadaController {
 		}
 		return "formularioPersona";
 	}
+	
+	@GetMapping("/editarPersona/{id}")
+	public String editarPersona(@PathVariable long id, Model model) {
+		Optional<PersonaTesteada> personaTesteada = ipersonaTesteadaService.listarPersonaId(id);
+		model.addAttribute("personaformulario", personaTesteada);
+		return "redirect:/registropersona";
+	}
+	
+	@GetMapping("/eliminarPersona/{id}")
+	public String eliminarPersona(Model model, @PathVariable long id) {
+		ipersonaTesteadaService.eliminar(id);
+		return "redirect:/registropersona";
+	}
+	
 }

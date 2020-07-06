@@ -3,6 +3,8 @@
  */
 package ar.edu.unju.fi.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,9 +29,9 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	}
 
 	@Override
-	public void eliminar() {
-		// TODO Auto-generated method stub
-		
+	public void eliminar(long id) {
+		ipersona.deleteById(id);
+		System.out.println("La persona fue eliminada.");
 	}
 
 	@Override
@@ -43,5 +45,13 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 		// TODO Auto-generated method stub
 		return ipersona.findAll();
 	}
+
+	@Override
+	public Optional<PersonaTesteada> listarPersonaId(long id) {
+		
+		return ipersona.findById(id);
+	}
+	
+
 
 }
