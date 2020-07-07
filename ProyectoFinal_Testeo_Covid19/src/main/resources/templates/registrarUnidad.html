@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registro de Unidad Habitacional</title>
+<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+</head>
+<body>
+
+	<div th:insert="layout/header :: header"></div>
+
+	<div class=" border-top border-bottom w-100">
+		<div class="mb-5 mt-5">
+			<div class="card col-md-5 container">
+				<h3 class="card-title text-center">Registrar Unidad</h3>
+				<div class="card-body">
+					<h5>Seleccione Barrio</h5>
+					<form><div class="group" th:object="${barrio}">
+										<label style="margin-left: 30px; margin-bottom: 20px;"
+											for="select">Selecione Barrio :</label> <select
+											required="required" style="margin-bottom: 20px;" id="select">
+											<option value="">Seleccionar</option>
+                                            <option th:each="barrio : ${listaBarrios}"
+                                                    th:value="${barrio.id}"
+                               th:text="${barrio.nombre}"></option>
+                          </select>
+                     </div>
+                     <div>
+                        <label style="margin-left: 30px; margin-bottom: 20px;"
+											for="time">Direccion :</label> <input
+											style="margin-bottom: 20px;" type="text" id="direccion"
+											required="required" /> 
+									</div>
+									<input style="border: 2px solid black; margin-bottom: 10px;"
+										type="submit" class="btn btn-primary" value="Buscar">
+								
+                   </form>
+                   
+				</div>
+			</div>
+		</div>
+	</div>
+
+	 <!--  <div style="clear: both; width: 100%;">
+		<div class="card">
+			<div class="card-header">
+				<h4>Listado de las Unidades Habitacionales Registradas</h4>
+			</div>
+			<div class="card-body">
+				<!-- Lista de usuarios1-->
+				<!-- <div class="table-responsive">
+					<table id="userList"
+						class="table table-bordered table-hover table-striped">
+						<thead class="thead-light">
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">DIRECCION</th>
+								<th scope="col">BARRIO</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="unidades : ${listaUnidad}">
+								<td th:text="${unidades.id}"></td>
+								<td th:text="${unidades.direccion}"></td>
+								<td th:text="${unidades.barrio}"></td>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>  -->
+
+	<div th:insert="layout/footer :: footer"></div>
+</body>
+</html>

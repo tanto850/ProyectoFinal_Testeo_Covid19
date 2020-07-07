@@ -3,6 +3,8 @@
  */
 package ar.edu.unju.fi.service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +35,13 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 		ipersona.deleteById(id);
 		System.out.println("La persona fue eliminada.");
 	}
+	
+	
+	@Override
+	public List<PersonaTesteada> listarBarrioFechas(LocalDate fecha1, LocalDate fecha2, String barrio) {
+		// TODO Auto-generated method stub
+		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(fecha1, fecha2, barrio);
+}
 
 	@Override
 	public void modificar() {
@@ -55,13 +64,19 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	@Override
 	public List<PersonaTesteada> listarPersonaApellido(String apellido) {
 		// TODO Auto-generated method stub
-		return ipersona.findByApellido(apellido);
+		return ipersona.findByApellidoContaining(apellido);
 	}
 
 	@Override
-	public List<PersonaTesteada> listarPersonaDocumento(long dni) {
+	public List<PersonaTesteada> listarPersonaDocumento(String dni) {
 		// TODO Auto-generated method stub
-		return ipersona.findByDocumento(dni);
+		return ipersona.findByDocumentoContaining(dni);
+	}
+
+	@Override
+	public List<PersonaTesteada> listarBarrioHoras(LocalTime hora1, LocalTime hora2, String barrio) {
+		// TODO Auto-generated method stub
+		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(hora1, hora2, barrio);
 	}
 	
 

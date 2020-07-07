@@ -17,12 +17,13 @@
 		<div style="text-align: center;" class="card-header">
 	<h1> Buscar por Apellido </h1>
 	<div style="margin-left: 10%;">
-   <form >
+   <form th:object=${equipo}  th:action="@{/consultaApellido}" method="POST">
   <div style="display: flex; text-align: center;" ><div class="group">
    <label for="input">Apellido : </label>
-    <input type="text" required="required" placeholder="ingrese apellido" >
+    <input type="text" required="required" placeholder="ingrese apellido" th:name = "apellidoConsu">
   </div>
   <input style="margin-left: 10px;" type="submit" class="btn btn-primary" value="Buscar">
+   <a class="btn btn-success" style="margin-left: 15px;" href="consultaApellido" role="button">ListarTodos</a>
   </div>
 </form>
 </div>
