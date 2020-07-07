@@ -3,6 +3,9 @@ package ar.edu.unju.fi.testeos.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,9 +31,9 @@ public class Barrio {
 	private String nombre;
 	
 	@Autowired
-	@OneToOne(mappedBy = "barrio" ,  fetch = FetchType.LAZY )
-	@JoinColumn( name = "ID_UNIDAD" )//
-	private UnidadHabitacional unidadHabitacional;
+	/*@OneToMany(mappedBy = "barrio" ,  fetch = FetchType.LAZY )*/
+	@OneToMany(mappedBy ="barrio", cascade = CascadeType.ALL)
+	private List<UnidadHabitacional> unidadHabitacional;
     
 	/**
 	 * Constructor por defecto sin parametros.
@@ -83,21 +87,15 @@ public class Barrio {
 
 
 
-	/**
-	 * @return the unidadHabitacional
-	 */
-	public UnidadHabitacional getUnidadHabitacional() {
+	public List<UnidadHabitacional> getUnidadHabitacional() {
 		return unidadHabitacional;
 	}
 
 
 
-	/**
-	 * @param unidadHabitacional the unidadHabitacional to set
-	 */
-	public void setUnidadHabitacional(UnidadHabitacional unidadHabitacional) {
+	public void setUnidadHabitacional(List<UnidadHabitacional> unidadHabitacional) {
 		this.unidadHabitacional = unidadHabitacional;
 	}
-	
-	
+
+
 }
