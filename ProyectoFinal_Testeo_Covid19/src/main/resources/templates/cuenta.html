@@ -3,43 +3,51 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
-	<!-- Los iconos tipo Solid de Fontawesome-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body class="bg-dark">
-<div th:insert="layout/headercuenta :: headercuenta"></div>
-<div class=" border-top border-bottom w-100">
-<div class="mb-5 mt-5">
-<div class="card col-md-5 container">
-	<h3 class="card-title text-center">Iniciar Sesion</h3>
-<div class="card-body">
-			<form>
-				  <div class="form-group row">
-				    <label for="idnombreUsuario" class="col-md-3 col-form-label">Usuario</label>
-				    <div class="col-md-8">
-				      <input type="text" class="form-control " id="idnombreUsuario" required>
-				    </div>
-				  </div>
+	<div th:insert="layout/headercuenta :: headercuenta"></div>
+	<div class=" border-top border-bottom w-100">
+		<div class="mb-5 mt-5">
+			<div class="card col-md-5 container">
+				<h3 class="card-title text-center">Iniciar Sesion</h3>
+				<div class="card-body">
+					<div class="row border-top border-bottom w-100">
+						
+							<form>
+								<div class="form-group row">
+									<label for="idnombreUsuario" class="col-md-3 col-form-label">Usuario</label>
+									<div class="col-md-8">
+										<input type="text" class="form-control " id="idnombreUsuario"
+											required>
+									</div>
+								</div>
 
-				   <div class="form-group row">
-				    <label for="inputPassword" class="col-md-3 col-form-label">Password</label>
-				    <div class="col-md-8">
-				      <input type="password" class="form-control" id="inputPassword" required>
-				    </div>
-				  </div>
-				  
-				  <div class="form-group row">
-				    <div class="col-md-10">
-				      <button type="submit" class="btn btn-primary">Ingresar</button>
-				    </div>
-				  </div>
-				</form>
+								<div class="form-group row">
+									<label for="inputPassword" class="col-md-3 col-form-label">Password</label>
+									<div class="col-md-8">
+										<input type="password" class="form-control" id="inputPassword"
+											required>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<div class="col-md-10">
+										<button type="submit" class="btn btn-primary">Ingresar</button>
+									</div>
+								</div>
+							</form>
+					
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-</div>
-</div>
-<div th:insert="layout/footer :: footer"></div>
+	<div th:insert="layout/footer :: footer"></div>
 </body>
 </html>

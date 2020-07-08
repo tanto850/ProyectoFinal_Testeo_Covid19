@@ -28,13 +28,15 @@ public IBarrioRepository iBarrio;
 	public void eliminar(long id) {
 		// TODO Auto-generated method stub
 		iBarrio.deleteById(id);
+		System.out.println("El barrio ha sido eliminado.");
 	
 	}
 
 	@Override
-	public void modificar() {
-		// TODO Auto-generated method stub
-		//ibarrio.modificar();
+	public Barrio modificar(Barrio unBarrio) throws Exception {
+		Barrio barrioGuardar = encontrarBarrio(unBarrio.getId());
+		mapearBarrio(unBarrio, barrioGuardar);		
+		return iBarrio.save(barrioGuardar);
 	}
 
 	@Override
@@ -43,5 +45,14 @@ public IBarrioRepository iBarrio;
 		
 		return iBarrio.findAll();
 	}
+	
+	public void mapearBarrio(Barrio desde, Barrio hacia) {
+		hacia.setNombre(desde.getNombre());
+	}
 
+	@Override
+	public Barrio encontrarBarrio(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return iBarrio.findById(id).orElseThrow(()-> new Exception("El barrio no existe."));
+	}
 }

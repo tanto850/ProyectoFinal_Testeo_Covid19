@@ -1,7 +1,5 @@
 package ar.edu.unju.fi.service;
 
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Optional;
 
 import ar.edu.unju.fi.testeos.model.RegistroTesteo;

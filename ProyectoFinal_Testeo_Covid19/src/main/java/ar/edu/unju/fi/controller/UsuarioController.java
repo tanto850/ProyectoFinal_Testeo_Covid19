@@ -32,7 +32,7 @@ public class UsuarioController {
 		return "registroUsuario";
 	}
 	
-	@PostMapping("/registroUsuario")
+	@PostMapping("/agregarUsuario")
 	public String crearUsuario(@ModelAttribute("usuarioformulario") Usuario usuario, BindingResult result, ModelMap model) {
 		
 		if (result.hasErrors()) {
@@ -73,11 +73,11 @@ public class UsuarioController {
 	
 	@PostMapping("/editarUsuario")
 	public String postEditarUsuario(@Valid @ModelAttribute("usuarioformulario") Usuario usuario, BindingResult result, ModelMap model) {
-		if(result.hasErrors()) {
-			model.addAttribute("usuarioformulario", usuario);			
+		//if(result.hasErrors()) {
+			//model.addAttribute("usuarioformulario", usuario);			
 			//model.addAttribute("formTab", "active");
-			model.addAttribute("editMode", "true");
-		} else {
+			//model.addAttribute("editMode", "true");
+		//} else {
 			try {
 				iusuarioService.modificar(usuario);
 				model.addAttribute("usuarioformulario", unUsuario);			
@@ -90,7 +90,7 @@ public class UsuarioController {
 				model.addAttribute("listaUsuario", iusuarioService.listarUsuario());				
 				model.addAttribute("editMode", "true");
 			}
-		}
+		//}
 		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());		
 		return "usuarioBM";
 	}
@@ -99,11 +99,12 @@ public class UsuarioController {
 	@GetMapping("/eliminarUsuario/{id}")
 	public String eliminarUsuario(Model model, @PathVariable(name="id") Long id) {
 		try {
-			iusuarioService.eliminar(id);;
+			iusuarioService.eliminar(id);
 		}
 		catch(Exception e){
 			model.addAttribute("listErrorMessage",e.getMessage());
-		}			
+		}
+		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());
 		return "usuarioBM";
 	}
 	

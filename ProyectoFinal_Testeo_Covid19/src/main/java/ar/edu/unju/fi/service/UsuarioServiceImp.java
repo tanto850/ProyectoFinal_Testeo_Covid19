@@ -48,7 +48,7 @@ public class UsuarioServiceImp implements IUsuarioService {
 			return iUsuario.findAll();
 		}
 		
-		public void mapearUsuario(Usuario desde, Usuario hacia) {
+		public void mapearUsuario(Usuario hacia, Usuario desde) {
 			hacia.setNombreUsuario(desde.getNombreUsuario());
 			hacia.setNombreReal(desde.getNombreReal());
 			hacia.setApellidoReal(desde.getApellidoReal());

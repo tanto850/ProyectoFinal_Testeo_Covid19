@@ -43,4 +43,10 @@ public class UnidadHabitacionalServiceImp implements IUnidadHabitacionalService 
 		return iUnidadHabitacional.findAll();
 	}
 
+	@Override
+	public Iterable<UnidadHabitacional> listarUnidad() {
+		// TODO Auto-generated method stub
+		return iUnidadHabitacional.findAll();
+	}
+
 }

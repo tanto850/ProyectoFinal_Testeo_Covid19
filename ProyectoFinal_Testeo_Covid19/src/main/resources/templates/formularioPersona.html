@@ -65,7 +65,6 @@
 											<th scope="col">Nombre</th>
 											<th scope="col">DNI</th>
 											<th scope="col">Resultado Testeo</th>
-											<th></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -75,41 +74,9 @@
 											<td th:text="${persona.nombres}"></td>
 											<td th:text="${persona.documento}"></td>
 											<td th:text="${persona.resultadoTesteo}"></td>
-											<td><a href="#" th:href= "@{/editarPersona/}+${persona.id}"><i class="fas fa-edit"></i></a> | <a
-												href="#" th:onclick="'javascript:confirmarEliminar(\''+${persona.id}+'\');'"><i class="fas fa-user-times"></i></a></td>
 										</tr>
 									</tbody>
 								</table>
-								<script type="text/javascript">
-function confirmarEliminar(id){
-	$('#modalEliminar').modal('show');
-	$("#identificadorUsuarioHiddenInput").val(id);
-}
-
-function eliminarPersona(){
-	var id = $("#identificadorUsuarioHiddenInput").val();
-    window.location = "eliminarPersona/"+id;
-}
-</script>
-				<!-- Modal Eliminar -->
-							<div class="modal fade" id="modalEliminar" tabindex="-1"	role="dialog" aria-labelledby="eliminarModalTitulo"	aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="eliminarModalTitulo">Confirmar Eliminar</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body"><h6>Estas seguro que deseas eliminar esta persona?</h6></div>
-										<input type="hidden" id="identificadorUsuarioHiddenInput" name="userIdHiddenInput"/>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary"	data-dismiss="modal">Cerrar</button>
-											<button type="button" class="btn btn-primary" th:onclick="eliminarPersona()">Eliminar persona</button>
-										</div>
-									</div>
-								</div>
-							</div>
 							</div>
 						</div>
 					</div>

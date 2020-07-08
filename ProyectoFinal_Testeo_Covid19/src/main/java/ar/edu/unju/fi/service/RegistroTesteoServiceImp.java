@@ -3,8 +3,8 @@
  */
 package ar.edu.unju.fi.service;
 
-import java.time.LocalDate;
-import java.util.List;
+//import java.time.LocalDate;
+//import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +33,7 @@ public IRegistroTesteoRepository iRegistro;
 	public void eliminar(long id) {
 		// TODO Auto-generated method stub
 		iRegistro.deleteById(id);
+		System.out.println("El registro fue borrado.");
 	}
 
 	@Override

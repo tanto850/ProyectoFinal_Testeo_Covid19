@@ -14,5 +14,6 @@ public interface IUnidadHabitacionalService {
 	public void eliminar(long id);
 	public void modificar();
 	public Iterable<UnidadHabitacional> listarUnidadHabitacional();
+	public Iterable<UnidadHabitacional> listarUnidad();
 	
 }
