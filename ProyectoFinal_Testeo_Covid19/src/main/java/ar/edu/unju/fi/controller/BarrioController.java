@@ -95,7 +95,9 @@ public class BarrioController {
 		return "registroBarrio";
 	}
 	
-	
+	/*
+	 * Metodo usado para eliminar un registro de barrio.
+	 */
 	@GetMapping("/eliminarBarrio/{id}")
 	public String eliminarBarrio(Model model, @PathVariable(name="id") Long id) {
 		try {
