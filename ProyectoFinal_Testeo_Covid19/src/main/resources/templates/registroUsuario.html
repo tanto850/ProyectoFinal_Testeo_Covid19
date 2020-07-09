@@ -12,7 +12,7 @@
 <body>
 <div th:insert="layout/headerBD :: headerBD"></div>
 	<div class="row border-top border-bottom w-100">
-		< section class="col-md-8">
+		<section class="col-md-8">
 			
 			 <div class="row">
 			<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -65,9 +65,9 @@
 		<aside class="col-md-4 bg-light">
 			<h3><center>Registro de usuario</center></h3>
 			<form th:object="${usuarioformulario}" th:action="${editMode}?@{/editarUsuario}:@{/agregarUsuario}" method="post">
-				  <!-- input class="form-control" type=hidden th:field="${usuarioformulario.id}" th:if="${editMode}"/>
+				  <input class="form-control" type=hidden th:field="${usuarioformulario.id}" th:if="${editMode}"/>
 				  <input class="form-control" type=hidden th:field="${usuarioformulario.password}" th:if="${editMode}"/>
-				  <input class="form-control" type=hidden th:field="${usuarioformulario.tipo}" th:if="${editMode}"/-->
+				  <input class="form-control" type=hidden th:field="${usuarioformulario.tipoUsuario}" th:if="${editMode}"/>
 				  <div class="form-group row">
 				    <label for="idnombreUsuario" class="col-md-3 col-form-label">Usuario</label>
 				    <div class="col-md-8">

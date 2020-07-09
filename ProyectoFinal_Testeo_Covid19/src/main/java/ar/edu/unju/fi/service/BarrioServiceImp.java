@@ -34,9 +34,8 @@ public IBarrioRepository iBarrio;
 
 	@Override
 	public Barrio modificar(Barrio unBarrio) throws Exception {
-		Barrio barrioGuardar = encontrarBarrio(unBarrio.getId());
-		mapearBarrio(unBarrio, barrioGuardar);		
-		return iBarrio.save(barrioGuardar);
+		System.out.println(unBarrio.getNombre() + " id " + unBarrio.getId());
+		return iBarrio.save(unBarrio);
 	}
 
 	@Override
@@ -45,13 +44,9 @@ public IBarrioRepository iBarrio;
 		
 		return iBarrio.findAll();
 	}
-	
-	public void mapearBarrio(Barrio desde, Barrio hacia) {
-		hacia.setNombre(desde.getNombre());
-	}
 
 	@Override
-	public Barrio encontrarBarrio(Long id) throws Exception {
+	public Barrio encontrarBarrio(long id) throws Exception {
 		// TODO Auto-generated method stub
 		return iBarrio.findById(id).orElseThrow(()-> new Exception("El barrio no existe."));
 	}

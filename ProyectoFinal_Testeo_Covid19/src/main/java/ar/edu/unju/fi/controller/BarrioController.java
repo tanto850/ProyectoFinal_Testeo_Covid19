@@ -1,5 +1,7 @@
 package ar.edu.unju.fi.controller;
 
+//import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,11 +75,11 @@ public class BarrioController {
 	
 	@PostMapping("/editarBarrio")
 	public String postEditarBarrio(@Valid @ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
-		if(result.hasErrors()) {
-			model.addAttribute("barrioformulario", barrio);			
+		//if(result.hasErrors()) {
+			//model.addAttribute("barrioformulario", barrio);			
 			//model.addAttribute("formTab", "active");
-			model.addAttribute("editMode", "true");
-		} else {
+			//model.addAttribute("editMode", "true");
+		//} else {
 			try {
 				ibarrioService.modificar(barrio);
 				model.addAttribute("barrioformulario", unBarrio);			
@@ -90,7 +92,7 @@ public class BarrioController {
 				model.addAttribute("listaBarrio", ibarrioService.listarBarrios());				
 				model.addAttribute("editMode", "true");
 			}
-		}
+		//}
 		model.addAttribute("listaBarrio", ibarrioService.listarBarrios());		
 		return "registroBarrio";
 	}
@@ -99,7 +101,7 @@ public class BarrioController {
 	 * Metodo usado para eliminar un registro de barrio.
 	 */
 	@GetMapping("/eliminarBarrio/{id}")
-	public String eliminarBarrio(Model model, @PathVariable(name="id") Long id) {
+	public String eliminarBarrio(Model model, @PathVariable(name="id") long id) {
 		try {
 			ibarrioService.eliminar(id);
 		}
@@ -107,7 +109,7 @@ public class BarrioController {
 			model.addAttribute("listErrorMessage",e.getMessage());
 		}
 		model.addAttribute("listaBarrio", ibarrioService.listarBarrios());
-		return "registroBarrio";
+		return "redirect:/registroBarrio";
 	}
 	
 }
