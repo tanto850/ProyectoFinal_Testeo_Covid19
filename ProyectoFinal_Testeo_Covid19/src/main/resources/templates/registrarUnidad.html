@@ -26,7 +26,7 @@
 						method="POST">
 						<div class="group" th:object="${barrio}">
 							<label style="margin-left: 30px; margin-bottom: 20px;"
-								for="select">Selecione Barrio : </label> 
+								for="select">Seleccione Barrio : </label> 
 							<select required="required" style="margin-bottom: 20px;" id="select"
 								th:field="${unidadformulario.barrio}">
 								<option value="">Seleccionar</option>
@@ -43,6 +43,7 @@
 						<input style="border: 2px solid black; margin-bottom: 10px;"
 							type="submit" class="btn btn-primary" value="Guardar">
 
+                        <a class="btn btn-primary" href="/seleccion" role="button">Volver</a>
 					</form>
 
 				</div>

@@ -23,13 +23,12 @@
 				<div class="card-body">
 
 					<form th:object="${barrioformulario}" th:action="${editMode}?@{/editarBarrio}:@{/agregarBarrio}"
-						method="post">
-						<input class="form-control" type=hidden th:field="${barrioformulario.id}" th:if="${editMode}"/>
+						method="POST">
 						<div class="form-row">
 							<div class="col-md-6 mb-3">
-								<label for="validationCustom01">Nombre del Barrio</label> 
-									<input type="text" class="form-control" id="validationCustom01"
-										required th:field="${barrioformulario.nombre}"/>
+								<label for="validationCustom01">Nombre del Barrio</label> <input
+									type="text" class="form-control" id="validationCustom01"
+									required th:field="*{nombre}"/>
 								<div class="valid-feedback"></div>
 							</div>
 							<input style="background-color: rgb(0,0,255,0.5);" type="submit" class="btn btn-sucess" th:value="${editMode}?'Guardar Barrio':'Crear Barrio'"/>

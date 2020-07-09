@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registro de Unidad Habitacional</title>
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+</head>
+<body>
+
+	<div th:insert="layout/header :: header"></div>
+
+	<div class=" border-top border-bottom w-100">
+		<div class="mb-5 mt-5">
+			<div class="card col-md-7 container">
+				<h3 class="card-title text-center">Seleccionar Unidad</h3>
+				<div class="card-body">
+					<h5>Bienvenido. Para continuar seleccione su Unidad Habitacional</h5>
+					<form th:object="${unidadformulario}" th:action="@{/agregarUnidad}"
+						method="POST">
+						<div class="group" th:object="${barrio}">
+							<label style="margin-left: 30px; margin-bottom: 20px;"
+								for="select">Seleccione Unidad Habitacional : </label> 
+							 <select
+											required="required" style="margin-bottom: 20px;" id="select">
+											<option value="">Seleccionar</option>
+                                            <option th:each="unidad : ${listaUnidad}"
+                                                    th:value="${unidad.id}"
+                               th:text="${unidad.direccion}+' : '+ ${unidad.barrio}"></option>
+										</select>
+						</div>
+						<input style="border: 2px solid black; margin-bottom: 10px;"
+							type="submit" class="btn btn-primary" value="Continuar">
+			
+						<a class="btn btn-primary" href="/registroUnidadHabitacional" role="button">Agregar</a>
+					
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div th:insert="layout/footer :: footer"></div>
+</body>
+</html>
