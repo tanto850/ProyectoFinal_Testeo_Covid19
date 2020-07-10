@@ -4,6 +4,7 @@
 package ar.edu.unju.fi.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
@@ -37,11 +38,7 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	}
 	
 	
-	@Override
-	public List<PersonaTesteada> listarBarrioFechas(LocalDate fecha1, LocalDate fecha2, String barrio) {
-		// TODO Auto-generated method stub
-		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(fecha1, fecha2, barrio);
-}
+
 
 	@Override
 	public void modificar() {
@@ -73,12 +70,12 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 		return ipersona.findByDocumentoContaining(dni);
 	}
 
+
 	@Override
-	public List<PersonaTesteada> listarBarrioHoras(LocalTime hora1, LocalTime hora2, String barrio) {
+	public List<PersonaTesteada> listarBarrioFechas(String barrio, LocalDateTime fecha1, LocalDateTime fecha2) {
 		// TODO Auto-generated method stub
-		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(hora1, hora2, barrio);
+		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(barrio, fecha1, fecha2);
 	}
-	
 
 
 }

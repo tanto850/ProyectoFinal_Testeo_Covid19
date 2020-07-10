@@ -6,6 +6,7 @@ package ar.edu.unju.fi.repository;
 //import java.util.Optional;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -22,8 +23,6 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 public interface IPersonaTesteadaRepository extends JpaRepository<PersonaTesteada,Long>{
 	public List<PersonaTesteada> findByApellidoContaining(String apellido);
 	public List<PersonaTesteada> findByDocumentoContaining(String dni);
-	public List<PersonaTesteada> findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(LocalDate fecha1, LocalDate fecha2, String barrio);
-	public List<PersonaTesteada> findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(LocalTime hora1, LocalTime hora2, String barrio);	   
-
+	public List<PersonaTesteada> findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween( String barrio, LocalDateTime fecha1, LocalDateTime fecha2);
 
 }

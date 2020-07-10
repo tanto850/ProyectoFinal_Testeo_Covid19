@@ -22,7 +22,7 @@
 				<h3 class="card-title text-center">Seleccionar Unidad</h3>
 				<div class="card-body">
 					<h5>Bienvenido. Para continuar seleccione su Unidad Habitacional</h5>
-					<form th:object="${unidadformulario}" th:action="@{/agregarUnidad}"
+					<form th:object="${unidadformulario}" th:action="@{/Link del post mapping}"
 						method="POST">
 						<div class="group" th:object="${barrio}">
 							<label style="margin-left: 30px; margin-bottom: 20px;"
@@ -37,6 +37,8 @@
 						</div>
 						<input style="border: 2px solid black; margin-bottom: 10px;"
 							type="submit" class="btn btn-primary" value="Continuar">
+	
+	
 			
 						<a class="btn btn-primary" href="/registroUnidadHabitacional" role="button">Agregar</a>
 					

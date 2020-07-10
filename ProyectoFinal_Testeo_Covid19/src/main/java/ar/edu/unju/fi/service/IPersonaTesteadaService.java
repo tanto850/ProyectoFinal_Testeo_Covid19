@@ -5,6 +5,7 @@ package ar.edu.unju.fi.service;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +26,6 @@ public interface IPersonaTesteadaService {
  	
 	public List<PersonaTesteada> listarPersonaDocumento(String dni);
 	
-	public List<PersonaTesteada> listarBarrioFechas(LocalDate fecha1, LocalDate fecha2, String barrio);
-	public List<PersonaTesteada> listarBarrioHoras(LocalTime hora1, LocalTime hora2, String barrio); 
+	public List<PersonaTesteada> listarBarrioFechas(String barrio,LocalDateTime fecha1, LocalDateTime fecha2);
 	
 }
