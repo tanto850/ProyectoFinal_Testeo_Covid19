@@ -34,7 +34,9 @@ public class TesteoController {
 		return "seleccionarUnidad";
 	}
 	
-	
+	/*
+	 * 
+	 */
 	@PostMapping("/continuar")
 	public String continuar(@ModelAttribute("testeoformulario") RegistroTesteo testeo ,Model model) {
 		testeo.setFechaHora(LocalDateTime.now());
