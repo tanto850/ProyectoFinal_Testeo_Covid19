@@ -41,12 +41,11 @@ public class TesteoController {
 		itesteoService.guardar(testeo);
 		registroTesteo = itesteoService.encontrarRegistroTesteo(testeo.getFechaHora());
 		//model.addAttribute("testeoformulario", registroTesteo);
-		unaPersonaTesteada.setRegistroTesteo(registroTesteo);
 		model.addAttribute("personaformulario", new PersonaTesteada());
-		model.addAttribute("personaformulario", unaPersonaTesteada);
+		//model.addAttribute("personaformulario", unaPersonaTesteada);
 		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
-		model.addAttribute("formTab", "active");
-		return "redirect: formularioPersona";
+		model.addAttribute("listTab", "active");
+		return "formularioPersona";
 	}
 	
 	

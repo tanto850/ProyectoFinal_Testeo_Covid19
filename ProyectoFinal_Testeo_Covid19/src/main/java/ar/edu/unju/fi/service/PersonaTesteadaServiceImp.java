@@ -34,15 +34,6 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 		ipersona.deleteById(id);
 		System.out.println("La persona fue eliminada.");
 	}
-	
-	
-
-
-	@Override
-	public void modificar() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public Iterable<PersonaTesteada> listarPersonasTesteadas() {

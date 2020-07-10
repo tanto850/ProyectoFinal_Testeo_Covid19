@@ -40,8 +40,8 @@ public class PersonaTesteadaController {
 		//try {
 			ipersonaTesteadaService.guardar(personaTesteada);
 			model.addAttribute("personaformulario", new PersonaTesteada());
-			model.addAttribute("formTab", "active");
-			//model.addAttribute("lisTab", "active");
+			//model.addAttribute("formTab", "active");
+			model.addAttribute("lisTab", "active");
 			model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
 		//} catch (Exception e) {
 			

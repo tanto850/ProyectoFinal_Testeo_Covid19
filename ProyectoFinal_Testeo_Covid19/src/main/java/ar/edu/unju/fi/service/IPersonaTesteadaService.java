@@ -16,7 +16,6 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 public interface IPersonaTesteadaService {
 	public void guardar(PersonaTesteada personaTesteada);
 	public void eliminar(long id);
-	public void modificar();
  	public Iterable<PersonaTesteada> listarPersonasTesteadas();
  	public Optional<PersonaTesteada> listarPersonaId(long id);
  	public List<PersonaTesteada> listarPersonaApellido(String apellido);
