@@ -30,7 +30,8 @@ public class PersonaTesteadaController {
 	}
 	
 	@PostMapping("/guardarPersona")
-	public String crearUsuario(@ModelAttribute("personaformulario") PersonaTesteada personaTesteada,BindingResult result, ModelMap model) {
+	public String crearUsuario(@ModelAttribute("personaformulario") PersonaTesteada personaTesteada, 
+							BindingResult result, ModelMap model) {
 		
 		if (result.hasErrors()) {
 			model.addAttribute("personaformulario", personaTesteada);
@@ -39,7 +40,8 @@ public class PersonaTesteadaController {
 		//try {
 			ipersonaTesteadaService.guardar(personaTesteada);
 			model.addAttribute("personaformulario", new PersonaTesteada());
-			model.addAttribute("lisTab", "active");
+			model.addAttribute("formTab", "active");
+			//model.addAttribute("lisTab", "active");
 			model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
 		//} catch (Exception e) {
 			

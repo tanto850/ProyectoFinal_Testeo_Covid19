@@ -3,6 +3,7 @@
  */
 package ar.edu.unju.fi.service;
 
+import java.time.LocalDateTime;
 //import java.time.LocalDate;
 //import java.util.List;
 import java.util.Optional;
@@ -41,6 +42,12 @@ public IRegistroTesteoRepository iRegistro;
 		// TODO Auto-generated method stub
 		
 		return iRegistro.findById(id);
+	}
+	
+	@Override
+	public RegistroTesteo encontrarRegistroTesteo(LocalDateTime fechaHora) {
+		
+		return iRegistro.findByFechaHora(fechaHora);
 	}
 
 	

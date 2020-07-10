@@ -14,7 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,7 +30,6 @@ public class RegistroTesteo {
 	private long id;
 	
 	@Column( name = "FECHAHORA")
-    @NotNull
 	private LocalDateTime fechaHora;
 	
 	@Autowired

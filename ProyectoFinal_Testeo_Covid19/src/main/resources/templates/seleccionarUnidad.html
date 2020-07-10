@@ -21,33 +21,32 @@
 			<div class="card col-md-7 container">
 				<h3 class="card-title text-center">Seleccionar Unidad</h3>
 				<div class="card-body">
-					<h5>Bienvenido. Para continuar seleccione su Unidad Habitacional</h5>
-					<form th:object="${unidadformulario}" th:action="@{/Link del post mapping}"
+					<h5>Bienvenido. Para continuar seleccione su Unidad
+						Habitacional</h5>
+					<form th:object="${testeoformulario}" th:action="@{/continuar}"
 						method="POST">
 						<div class="group" th:object="${barrio}">
 							<label style="margin-left: 30px; margin-bottom: 20px;"
 								for="select">Seleccione Unidad Habitacional : </label> 
-							 <select
-											required="required" style="margin-bottom: 20px;" id="select">
-											<option value="">Seleccionar</option>
-                                            <option th:each="unidad : ${listaUnidad}"
-                                                    th:value="${unidad.id}"
-                               th:text="${unidad.direccion}+' : '+ ${unidad.barrio}"></option>
-										</select>
+							<select required="required" style="margin-bottom: 20px;" 
+							id="select" th:field="${testeoformulario.unidadHabitacional}">
+									<option value="">Seleccionar</option>
+									<option th:each="unidad : ${listaUnidad}"
+									th:value="${unidad.id}"
+									th:text="${unidad.direccion}+' : '+ ${unidad.barrio}"></option>
+							</select>
 						</div>
 						<input style="border: 2px solid black; margin-bottom: 10px;"
-							type="submit" class="btn btn-primary" value="Continuar">
-	
-	
-			
-						<a class="btn btn-primary" href="/registroUnidadHabitacional" role="button">Agregar</a>
-					
+							type="submit" class="btn btn-primary" value="Continuar"/>
+						<a class="btn btn-primary" href="/registroUnidadHabitacional"
+							role="button">Agregar</a>
+
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<div th:insert="layout/footer :: footer"></div>
 </body>
 </html>

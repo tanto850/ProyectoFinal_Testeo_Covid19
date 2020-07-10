@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import ar.edu.unju.fi.service.IBarrioService;
 import ar.edu.unju.fi.service.IPersonaTesteadaService;
-import ar.edu.unju.fi.service.IUnidadHabitacionalService;
+//import ar.edu.unju.fi.service.IUnidadHabitacionalService;
 
 @Controller
 public class MainController {
@@ -23,8 +23,8 @@ public class MainController {
 	IPersonaTesteadaService personaTesteadaService;
 	
 	
-	@Autowired
-	private IUnidadHabitacionalService iunidadService;
+	//@Autowired
+	//private IUnidadHabitacionalService iunidadService;
 	
 
 //@RequestMapping("inicio")
@@ -66,18 +66,5 @@ public class MainController {
 		model.addAttribute("listaBarrios", barrioService.listarBarrios());
 	return "consulta";	
 	}
-	
-	
-	
-	
-	
-	@RequestMapping("/seleccion")
-	public String getconsss(Model model) {
-		model.addAttribute("listaUnidad",iunidadService.listarUnidad());
-		return "seleccionarUnidad";
-}
-	
-	
-	
 	
 }
