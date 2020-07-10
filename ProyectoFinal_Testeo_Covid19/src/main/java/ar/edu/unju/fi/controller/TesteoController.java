@@ -5,9 +5,13 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ar.edu.unju.fi.service.IPersonaTesteadaService;
 import ar.edu.unju.fi.service.IRegistroTesteoService;
@@ -24,8 +28,8 @@ public class TesteoController {
 	private IUnidadHabitacionalService iunidadService;
 	@Autowired
 	private IPersonaTesteadaService ipersonaTesteadaService;
-	private RegistroTesteo registroTesteo;
-	private PersonaTesteada unaPersonaTesteada;
+	public RegistroTesteo registroTesteo;
+	public PersonaTesteada unaPersonaTesteada;
 	
 	@GetMapping("/seleccion")
 	public String getconsss(Model model) {
@@ -41,12 +45,46 @@ public class TesteoController {
 	public String continuar(@ModelAttribute("testeoformulario") RegistroTesteo testeo ,Model model) {
 		testeo.setFechaHora(LocalDateTime.now());
 		itesteoService.guardar(testeo);
-		registroTesteo = itesteoService.encontrarRegistroTesteo(testeo.getFechaHora());
+	    System.out.println(testeo.getId());
 		//model.addAttribute("testeoformulario", registroTesteo);
+		registroTesteo = testeo;
 		model.addAttribute("personaformulario", new PersonaTesteada());
 		//model.addAttribute("personaformulario", unaPersonaTesteada);
 		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
 		model.addAttribute("listTab", "active");
+		return "formularioPersona";
+	}
+		
+	
+	@RequestMapping("/registroPersona")
+	public String getIndex(Model model, RegistroTesteo registroTesteo) {
+		PersonaTesteada personaTesteada =  new PersonaTesteada();
+		personaTesteada.setRegistroTesteo(registroTesteo);
+		model.addAttribute("personaformulario", personaTesteada);
+		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
+		return "formularioPersona";
+	}
+	
+	@PostMapping("/guardarPersona")
+	public String crearUsuario(@ModelAttribute("personaformulario") PersonaTesteada personaTesteada, 
+							BindingResult result, ModelMap model) {
+			if (result.hasErrors()) {
+				
+				//System.out.println("2hola a todos" + registroTesteo.getId());
+			model.addAttribute("personaformulario", personaTesteada);
+			model.addAttribute("formTab", "active");
+		}else {
+		//try {
+			System.out.println("2hola a todos" + registroTesteo.getId());
+			personaTesteada.setRegistroTesteo(registroTesteo);
+			ipersonaTesteadaService.guardar(personaTesteada);
+			model.addAttribute("personaformulario", new PersonaTesteada());
+			//model.addAttribute("formTab", "active");
+			model.addAttribute("lisTab", "active");
+			model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
+		}// catch (Exception e) {
+			
+		//}
 		return "formularioPersona";
 	}
 	

@@ -27,7 +27,7 @@ public IRegistroTesteoRepository iRegistro;
 	public void guardar(RegistroTesteo registroTesteo) {
 		// TODO Auto-generated method stub
 		iRegistro.save(registroTesteo);
-		System.out.println("El registro fue guardado.");
+		System.out.println("El registro fue guardado con id" + registroTesteo.getId());
 	}
 
 	@Override

@@ -19,35 +19,5 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 @Controller
 public class PersonaTesteadaController {
 	
-	@Autowired
-	private IPersonaTesteadaService ipersonaTesteadaService;
-
-	@RequestMapping("/registroPersona")
-	public String getIndex(Model model) {
-		model.addAttribute("personaformulario", new PersonaTesteada());
-		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
-		return "formularioPersona";
-	}
-	
-	@PostMapping("/guardarPersona")
-	public String crearUsuario(@ModelAttribute("personaformulario") PersonaTesteada personaTesteada, 
-							BindingResult result, ModelMap model) {
-		
-		if (result.hasErrors()) {
-			model.addAttribute("personaformulario", personaTesteada);
-			model.addAttribute("formTab", "active");
-		}else {
-		//try {
-			ipersonaTesteadaService.guardar(personaTesteada);
-			model.addAttribute("personaformulario", new PersonaTesteada());
-			//model.addAttribute("formTab", "active");
-			model.addAttribute("lisTab", "active");
-			model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
-		//} catch (Exception e) {
-			
-		//}
-		}
-		return "formularioPersona";
-	}
 	
 }
