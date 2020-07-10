@@ -63,14 +63,12 @@
 						class="table table-bordered table-hover table-striped">
 						<thead class="thead-light">
 							<tr>
-								<th scope="col">ID</th>
 								<th scope="col">DIRECCION</th>
 								<th scope="col">BARRIO</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr th:each="unidades : ${listaUnidad}">
-								<td th:text="${unidades.id}"></td>
 								<td th:text="${unidades.direccion}"></td>
 								<td th:text="${unidades.barrio}"></td>
 						</tbody>

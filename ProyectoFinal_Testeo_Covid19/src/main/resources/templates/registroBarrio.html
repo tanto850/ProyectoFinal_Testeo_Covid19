@@ -53,14 +53,12 @@
 						class="table table-bordered table-hover table-striped">
 						<thead class="thead-light">
 							<tr>
-								<th scope="col">ID</th>
 								<th scope="col">NOMBRE</th>
 								<th scope="col">ACCION</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr th:each="barrio : ${listaBarrio}">
-								<td th:text="${barrio.id}"></td>
 								<td th:text="${barrio.nombre}"></td>
 								<td><a href="#" th:href="@{/editarBarrio/}+${barrio.id}"><i
 										class="fas fa-edit"></i></a> | <a href="#"

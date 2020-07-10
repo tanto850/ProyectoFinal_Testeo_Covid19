@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 import ar.edu.unju.fi.testeos.model.PersonaTesteada;
+import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 
 /**
  * @author Aucachi Fabian
@@ -23,5 +24,5 @@ public interface IPersonaTesteadaService {
 	public List<PersonaTesteada> listarPersonaDocumento(String dni);
 	
 	public List<PersonaTesteada> listarBarrioFechas(String barrio,LocalDateTime fecha1, LocalDateTime fecha2);
-	
+	public Iterable<PersonaTesteada> listarPersonasTesteadasRegistro(RegistroTesteo resgitroTesteo);
 }

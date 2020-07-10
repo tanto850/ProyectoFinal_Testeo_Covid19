@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 import ar.edu.unju.fi.service.IPersonaTesteadaService;
 import ar.edu.unju.fi.service.IRegistroTesteoService;
@@ -50,8 +50,8 @@ public class TesteoController {
 		registroTesteo = testeo;
 		model.addAttribute("personaformulario", new PersonaTesteada());
 		//model.addAttribute("personaformulario", unaPersonaTesteada);
-		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
-		model.addAttribute("listTab", "active");
+		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));
+		model.addAttribute("formTab", "active");
 		return "formularioPersona";
 	}
 		
@@ -61,7 +61,8 @@ public class TesteoController {
 		PersonaTesteada personaTesteada =  new PersonaTesteada();
 		personaTesteada.setRegistroTesteo(registroTesteo);
 		model.addAttribute("personaformulario", personaTesteada);
-		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
+		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));
+		model.addAttribute("formTab", "active");
 		return "formularioPersona";
 	}
 	
@@ -79,14 +80,13 @@ public class TesteoController {
 			personaTesteada.setRegistroTesteo(registroTesteo);
 			ipersonaTesteadaService.guardar(personaTesteada);
 			model.addAttribute("personaformulario", new PersonaTesteada());
-			//model.addAttribute("formTab", "active");
-			model.addAttribute("lisTab", "active");
-			model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadas());
+			model.addAttribute("formTab", "active");
+			//model.addAttribute("lisTab", "active");
+			model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));
 		}// catch (Exception e) {
 			
 		//}
 		return "formularioPersona";
 	}
-	
 	
 }

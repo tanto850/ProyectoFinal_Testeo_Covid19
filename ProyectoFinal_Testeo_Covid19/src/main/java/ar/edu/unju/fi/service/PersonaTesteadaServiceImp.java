@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.repository.IPersonaTesteadaRepository;
 import ar.edu.unju.fi.testeos.model.PersonaTesteada;
+import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 
 /**
  * @author Aucachi fabian
@@ -64,6 +65,12 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	public List<PersonaTesteada> listarBarrioFechas(String barrio, LocalDateTime fecha1, LocalDateTime fecha2) {
 		// TODO Auto-generated method stub
 		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(barrio, fecha1, fecha2);
+	}
+
+	@Override
+	public Iterable<PersonaTesteada> listarPersonasTesteadasRegistro(RegistroTesteo registroTesteo) {
+		// TODO Auto-generated method stub
+		return ipersona.findByRegistroTesteo(registroTesteo);
 	}
 
 

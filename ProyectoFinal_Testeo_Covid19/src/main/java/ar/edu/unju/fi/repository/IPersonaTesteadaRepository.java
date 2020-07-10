@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import ar.edu.unju.fi.testeos.model.PersonaTesteada;
+import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 //import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 
 /**
@@ -22,5 +23,6 @@ public interface IPersonaTesteadaRepository extends JpaRepository<PersonaTestead
 	public List<PersonaTesteada> findByApellidoContaining(String apellido);
 	public List<PersonaTesteada> findByDocumentoContaining(String dni);
 	public List<PersonaTesteada> findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween( String barrio, LocalDateTime fecha1, LocalDateTime fecha2);
-
+	public Iterable<PersonaTesteada> findByRegistroTesteo(RegistroTesteo registroTesteo);
+	
 }
