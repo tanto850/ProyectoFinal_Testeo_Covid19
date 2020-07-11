@@ -61,18 +61,20 @@
 									class="table table-bordered table-hover table-striped">
 									<thead class="thead-light">
 										<tr>
+											<th scope="col">DNI</th>
 											<th scope="col">Apellido</th>
 											<th scope="col">Nombre</th>
-											<th scope="col">DNI</th>
 											<th scope="col">Resultado Testeo</th>
+											<th scope="col">UnidadHabitacional - Barrio</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr th:each="persona : ${listaPersonaTesteada}">
+											<td th:text="${persona.documento}"></td>
 											<td th:text="${persona.apellido}"></td>
 											<td th:text="${persona.nombres}"></td>
-											<td th:text="${persona.documento}"></td>
 											<td th:text="${persona.resultadoTesteo}"></td>
+											<td th:text="${persona.registroTesteo.unidadHabitacional.direccion}' - '+${persona.registroTesteo.unidadHabitacional.barrio.nombre}"></td>
 										</tr>
 									</tbody>
 								</table>

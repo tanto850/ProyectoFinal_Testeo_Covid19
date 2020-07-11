@@ -63,4 +63,6 @@ public class UsuarioServiceImp implements IUsuarioService {
 			// TODO Auto-generated method stub
 			return iUsuario.findById(id).orElseThrow(()-> new Exception("El usuario no existe."));
 		}
+		
+	
 }
