@@ -33,6 +33,10 @@
 			$('#datetimepicker2').datetimepicker();
 		});
 	</script> -->
+	<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
 
 </head>
 <body>
@@ -47,14 +51,16 @@
          <div style="width: 100%;">
             <div class=row style="width: 100%">
                <div class="form-group">
-										<label style="margin-left: 30px; margin-bottom: 20px;"
-											for="select">Selecione Barrio :</label>
-                                            <select th:field="${objetoConsulta.barrio}" required="required" style="margin-bottom: 20px;" id="select" th:name="barrio">
-											<option value="">Seleccionar</option>
-                                            <option th:each="barrio : ${listaBarrios}"
-                                                    th:value="${barrio.nombre}"
-                               th:text="${barrio.nombre}"></option>    
-										</select>
+					<label style="margin-left: 30px; margin-bottom: 20px;"
+						for="select">Selecione Barrio :
+					</label>
+                     <select th:field="${objetoConsulta.barrio}" required="required" style="margin-bottom: 20px;" id="select" th:name="barrio">
+						<option value="">Seleccionar</option>
+                        <option th:each="barrio : ${listaBarrios}"
+                          th:value="${barrio.nombre}"
+                          th:text="${barrio.nombre}">
+                        </option>    
+					</select>
                 </div>
             <div class='row' style="width: 70%;">
                <div style="margin-left: 60px">
@@ -120,5 +126,6 @@
 		</div>
 	</div>
 </div>
+<div th:insert="layout/footer :: footer"></div>
 </body>
 </html>
