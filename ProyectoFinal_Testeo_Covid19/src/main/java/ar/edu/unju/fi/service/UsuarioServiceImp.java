@@ -4,6 +4,7 @@
 package ar.edu.unju.fi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.repository.IUsuarioRepository;
@@ -21,6 +22,10 @@ public class UsuarioServiceImp implements IUsuarioService {
 		@Override
 		public void guardar(Usuario unUsuario) {
 			
+			String pw = unUsuario.getPassword();
+			BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
+			//Se encripta la contraseña del Usuario
+			unUsuario.setPassword(bCryptPasswordEncoder.encode(pw));
 			System.out.println("El usuario " + unUsuario.getApellidoReal() + " ha sido guardado.");
 			iUsuario.save(unUsuario);
 			

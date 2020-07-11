@@ -3,6 +3,8 @@
  */
 package ar.edu.unju.fi.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import ar.edu.unju.fi.testeos.model.Usuario;
@@ -20,5 +22,9 @@ public interface IUsuario {
 }*/
 
 public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
+	
+	//Metodo para buscar el nombre del usuario en la capa repositorio.
+	
+	public Optional<Usuario> findBynombreUsuario(String nombreUsuario);
 	
 }
