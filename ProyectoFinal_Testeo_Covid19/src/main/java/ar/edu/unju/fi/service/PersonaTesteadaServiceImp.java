@@ -64,7 +64,7 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	@Override
 	public List<PersonaTesteada> listarBarrioFechas(String barrio, LocalDateTime fecha1, LocalDateTime fecha2) {
 		// TODO Auto-generated method stub
-		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween(barrio, fecha1, fecha2);
+		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetweenOrderByRegistroTesteoUnidadHabitacional(barrio, fecha1, fecha2);
 	}
 
 	@Override

@@ -22,7 +22,7 @@ import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 public interface IPersonaTesteadaRepository extends JpaRepository<PersonaTesteada,Long>{
 	public List<PersonaTesteada> findByApellidoContaining(String apellido);
 	public List<PersonaTesteada> findByDocumentoContaining(String dni);
-	public List<PersonaTesteada> findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetween( String barrio, LocalDateTime fecha1, LocalDateTime fecha2);
+	public List<PersonaTesteada> findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetweenOrderByRegistroTesteoUnidadHabitacional( String barrio, LocalDateTime fecha1, LocalDateTime fecha2);
 	public Iterable<PersonaTesteada> findByRegistroTesteo(RegistroTesteo registroTesteo);
 	
 }
