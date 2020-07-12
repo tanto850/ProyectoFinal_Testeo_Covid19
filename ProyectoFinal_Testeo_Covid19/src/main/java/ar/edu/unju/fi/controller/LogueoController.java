@@ -17,24 +17,9 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 public class LogueoController {
 	
 	
-	/**
-	 * Muestra la pagina login ante la peticion /
-	 * @return la pagina de login
-	 */
-	@GetMapping("/")
-	public String logIn() {
-		return "inicio";
-	}
 	
-	/**
-	 * Muestra la pagina login ante la peticion /login
-	 * @return la pagina de login
-	 */
-	@PostMapping("/login")
-	public String login() {
-		return "inicio";
-	}
 	
+
 	@GetMapping("/login")
 	public String logCuenta() {
 		return "inicio";
@@ -49,6 +34,25 @@ public class LogueoController {
 		model.addAttribute("usuariologueo", new Usuario());
 		
 		return "inicio";
+	}
+	
+
+	@GetMapping("/registroUsuario")
+	public String loginExitoso(Model model) {
+		
+		return "registroUsuario";
+	}
+	
+	@GetMapping("/formularioPersona")
+	public String formulario(Model model) {
+		
+		return "formularioPersona";
+	}
+	
+	@GetMapping("/consulta")
+	public String consulta(Model model) {
+		
+		return "consulta";
 	}
 	
 	@PostMapping("/registraUsuario")

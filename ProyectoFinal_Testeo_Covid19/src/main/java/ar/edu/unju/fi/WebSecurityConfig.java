@@ -49,16 +49,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				
 				.antMatchers("/usuarioBM").hasAuthority("BD")
 				.antMatchers("/registroUsuario").hasAuthority("BD")
+				.antMatchers("/registroBarrio").hasAuthority("BD")
 				
 				.antMatchers("/registrarUnidad").hasAuthority("REGISTRADOR")
-				.antMatchers("/registroBarrio").hasAuthority("REGISTRADOR")
 				.antMatchers("/formularioPersona").hasAuthority("REGISTRADOR")
+				.antMatchers("/seleccionarUnidad").hasAuthority("REGISTRADOR")
 				
 				.antMatchers("/consulta").hasAuthority("CONSULTOR")
 				.antMatchers("/consultaApellido").hasAuthority("CONSULTOR")
-				.antMatchers("/consultaBarrio").hasAuthority("CONSULTOR")
 				.antMatchers("/consultaDNI").hasAuthority("CONSULTOR")
-				.antMatchers("/seleccionarUnidad").hasAuthority("CONSULTOR")
+
 				
 				//En caso de requerir otra cosa, se pedira autenticacion
 				.anyRequest().authenticated()
@@ -74,8 +74,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				//Pagina donde redireccionara cuando el logeo sea invalido
 				.failureUrl("/inicio?error=true")
 				//Paramentros del usuario para login 
-				.usernameParameter("usuario")
-				.usernameParameter("password")
+				.usernameParameter("username")
+				.passwordParameter("password")
 				.and()
 				
 				//Configuracion del logout
