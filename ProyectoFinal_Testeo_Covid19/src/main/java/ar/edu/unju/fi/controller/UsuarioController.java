@@ -57,7 +57,7 @@ public class UsuarioController {
 	@GetMapping("/editarUsuario/{id}")
 	public String editarUsuario(Model model, @PathVariable(name="id") Long id) throws Exception {		
 		try {
-			Usuario usuarioEncontrado = iusuarioService.encontrarUsuario(id);
+			Usuario usuarioEncontrado = iusuarioService.encontrarUsuario2(id);
 			model.addAttribute("usuarioformulario", usuarioEncontrado);
 			model.addAttribute("editMode", "true");
 		}

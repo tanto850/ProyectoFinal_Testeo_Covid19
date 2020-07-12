@@ -35,10 +35,10 @@ public class MainController {
 //		return "registroUsuario";
 //	}
 	
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String getCuenta(Model model) {
 		return "cuenta";
-	}
+	}*/
 
 	/*@RequestMapping("/registroBarrio")
 	public String getBarrio(Model model) {
@@ -51,28 +51,6 @@ public class MainController {
 		return "usuarioBM";
 	}*/
 	
-	@RequestMapping("/consulta")
-	public String getcons(Model model) {	
-		model.addAttribute("listaPersonas", personaTesteadaService.listarPersonasTesteadas());
-		model.addAttribute("listaBarrios", barrioService.listarBarrios());
-		model.addAttribute("objetoConsulta", new ObjetoConsulta());
-		return "consulta";
-}
-	@PostMapping("/consulta")
-	public String getconsPos(@ModelAttribute("objetoConsulta") ObjetoConsulta objetoConsulta, Model model)
-	{
-		//lista tabla encontrados
-		//System.out.println("BARRIIo" +  objetoConsulta.getBarrio() + objetoConsulta.getTime1());
-		String fecha1Cadena = objetoConsulta.getTime1()+":01";
-		String fecha2Cadena = objetoConsulta.getTime2()+":01";
-		
-		LocalDateTime fechaInicio=LocalDateTime.parse(fecha1Cadena);
-		LocalDateTime fechaFin=LocalDateTime.parse(fecha2Cadena);
-				
-		model.addAttribute("listaPersonas", personaTesteadaService.listarBarrioFechas(objetoConsulta.getBarrio(),fechaInicio,fechaFin));
-		//lista de seleccion de barrios
-		model.addAttribute("listaBarrios", barrioService.listarBarrios());
-	return "consulta";	
-	}
+
 	
 }

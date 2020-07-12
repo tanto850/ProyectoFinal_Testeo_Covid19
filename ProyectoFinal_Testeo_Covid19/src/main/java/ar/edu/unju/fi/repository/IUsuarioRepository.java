@@ -25,6 +25,6 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	//Metodo para buscar el nombre del usuario en la capa repositorio.
 	
-	public Optional<Usuario> findBynombreUsuario(String nombreUsuario);
+	public Optional<Usuario> findByNombreUsuario(String nombreUsuario);
 	
 }

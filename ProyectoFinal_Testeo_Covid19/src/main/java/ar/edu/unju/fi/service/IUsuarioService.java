@@ -14,5 +14,6 @@ public interface IUsuarioService {
 	public void eliminar(long dni);
 	public Usuario modificar(Usuario usuario) throws Exception;
 	public Iterable<Usuario> listarUsuario();
-	public Usuario encontrarUsuario(Long id) throws Exception;
+	public Usuario encontrarUsuario2(Long id) throws Exception;
+	public Usuario encontrarUsuario(String nombreUsuario) throws Exception;
 }

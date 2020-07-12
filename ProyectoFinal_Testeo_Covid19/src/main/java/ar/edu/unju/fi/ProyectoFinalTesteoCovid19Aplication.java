@@ -19,19 +19,17 @@ public class ProyectoFinalTesteoCovid19Aplication implements CommandLineRunner{
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoFinalTesteoCovid19Aplication.class, args);
 	}
-
 	
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		/*
-		usuario.setApellidoReal("Apellido");
+		
+		/*usuario.setApellidoReal("Apellido");
 		usuario.setNombreReal("Nombre");
 		usuario.setNombreUsuario("admin");
-		usuario.setTipoUsuario("REGISTRADOR");
+		usuario.setTipoUsuario("BD");
 		usuario.setPassword("12345678");
-		usuarioService.guardar(usuario);
-		*/
+		usuarioService.guardar(usuario);*/
+		
 	}
-
 }

@@ -31,24 +31,25 @@ public class LoginUsuarioServiceImp implements UserDetailsService {
 
 	//Se sobre escribe el metodo UserDetailService
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		// Busca al Usuario por el su nombre legueado en caso de no encontrarlo mostrar el mensaje Login Invalido..
 		
-		Usuario usuarioEncontrado = iUsuario.findBynombreUsuario(username).orElseThrow(()-> new UsernameNotFoundException("Login Invalido") );
+		Usuario usuarioEncontrado = iUsuario.findByNombreUsuario(nombreUsuario).orElseThrow(()-> new UsernameNotFoundException("Login Invalido") );
 		
 		//Esta guardando la coleccion de roles que tienen los usuarios
 		List<GrantedAuthority> tipos = new ArrayList<>();
+		
+		System.out.println(usuarioEncontrado.getTipoUsuario());
 		GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(usuarioEncontrado.getTipoUsuario());
 		tipos.add(grantedAuthority);
 		
 		//Declaro el objeto UserDetails que retornara el metodo, trabaja con ciertos datos del usuario que se pasaran como parametros
 
-		UserDetails user = (UserDetails) new User(username, usuarioEncontrado.getPassword(),tipos);
+		UserDetails user = (UserDetails) new User(nombreUsuario, usuarioEncontrado.getPassword(),tipos);
+		System.out.println(user.getPassword() + user.getUsername());
 		
 		return user;
 	}
 	
-	
-
 }

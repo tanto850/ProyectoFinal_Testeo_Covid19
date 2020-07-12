@@ -15,33 +15,27 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 
 @Controller
 public class LogueoController {
-	
-	
-	
-	
 
-	@GetMapping("/login")
+	/*/@GetMapping("/login")
 	public String logCuenta() {
 		return "inicio";
-	}
+	}*/
 	
 	@Autowired
 	private IUsuarioService usuarioService;
 	
-	@RequestMapping("/login")
+	/*RequestMapping("/login")
 	public String getIndex(Model model) {
 		
-		model.addAttribute("usuariologueo", new Usuario());
-		
+		model.addAttribute("usuariologueo", new Usuario());		
 		return "inicio";
-	}
+	}/*/
 	
 
-	@GetMapping("/registroUsuario")
-	public String loginExitoso(Model model) {
-		
+	/*@RequestMapping("/registroUsuario")
+	public String loginExitoso(Model model) {		
 		return "registroUsuario";
-	}
+	}*/
 	
 	@GetMapping("/formularioPersona")
 	public String formulario(Model model) {
@@ -49,20 +43,20 @@ public class LogueoController {
 		return "formularioPersona";
 	}
 	
-	@GetMapping("/consulta")
-	public String consulta(Model model) {
-		
-		return "consulta";
+
+	@GetMapping("/login")
+	public String ingresar(Model model) {
+		model.addAttribute("usuariologueo", new Usuario());	
+		System.out.println("estoy en el login");
+		return "inicio";
 	}
+		
 	
-	@PostMapping("/registraUsuario")
-		public String registroUsuario(@ModelAttribute("usuariologueo") Usuario unUsuario,Model model) {
-		
-		usuarioService.guardar(unUsuario);
-		
-		return "registroUsuario";
-		
-	}
+	/*@PostMapping("/registraUsuario")
+		public String registroUsuario(/*@ModelAttribute("usuariologueo") Usuario unUsuario*//*Model model) {
+		//usuarioService.guardar(unUsuario);
+		/*return "registroUsuario";*/
+	/*}*/
 				
 
 }

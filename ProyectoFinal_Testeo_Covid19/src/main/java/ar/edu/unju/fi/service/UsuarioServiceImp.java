@@ -64,9 +64,26 @@ public class UsuarioServiceImp implements IUsuarioService {
 		}*/
 
 		@Override
-		public Usuario encontrarUsuario(Long id) throws Exception {
+		public Usuario encontrarUsuario2(Long id) throws Exception {
 			// TODO Auto-generated method stub
 			return iUsuario.findById(id).orElseThrow(()-> new Exception("El usuario no existe."));
+		}
+		
+		
+		
+		@Override
+		public Usuario encontrarUsuario(String nombreUsuario) throws Exception {
+			// TODO Auto-generated method stub
+			System.out.println("BUSCANDO USUARIO " + nombreUsuario);
+			return iUsuario.findByNombreUsuario(nombreUsuario).orElseThrow(()-> new Exception("El Usuario no Existe"));
+		}
+		
+		public void mapearUsuario(Usuario hacia, Usuario desde) {
+			hacia.setNombreUsuario(desde.getNombreUsuario());
+			hacia.setNombreReal(desde.getNombreReal());
+			hacia.setApellidoReal(desde.getApellidoReal());
+			hacia.setTipoUsuario(desde.getTipoUsuario());
+			//hacia.setPassword(desde.getPassword());
 		}
 		
 	

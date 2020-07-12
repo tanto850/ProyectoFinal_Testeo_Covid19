@@ -17,7 +17,7 @@ import ar.edu.unju.fi.service.LoginUsuarioServiceImp;
  *  Se define que acciones se puede permitir para cada usuario..
  * 
  * @author Uzqueda,Jose G.
- *
+ * 
  */
 
 @Configuration
@@ -53,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				
 				.antMatchers("/registrarUnidad").hasAuthority("REGISTRADOR")
 				.antMatchers("/formularioPersona").hasAuthority("REGISTRADOR")
-				.antMatchers("/seleccionarUnidad").hasAuthority("REGISTRADOR")
+				.antMatchers("/seleccion").hasAuthority("REGISTRADOR")
 				
 				.antMatchers("/consulta").hasAuthority("CONSULTOR")
 				.antMatchers("/consultaApellido").hasAuthority("CONSULTOR")
@@ -63,7 +63,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				//En caso de requerir otra cosa, se pedira autenticacion
 				.anyRequest().authenticated()
 				.and()
+				
 				//Configuracion de la pagina de logueo
+			
 			.formLogin()
 			//Todos tiene permiso, el login se encuentra en /inicio
 				.loginPage("/login")
@@ -74,7 +76,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				//Pagina donde redireccionara cuando el logeo sea invalido
 				.failureUrl("/inicio?error=true")
 				//Paramentros del usuario para login 
-				.usernameParameter("username")
+				.usernameParameter("nombreUsuario")
 				.passwordParameter("password")
 				.and()
 				
@@ -84,7 +86,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				.permitAll()
 				//Permiso para establecer una pagina para redirigir en logout
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
-
+		http.csrf().disable();
 	}
 				
 
