@@ -58,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				.antMatchers("/consulta").hasAuthority("CONSULTOR")
 				.antMatchers("/consultaApellido").hasAuthority("CONSULTOR")
 				.antMatchers("/consultaDNI").hasAuthority("CONSULTOR")
+				.antMatchers("/hola").hasAuthority("CONSULTOR")
 
 				
 				//En caso de requerir otra cosa, se pedira autenticacion
@@ -74,7 +75,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				//Al ingresar se direccionara segun el rol del usuario
 				.successHandler(autenticacion) 
 				//Pagina donde redireccionara cuando el logeo sea invalido
-				.failureUrl("/inicio?error=true")
+				//.failureUrl("/inicio?error=true")
+				.failureUrl("/login?error=true")
+				
 				//Paramentros del usuario para login 
 				.usernameParameter("nombreUsuario")
 				.passwordParameter("password")

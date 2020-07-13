@@ -25,4 +25,5 @@ public interface IPersonaTesteadaService {
 	
 	public List<PersonaTesteada> listarBarrioFechas(String barrio,LocalDateTime fecha1, LocalDateTime fecha2);
 	public Iterable<PersonaTesteada> listarPersonasTesteadasRegistro(RegistroTesteo resgitroTesteo);
+	public List<PersonaTesteada> listarPersonas();
 }

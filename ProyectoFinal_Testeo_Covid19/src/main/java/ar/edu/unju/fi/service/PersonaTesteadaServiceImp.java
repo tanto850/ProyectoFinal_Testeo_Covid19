@@ -73,5 +73,11 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 		return ipersona.findByRegistroTesteo(registroTesteo);
 	}
 
+	@Override
+	public List<PersonaTesteada> listarPersonas() {
+		// TODO Auto-generated method stub
+		return ipersona.findAll();
+	}
+
 
 }

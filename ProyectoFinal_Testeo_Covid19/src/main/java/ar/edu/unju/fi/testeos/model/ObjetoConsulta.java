@@ -4,6 +4,7 @@
 package ar.edu.unju.fi.testeos.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author user
@@ -13,8 +14,6 @@ public class ObjetoConsulta {
  public String barrio;
  public String time1;
  public String time2;
- 
-
  public ObjetoConsulta() {}
  
 /**
@@ -66,6 +65,36 @@ public String getTime2() {
  */
 public void setTime2(String time2) {
 	this.time2 = time2;
+}
+
+public int contarPositivos( List<PersonaTesteada> lista)
+{
+	int totalPositivos=0;
+	for (int i = 0; i < lista.size(); i++) 
+        { 
+	      if(lista.get(i).getResultadoTesteo().equalsIgnoreCase("positivo"))
+	      {
+	    	  totalPositivos++;
+	    	  
+	      } 	  
+        }
+	return totalPositivos;
+}
+
+
+public int contarNegativos(List<PersonaTesteada> lista)
+{
+	int totalNegativos=0;
+	for (int i = 0; i < lista.size(); i++) 
+        { 
+	      if(lista.get(i).getResultadoTesteo().equalsIgnoreCase("negativo"))
+	      {
+	    	  totalNegativos++;
+	    	  
+	      } 	  
+        }
+	
+	return totalNegativos;
 }
 
 

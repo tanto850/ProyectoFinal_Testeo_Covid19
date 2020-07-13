@@ -16,31 +16,24 @@
 	<div class="card">
 		<div style="text-align: center;" class="card-header">
 	<h1> Buscar por DNI </h1>
-
-
-		     <!--  Usar cualquiera. -->
-<!--      </div> <a class="btn btn-primary" href="#" role="button">Buscar</a> -->
-<!--       <button class="btn btn-primary" type="submit">Button</button> -->
-<!-- <input class="btn btn-primary" type="button" value="Input"> -->
-<!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
-<!-- <input class="btn btn-primary" type="reset" value="Reset"> -->
-
 <div style="margin-left: 10%;">
    <form th:object=${equipo}  th:action="@{/consultaDNI}" method="POST">
   <div style="display: flex; text-align: center;" ><div class="group">
    <label for="input">DNI : </label>
     <input type="number" required="required" placeholder="ingrese dni" th:name = "documentoConsu" id ="documentoConsu">
   </div>
-  <input style="margin-left: 10px;" type="submit" class="btn btn-primary" value="Buscar">
-  <a class="btn btn-success" style="margin-left: 20px;" href="consultaDNI" role="button">ListarTodos</a>
+  <input style="margin-left: 10px; margin-bottom: 10px;" type="submit" class="btn btn-primary" value="Buscar">
+  <a class="btn btn-success" style="margin-left: 20px; margin-bottom: 10px;" href="consultaDNI" role="button">ListarTodos</a>
+  <div th:insert="layout/modal :: modal"></div>
   </div>
 </form>
 </div>
 		</div>
 		
 		<div class="card-body">
+			<div th:insert="layout/tablaConsultas :: tablaConsultas"></div>
 			<!-- Lista de usuarios-->
-			<div class="table-responsive">
+		<!--  	<div class="table-responsive">
 				<table id="userList"
 					class="table table-bordered table-hover table-striped">
 					<thead class="thead-light">
@@ -62,7 +55,7 @@
 						</tr>
 					</tbody>
 				</table>
-			</div>
+			</div>-->
 		</div>
 	</div>
 
