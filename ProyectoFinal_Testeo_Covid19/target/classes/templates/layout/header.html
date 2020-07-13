@@ -11,10 +11,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     
-    <div class="navbar-header">
-      <a class="navbar-brand" >Usuario Registrador</a>
+    <div style="width:70%;" class="navbar-header">
+      <a style="color: white;" class="navbar-brand" >Usuario Registrador</a>
     </div> 
-        <button class="btn btn-danger navbar-btn">Cerrar Sesion</button>
+        <span style="color: white; margin-right: 20px;" th:text="'Bienvenido : '+ ${#authentication.getPrincipal().getUsername()}"></span>
+        <a href="#" th:href="@{/logout}" class="btn btn-danger navbar-btn">Cerrar Sesion</a>
   </div>
  </nav>
 

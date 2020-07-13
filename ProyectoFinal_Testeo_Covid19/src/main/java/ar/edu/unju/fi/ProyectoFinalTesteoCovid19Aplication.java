@@ -29,7 +29,7 @@ public class ProyectoFinalTesteoCovid19Aplication implements CommandLineRunner{
 		usuario.setNombreUsuario("admin");
 		usuario.setTipoUsuario("BD");
 		usuario.setPassword("12345678");
-		usuarioService.guardar(usuario);*/
-		
+		usuarioService.guardar(usuario);
+		*/
 	}
 }

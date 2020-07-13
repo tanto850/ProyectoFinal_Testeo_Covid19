@@ -92,7 +92,7 @@ public class UsuarioController {
 			}
 		//}
 		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());		
-		return "usuarioBM";
+		return "/usuarioBM";
 	}
 	
 	
@@ -105,7 +105,7 @@ public class UsuarioController {
 			model.addAttribute("listErrorMessage",e.getMessage());
 		}
 		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());
-		return "usuarioBM";
+		return "redirect:/usuarioBM";
 	}
 	
 	@GetMapping("/usuarioBM")
