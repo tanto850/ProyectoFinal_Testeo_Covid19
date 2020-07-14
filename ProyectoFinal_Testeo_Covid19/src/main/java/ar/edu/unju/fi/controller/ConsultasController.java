@@ -42,12 +42,6 @@ public class ConsultasController {
 		return "consultaDNI";
 }
 	
-	@RequestMapping("/hola")
-	public String getConsultadni2(Model model) {
-		model.addAttribute("listaPersonas", personaTesteadaService.listarPersonasTesteadas());
-		return "u";
-}
-	
 	@PostMapping("/consultaDNI")
 	public String getconsultadni2(@RequestParam( value = "documentoConsu") Long documentoConsu, Model model) {
 		model.addAttribute("listaPersonas", personaTesteadaService.listarPersonaDocumento(documentoConsu.toString()));		

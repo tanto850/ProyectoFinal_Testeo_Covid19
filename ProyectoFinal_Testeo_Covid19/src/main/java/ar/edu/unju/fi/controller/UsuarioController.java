@@ -113,6 +113,12 @@ public class UsuarioController {
 		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());
 		return "usuarioBM";
 	}
+	
+	@RequestMapping("/noAutorizado")
+	public String sinPermisos() {
+		return "noAutorizado";
+	}
 }
+
 
 

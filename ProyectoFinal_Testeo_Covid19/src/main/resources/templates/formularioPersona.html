@@ -4,11 +4,16 @@
 <meta charset="UTF-8">
 <title>Formulario de registro de persona testeada</title>
 <link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../css/estilos.css">
 
 <!-- Los iconos tipo Solid de Fontawesome-->
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
 <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>		
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript" src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
 <!-- DATA TABLE -->
@@ -30,7 +35,7 @@
 </script>
 
 </head>
-<body>
+<body class="bodyRegistrador">
 	<div th:insert="layout/header :: header"></div>
 
 	<!-- Pestañas de Lista y Formulario -->
@@ -158,4 +163,10 @@
 	
 	<div th:insert="layout/footer :: footer"></div>
 </body>
+<!-- Script para el datatable -->
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
 </html>

@@ -10,3 +10,45 @@
     margin-bottom: 20px;
     background-color: rgb(245, 255, 250);
 }
+
+.body-cons{
+	background-color: rgb(240,240,20,0.7);
+}
+
+.btn btn-danger navbar-btn{
+	margin-right: 5px;
+	color: white;
+}
+
+.logout{
+	margin-right: 10px;
+	color: white;
+	float: right;
+}
+
+#tablaConsultas{
+	background-color: white;
+	border: 1px solid black;
+}
+
+.bodyRegistrador{
+	background-color: rgb(0, 51, 255,0.4);
+	
+}
+
+
+#tarjetaLogin{
+	margin-top: 40px;
+	border-radius: 10px 100px 10px 100px;
+	background: rgb(205, 205,20,0.6);
+	padding-top: 50px;
+	
+}
+
+.bodyAdm{
+	background-color: rgb(0,0,0,0.6);
+}
+
+#registroBarrio{
+	border: 2px solid red; 
+}

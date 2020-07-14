@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <meta charset="utf-8">
+    <title> No accesible </title>
+  </head>
+		<body>
+			<div class="container">
+						<div>
+							<h1> INGRESO NO AUTORIZADO</h1>
+							<h2>Usted esta intentando acceder a una pagina que no le correponde segun su usuario logueado : </h2><h2 th:text=${#authentication.getPrincipal().getUsername()}> </h2> <h2>"</h2> 
+							<h2> Por favor comuniquese con el administrador</h2>
+						</div>
+				<div>
+					<input type="button" class="btn btn btn-warning mx-auto" onclick="history.back()" name="retroceder" value="retroceder">
+                    <a href="#" th:href="@{/logout}" class="btn btn-danger navbar-btn">Cerrar Sesion</a></div>
+				</div>
+		</body>
+</html>

@@ -59,7 +59,7 @@ public class AutenticacionSuccessHandler implements AuthenticationSuccessHandler
 			
 			//Se redirige a una pagina relacionada al rol del usuario
 			if (tipoBD) {
-				redirectStrategy.sendRedirect(request, response, "/registroUsuario");
+				redirectStrategy.sendRedirect(request, response, "/registroBarrio");
 			}else {
 				if(tipoConsultor) {
 					redirectStrategy.sendRedirect(request, response, "/consulta");

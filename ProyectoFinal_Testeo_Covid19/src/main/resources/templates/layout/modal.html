@@ -13,15 +13,15 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">RESULTADO DE LA CONSULTA</h5>
+        <h3 class="modal-title" id="exampleModalLongTitle">RESULTADO DE LA CONSULTA</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-          <h6 th:text =" ' Cantidad de personas con resultado Positivo : ' + ${cantidadPositivo} "></h6>
-          <h6 th:text =" ' Cantidad de personas con resultado Negativos : ' + ${cantidadNegativo} "></h6>
-          <h6 th:text =" ' Cantidad de personas testeadas : ' + ${cantidadTotal} "></h6>
+          <h4 style="color: blue;" th:text =" ' Cantidad de personas con resultado Positivo : ' + ${cantidadPositivo} "></h4>
+          <h4 style="color:red;" th:text =" ' Cantidad de personas con resultado Negativos : ' + ${cantidadNegativo} "></h4>
+          <h4 style="color: green;" th:text =" ' Cantidad de personas testeadas : ' + ${cantidadTotal} "></h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>

@@ -89,9 +89,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				.permitAll()
 				//Permiso para establecer una pagina para redirigir en logout
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
-		http.csrf().disable();
+		
+		//Permite redirigir los intentos de accesos denegados de los usuarios logueados..
+		http.exceptionHandling().accessDeniedPage("/noAutorizado");
+	//	http.csrf().disable();
 	}
 				
+
 
 	//Encriptacion de la contraseña
 	BCryptPasswordEncoder bCrypyPasswordEncoder;
@@ -110,9 +114,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-		
-	}
-	
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());		
+	}	
 	
 }

@@ -25,8 +25,9 @@
             <a class="nav-link" href="/consulta"> Consulta Barrio </a>
        </li>
     </ul>
-       <span style="color: white; margin-right: 20px;" th:text="'Bienvenido : '+ ${#authentication.getPrincipal().getUsername()}"></span>
-        <a href="#" th:href="@{/logout}" class="btn btn-danger navbar-btn">Cerrar Sesion</a>
+    <div class="logout">
+       <span th:text="'Bienvenido : '+ ${#authentication.getPrincipal().getUsername()}"></span>
+        <a href="#" th:href="@{/logout}" class="btn btn-danger navbar-btn">Cerrar Sesion</a></div>
   </div>
   
 </nav>

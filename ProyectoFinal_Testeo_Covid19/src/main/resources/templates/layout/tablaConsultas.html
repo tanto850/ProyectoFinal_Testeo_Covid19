@@ -1,12 +1,12 @@
 <html>
 <head>
+
 </head>
 <body>
 <div id="tablaConsultas" th:fragment="tablaConsultas">
 <!-- Lista de usuarios-->
 			<div class="table-responsive">
-				<table id="userList"
-					class="table table-bordered table-hover table-striped">
+				<table id="myTable" class="table table-striped"  style="width:100%">
 					<thead class="thead-light">
 						<tr>
 						    <th scope="col">Registro-Barrio</th>
@@ -21,11 +21,11 @@
 					<tbody>
 						<tr th:each="usuario : ${listaPersonas}">
 								<td th:text="${usuario.registroTesteo.id}+' : '+ ${usuario.registroTesteo.unidadHabitacional.barrio.nombre}"></td>
-								<td th:text="${usuario.registroTesteo.unidadHabitacional.id}"></td>
+								<td th:text="${usuario.registroTesteo.unidadHabitacional.direccion}"></td>
 								<td th:text="${usuario.documento}"></td>
 								<td th:text="${usuario.nombres}"></td>
 								<td th:text="${usuario.apellido}"></td>
-								<td th:text="${usuario.resultadoTesteo}"></td>
+								<td style="font-weight: bolder;" th:text="${usuario.resultadoTesteo}"></td>
 								<td th:text="${usuario.registroTesteo.fechaHora}"></td>
 						</tr>
 					</tbody>
