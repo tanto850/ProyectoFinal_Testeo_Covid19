@@ -16,10 +16,10 @@
 	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
 <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
-<body>
+<body id="cuerpoInicio">
 <div th:insert="layout/headercuenta :: headercuenta"></div>
-	<div class="row border-top border-bottom w-100">
-		<section class="col-md-8">
+	<nav class="row border-top border-bottom w-100">
+		<section class="col-md-7">
 			
 			<div class="row">
 			<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -69,9 +69,9 @@
 			</div>		
 		</section>
 	
-		<aside class="col-md-4 bg-light">
+		<aside class="col-md-4 bg-light" id="asideLogin" >
 		<div id="tarjetaLogin">
-		<h3 class="card-title text-center">Iniciar Secion</h3>
+		<h3 class="card-title text-center">Iniciar Sesion</h3>
 <div class="card-body">
 		 <!-- th:object="${usuariologueo}" -->	<form class="container"  th:action="@{/login}" method="post">
 				  <div class="form-group row">
@@ -102,7 +102,7 @@
 	</div>
 			</div>
 		</aside>				
-	</div>
+	</nav>
 <div th:insert="layout/footer :: footer"></div>
 </body>
 </html>

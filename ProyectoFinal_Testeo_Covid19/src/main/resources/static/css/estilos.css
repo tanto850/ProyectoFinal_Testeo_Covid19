@@ -1,5 +1,16 @@
 @charset "ISO-8859-1";
 
+*{
+	margin: 2px;
+	padding: 2px;
+	
+}
+
+#cuerpoInicio{
+	background: url("../img/coronavirus.jpg");
+	background-size:100% 100%;
+}
+
 #select{
 	background-color: rgb(255, 255, 224);
 	
@@ -12,7 +23,8 @@
 }
 
 .body-cons{
-	background-color: rgb(240,240,20,0.7);
+	background: url("../img/fondoconsulta.jpg");
+	background-size: 100% 100%;
 }
 
 .btn btn-danger navbar-btn{
@@ -32,21 +44,27 @@
 }
 
 .bodyRegistrador{
-	background-color: rgb(0, 51, 255,0.4);
+	background: url("../img/registrotesteo.jpg");
+	background-size: 100% 100%;
 	
+}
+
+#asideLogin{
+	background-color: rgb(133, 193, 233, 0.1);
 }
 
 
 #tarjetaLogin{
 	margin-top: 40px;
 	border-radius: 10px 100px 10px 100px;
-	background: rgb(205, 205,20,0.6);
+	background: rgb(133, 146, 158, 0.5);
 	padding-top: 50px;
 	
 }
 
 .bodyAdm{
-	background-color: rgb(0,0,0,0.6);
+	background: url("../img/fondocovid.jpg");
+	background-size: 100% 100%;
 }
 
 #registroBarrio{
@@ -55,4 +73,5 @@
 
 #cuerpoNoAutorizado{
 	background: url("../img/fondosalud.jpg");
+	background-size: 100% 100%;
 }

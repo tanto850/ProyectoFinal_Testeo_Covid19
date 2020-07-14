@@ -3,8 +3,6 @@
  */
 package ar.edu.unju.fi.service;
 
-//import java.util.Optional;
-
 import ar.edu.unju.fi.testeos.model.Barrio;
 
 /**
@@ -17,6 +15,6 @@ public interface IBarrioService {
 	public Barrio modificar(Barrio unBarrio) throws Exception;
 	public Iterable<Barrio> listarBarrios();
 	public Barrio encontrarBarrio(long id) throws Exception;
-	//public Optional<Barrio> listarId(long id);
+	public boolean encontrarNombreBarrio(Barrio unBarrio);
 
 }

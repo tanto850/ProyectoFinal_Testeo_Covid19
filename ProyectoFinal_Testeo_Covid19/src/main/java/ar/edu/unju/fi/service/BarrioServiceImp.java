@@ -3,6 +3,7 @@
  */
 package ar.edu.unju.fi.service;
 
+import java.util.Optional;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +54,11 @@ private Logger log = Logger.getLogger("");
 	public Barrio encontrarBarrio(long id) throws Exception {
 		// TODO Auto-generated method stub
 		return iBarrio.findById(id).orElseThrow(()-> new Exception("El barrio no existe."));
+	}
+
+	@Override
+	public boolean encontrarNombreBarrio(Barrio unBarrio) {
+		Optional<Barrio> barrioBuscado = iBarrio.findByNombre(unBarrio.getNombre());
+		return barrioBuscado.isPresent();
 	}
 }

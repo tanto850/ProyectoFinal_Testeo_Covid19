@@ -14,14 +14,15 @@
       <a class="navbar-brand" >Usuario Administrador</a>
     </div> 
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-           <a class="nav-link" href="/registroBarrio">Barrio</a>
+      
+       <li class="nav-item">
+            <a class="nav-link" href="/registroUsuario">Registrar Usuario</a>
        </li>
        <li class="nav-item">
-            <a class="nav-link" href="/registroUsuario">Usuarios </a>
+            <a class="nav-link" href="/usuarioBM">Lista de Usuarios</a>
        </li>
        <li class="nav-item">
-            <a class="nav-link" href="/usuarioBM">Usuario B-M </a>
+           <a class="nav-link" href="/registroBarrio">Registrar Barrio</a>
        </li>
     </ul>
         <span style="color: white; margin-right: 20px;" th:text="'Bienvenido : '+ ${#authentication.getPrincipal().getUsername()}"></span>

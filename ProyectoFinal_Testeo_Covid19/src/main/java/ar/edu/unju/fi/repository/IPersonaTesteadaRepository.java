@@ -7,6 +7,7 @@ package ar.edu.unju.fi.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -24,5 +25,6 @@ public interface IPersonaTesteadaRepository extends JpaRepository<PersonaTestead
 	public List<PersonaTesteada> findByDocumentoContaining(String dni);
 	public List<PersonaTesteada> findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetweenOrderByRegistroTesteoUnidadHabitacional( String barrio, LocalDateTime fecha1, LocalDateTime fecha2);
 	public Iterable<PersonaTesteada> findByRegistroTesteo(RegistroTesteo registroTesteo);
+	public Optional<PersonaTesteada> findByDocumentoAndRegistroTesteo(RegistroTesteo registroTesteo, String documento);
 	
 }

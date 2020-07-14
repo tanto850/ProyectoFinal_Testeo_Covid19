@@ -82,5 +82,12 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 		return ipersona.findAll();
 	}
 
+	@Override
+	public boolean encontrarPersonaRegistro(PersonaTesteada unaPersonaTesteada) {
+		// TODO Auto-generated method stub
+		Optional<PersonaTesteada> personaBuscada = ipersona.findByDocumentoAndRegistroTesteo(unaPersonaTesteada.getRegistroTesteo(), unaPersonaTesteada.getDocumento());
+		return personaBuscada.isPresent();
+	}
+
 
 }

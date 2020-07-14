@@ -70,7 +70,7 @@ public class TesteoController {
 	@PostMapping("/guardarPersona")
 	public String crearUsuario(@Valid @ModelAttribute("personaformulario") PersonaTesteada personaTesteada,
 			BindingResult result, ModelMap model) {
-		if (result.hasErrors()) {
+		if (result.hasErrors() || ipersonaTesteadaService.encontrarPersonaRegistro(personaTesteada)) {
 			model.addAttribute("personaformulario", personaTesteada);
 			model.addAttribute("formTab", "active");
 		} else {

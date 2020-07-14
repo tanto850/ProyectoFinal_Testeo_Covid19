@@ -37,9 +37,10 @@ public class BarrioController {
 	@PostMapping("/agregarBarrio")
 	public String crearUsuario(@Valid @ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
 		
-		if (result.hasErrors()) {
+		if (result.hasErrors() || ibarrioService.encontrarNombreBarrio(barrio)) {
 			model.addAttribute("barrioformulario", barrio);
 			// model.addAttribute("formTab", "active");
+			model.addAttribute("listaBarrio", ibarrioService.listarBarrios());
 		} else {
 			try {
 				ibarrioService.guardar(barrio);
