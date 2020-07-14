@@ -35,7 +35,7 @@ public class BarrioController {
 	}
 	
 	@PostMapping("/agregarBarrio")
-	public String crearUsuario(@ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
+	public String crearUsuario(@Valid @ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
 		
 		if (result.hasErrors()) {
 			model.addAttribute("barrioformulario", barrio);
@@ -75,11 +75,10 @@ public class BarrioController {
 	
 	@PostMapping("/editarBarrio")
 	public String postEditarBarrio(@Valid @ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
-		//if(result.hasErrors()) {
-			//model.addAttribute("barrioformulario", barrio);			
-			//model.addAttribute("formTab", "active");
-			//model.addAttribute("editMode", "true");
-		//} else {
+		if(result.hasErrors()) {
+			model.addAttribute("barrioformulario", barrio);
+			model.addAttribute("editMode", "true");
+		} else {
 			try {
 				ibarrioService.modificar(barrio);
 				model.addAttribute("barrioformulario", unBarrio);			
@@ -92,7 +91,7 @@ public class BarrioController {
 				model.addAttribute("listaBarrio", ibarrioService.listarBarrios());				
 				model.addAttribute("editMode", "true");
 			}
-		//}
+		}
 		model.addAttribute("listaBarrio", ibarrioService.listarBarrios());		
 		return "registroBarrio";
 	}

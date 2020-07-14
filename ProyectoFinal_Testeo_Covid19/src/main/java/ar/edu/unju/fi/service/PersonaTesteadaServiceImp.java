@@ -6,6 +6,7 @@ package ar.edu.unju.fi.service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,17 +24,19 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	
 	@Autowired
 	public IPersonaTesteadaRepository ipersona;
+	
+	private Logger log = Logger.getLogger("");
 
 	@Override
 	public void guardar(PersonaTesteada personaTesteada) {
 		ipersona.save(personaTesteada);
-		System.out.println("La persona de apellido "+ personaTesteada.getApellido()+ " ha sido resgistrada en la base de datos.");
+		log.info("La persona de apellido "+ personaTesteada.getApellido()+ " ha sido resgistrada en la base de datos.");
 	}
 
 	@Override
 	public void eliminar(long id) {
 		ipersona.deleteById(id);
-		System.out.println("La persona fue eliminada.");
+		log.info("La persona fue eliminada.");
 	}
 
 	@Override

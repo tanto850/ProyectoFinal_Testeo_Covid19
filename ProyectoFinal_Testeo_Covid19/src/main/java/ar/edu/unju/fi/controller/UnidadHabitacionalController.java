@@ -1,5 +1,7 @@
 package ar.edu.unju.fi.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,22 +32,20 @@ public class UnidadHabitacionalController {
 	}
 	
 	@PostMapping("/agregarUnidad")
-	public String crearUnidad(@ModelAttribute("unidadformulario") UnidadHabitacional unidad, BindingResult result, ModelMap model) {
+	public String crearUnidad(@Valid @ModelAttribute("unidadformulario") UnidadHabitacional unidad, BindingResult result, ModelMap model) {
 		
 		if (result.hasErrors()) {
 			model.addAttribute("unidadformulario", unidad);
-			// model.addAttribute("formTab", "active");
+			model.addAttribute("listaUnidad", iunidadService.listarUnidad());
 		} else {
 			try {
 				iunidadService.guardar(unidad);
 				model.addAttribute("unidadformulario", new UnidadHabitacional());
 				model.addAttribute("listaUnidad", iunidadService.listarUnidad());
-				// model.addAttribute("lisTab", "active");
 			} catch (Exception e) {
 				model.addAttribute("formUnidadErrorMessage", e.getMessage());
 				model.addAttribute("unidadformulario", unidad);
 				model.addAttribute("listaUnidad", iunidadService.listarUnidad());
-				// model.addAttribute("formTab", "active");
 			}
 		}
 		model.addAttribute("listaBarrios", barrioService.listarBarrios());

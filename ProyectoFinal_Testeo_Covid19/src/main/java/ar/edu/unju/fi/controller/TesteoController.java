@@ -2,6 +2,8 @@ package ar.edu.unju.fi.controller;
 
 import java.time.LocalDateTime;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 
 import ar.edu.unju.fi.service.IPersonaTesteadaService;
 import ar.edu.unju.fi.service.IRegistroTesteoService;
@@ -67,25 +68,26 @@ public class TesteoController {
 	}
 	
 	@PostMapping("/guardarPersona")
-	public String crearUsuario(@ModelAttribute("personaformulario") PersonaTesteada personaTesteada, 
-							BindingResult result, ModelMap model) {
-			if (result.hasErrors()) {
-				
-				//System.out.println("2hola a todos" + registroTesteo.getId());
+	public String crearUsuario(@Valid @ModelAttribute("personaformulario") PersonaTesteada personaTesteada,
+			BindingResult result, ModelMap model) {
+		if (result.hasErrors()) {
 			model.addAttribute("personaformulario", personaTesteada);
 			model.addAttribute("formTab", "active");
-		}else {
-		//try {
-			System.out.println("2hola a todos" + registroTesteo.getId());
-			personaTesteada.setRegistroTesteo(registroTesteo);
-			ipersonaTesteadaService.guardar(personaTesteada);
-			model.addAttribute("personaformulario", new PersonaTesteada());
-			model.addAttribute("formTab", "active");
-			//model.addAttribute("lisTab", "active");
-			model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));
-		}// catch (Exception e) {
-			
-		//}
+		} else {
+			try {
+				personaTesteada.setRegistroTesteo(registroTesteo);
+				ipersonaTesteadaService.guardar(personaTesteada);
+				model.addAttribute("personaformulario", new PersonaTesteada());
+				model.addAttribute("formTab", "active");
+				// model.addAttribute("lisTab", "active");
+				model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));
+			} catch (Exception e) {
+				model.addAttribute("formPersonaErrorMessage",e.getMessage());
+				model.addAttribute("personaformulario", personaTesteada);			
+				model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));				
+				model.addAttribute("editMode", "true");
+			}
+		}
 		return "formularioPersona";
 	}
 	

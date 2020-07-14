@@ -21,7 +21,7 @@ public class Usuario {
 	@Column(nullable=true)
 	private long id;
 	
-	@Column
+	@Column (unique = true)
 	@NotBlank
 	private String nombreUsuario;
 	

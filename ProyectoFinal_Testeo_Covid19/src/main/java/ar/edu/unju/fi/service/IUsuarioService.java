@@ -16,4 +16,5 @@ public interface IUsuarioService {
 	public Iterable<Usuario> listarUsuario();
 	public Usuario encontrarUsuario2(Long id) throws Exception;
 	public Usuario encontrarUsuario(String nombreUsuario) throws Exception;
+	public boolean encontrarNombreUsuario(Usuario unUsuario);
 }

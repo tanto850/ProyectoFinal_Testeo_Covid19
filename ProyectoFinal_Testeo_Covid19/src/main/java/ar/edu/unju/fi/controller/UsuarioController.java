@@ -33,11 +33,12 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/agregarUsuario")
-	public String crearUsuario(@ModelAttribute("usuarioformulario") Usuario usuario, BindingResult result, ModelMap model) {
+	public String crearUsuario(@Valid @ModelAttribute("usuarioformulario") Usuario usuario, BindingResult result, ModelMap model) {
 		
 		if (result.hasErrors()) {
 			model.addAttribute("usuarioformulario", usuario);
 			// model.addAttribute("formTab", "active");
+			return "registroUsuario";
 		} else {
 			try {
 				iusuarioService.guardar(usuario);
@@ -50,8 +51,8 @@ public class UsuarioController {
 				model.addAttribute("listaUsuario", iusuarioService.listarUsuario());
 				// model.addAttribute("formTab", "active");
 			}
+			return "usuarioBM";
 		}
-		return "usuarioBM";
 	}
 	
 	@GetMapping("/editarUsuario/{id}")
@@ -66,18 +67,17 @@ public class UsuarioController {
 			model.addAttribute("usuarioformulario", unUsuario);
 			model.addAttribute("editMode", "false");
 		}				
-		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());		
-		model.addAttribute("formTab", "active");		
+		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());				
 		return "registroUsuario";
 	}
 	
 	@PostMapping("/editarUsuario")
 	public String postEditarUsuario(@Valid @ModelAttribute("usuarioformulario") Usuario usuario, BindingResult result, ModelMap model) {
-		//if(result.hasErrors()) {
-			//model.addAttribute("usuarioformulario", usuario);			
+		if(result.hasErrors()) {
+			model.addAttribute("usuarioformulario", usuario);			
 			//model.addAttribute("formTab", "active");
-			//model.addAttribute("editMode", "true");
-		//} else {
+			model.addAttribute("editMode", "true");
+		} else {
 			try {
 				iusuarioService.modificar(usuario);
 				model.addAttribute("usuarioformulario", unUsuario);			
@@ -90,7 +90,7 @@ public class UsuarioController {
 				model.addAttribute("listaUsuario", iusuarioService.listarUsuario());				
 				model.addAttribute("editMode", "true");
 			}
-		//}
+		}
 		model.addAttribute("listaUsuario", iusuarioService.listarUsuario());		
 		return "/usuarioBM";
 	}

@@ -21,7 +21,7 @@ import ar.edu.unju.fi.testeos.model.ObjetoConsulta;
  *
  */
 @Controller
-public class consultasControler {
+public class ConsultasController {
 
 	@Autowired	
 	 IPersonaTesteadaService personaTesteadaService;

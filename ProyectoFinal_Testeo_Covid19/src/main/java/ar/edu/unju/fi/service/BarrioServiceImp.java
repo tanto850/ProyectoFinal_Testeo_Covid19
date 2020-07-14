@@ -3,6 +3,8 @@
  */
 package ar.edu.unju.fi.service;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,23 +20,25 @@ public class BarrioServiceImp implements IBarrioService{
 @Autowired
 public IBarrioRepository iBarrio;
 
+private Logger log = Logger.getLogger("");
+
 	@Override
 	public void guardar(Barrio barrio) {
 		iBarrio.save(barrio);
-		System.out.println("El barrio " + barrio.getNombre() + " ha sido guardado.");
+		log.info("El barrio " + barrio.getNombre() + " ha sido guardado.");
 	}
 
 	@Override
 	public void eliminar(long id) {
 		// TODO Auto-generated method stub
 		iBarrio.deleteById(id);
-		System.out.println("El barrio ha sido eliminado.");
+		log.info("El barrio ha sido eliminado.");
 	
 	}
 
 	@Override
 	public Barrio modificar(Barrio unBarrio) throws Exception {
-		System.out.println(unBarrio.getNombre() + " id " + unBarrio.getId());
+		log.info(unBarrio.getNombre() + " id " + unBarrio.getId());
 		return iBarrio.save(unBarrio);
 	}
 

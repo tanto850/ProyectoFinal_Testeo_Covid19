@@ -2,6 +2,7 @@ package ar.edu.unju.fi.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,6 +29,8 @@ public class LoginUsuarioServiceImp implements UserDetailsService {
 	
 	@Autowired
 	IUsuarioRepository iUsuario;
+	
+	private Logger log = Logger.getLogger("");
 
 	//Se sobre escribe el metodo UserDetailService
 	@Override
@@ -40,14 +43,14 @@ public class LoginUsuarioServiceImp implements UserDetailsService {
 		//Esta guardando la coleccion de roles que tienen los usuarios
 		List<GrantedAuthority> tipos = new ArrayList<>();
 		
-		System.out.println(usuarioEncontrado.getTipoUsuario());
+		log.info(usuarioEncontrado.getTipoUsuario());
 		GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(usuarioEncontrado.getTipoUsuario());
 		tipos.add(grantedAuthority);
 		
 		//Declaro el objeto UserDetails que retornara el metodo, trabaja con ciertos datos del usuario que se pasaran como parametros
 
 		UserDetails user = (UserDetails) new User(nombreUsuario, usuarioEncontrado.getPassword(),tipos);
-		System.out.println(user.getPassword() + user.getUsername());
+		log.info(user.getPassword() + user.getUsername());
 		
 		return user;
 	}

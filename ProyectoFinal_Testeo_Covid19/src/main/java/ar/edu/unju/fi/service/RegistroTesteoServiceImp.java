@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 //import java.time.LocalDate;
 //import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,18 +24,20 @@ public class RegistroTesteoServiceImp implements IRegistroTesteoService {
 @Autowired	
 public IRegistroTesteoRepository iRegistro;
 
+private Logger log = Logger.getLogger("");
+
 @Override
 	public void guardar(RegistroTesteo registroTesteo) {
 		// TODO Auto-generated method stub
 		iRegistro.save(registroTesteo);
-		System.out.println("El registro fue guardado con id" + registroTesteo.getId());
+		log.info("El registro fue guardado con id" + registroTesteo.getId());
 	}
 
 	@Override
 	public void eliminar(long id) {
 		// TODO Auto-generated method stub
 		iRegistro.deleteById(id);
-		System.out.println("El registro fue borrado.");
+		log.info("El registro fue borrado.");
 	}
 
 	@Override
