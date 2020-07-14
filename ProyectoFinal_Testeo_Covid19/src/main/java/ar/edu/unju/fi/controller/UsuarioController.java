@@ -35,7 +35,7 @@ public class UsuarioController {
 	@PostMapping("/agregarUsuario")
 	public String crearUsuario(@Valid @ModelAttribute("usuarioformulario") Usuario usuario, BindingResult result, ModelMap model) {
 		
-		if (result.hasErrors()) {
+		if (result.hasErrors() || iusuarioService.encontrarNombreUsuario(usuario)) {
 			model.addAttribute("usuarioformulario", usuario);
 			// model.addAttribute("formTab", "active");
 			return "registroUsuario";

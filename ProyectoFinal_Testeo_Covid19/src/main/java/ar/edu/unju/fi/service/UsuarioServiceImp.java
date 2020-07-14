@@ -81,7 +81,7 @@ public class UsuarioServiceImp implements IUsuarioService {
 		@Override
 		public boolean encontrarNombreUsuario(Usuario unUsuario) {
 			Optional<Usuario> nameUser = iUsuario.findByNombreUsuario(unUsuario.getNombreUsuario()); 
-			return (nameUser==null);
+			return nameUser.isPresent();
 		}
 	
 }

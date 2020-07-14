@@ -52,3 +52,7 @@
 #registroBarrio{
 	border: 2px solid red; 
 }
+
+#cuerpoNoAutorizado{
+	background: url("../img/fondosalud.jpg");
+}

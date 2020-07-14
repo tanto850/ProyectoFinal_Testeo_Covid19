@@ -47,5 +47,10 @@ public class LogueoController {
 		model.addAttribute("usuariologueo", new Usuario());	
 		return "inicio";
 	}	
+	
+	@GetMapping("/noautorizado")
+	public String noAutorizado(Model model) {
+		return "noAutorizado";
+	}
 
 }

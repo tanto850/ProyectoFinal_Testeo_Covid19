@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-      <meta charset="utf-8">
-    <title> No accesible </title>
-  </head>
-		<body>
-			<div class="container">
-						<div>
-							<h1> INGRESO NO AUTORIZADO</h1>
-							<h2>Usted esta intentando acceder a una pagina que no le correponde segun su usuario logueado : </h2><h2 th:text=${#authentication.getPrincipal().getUsername()}> </h2> <h2>"</h2> 
-							<h2> Por favor comuniquese con el administrador</h2>
-						</div>
-				<div>
-					<input type="button" class="btn btn btn-warning mx-auto" onclick="history.back()" name="retroceder" value="retroceder">
-                    <a href="#" th:href="@{/logout}" class="btn btn-danger navbar-btn">Cerrar Sesion</a></div>
-				</div>
-		</body>
+<head>
+<meta charset="utf-8">
+<title>No accesible</title>
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../css/estilos.css">
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
+	type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
+	type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
+	type="text/javascript"
+	src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<body id="cuerpoNoAutorizado">
+	<div class="container">
+		<div class="alert alert-success" role="alert">
+			<h4 class="alert-heading">INGRESO NO AUTORIZADO</h4>
+			<p>Usted esta intentando acceder a una pagina que no le
+				correponde segun su usuario logueado :</p>
+				<h2 th:text=${#authentication.getPrincipal().getUsername()}></h2>
+			<hr>
+			<p class="mb-0">Por favor comuniquese con el administrador.</p>
+		</div>
+		<div>
+			<input type="button" class="btn btn btn-warning mx-auto"
+				onclick="history.back()" name="retroceder" value="retroceder">
+			<a href="#" th:href="@{/logout}" class="btn btn-danger navbar-btn">Cerrar
+				Sesion</a>
+		</div>
+	</div>
+</body>
 </html>
