@@ -17,48 +17,32 @@ import javax.persistence.OneToMany;
 //import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-/**
- * Clase que representa un barrio 
- * 
- * @author Jose
- *
- */
-
 @Component
 @Entity
 @Table(name = "barrio")
 public class Barrio {
 	
-	/**
-	 * Atributo para identificar cada registro de esta clase
-	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private long id;
 	
-	/**
-	 * Atributo que representa el nombre de un barrio
-	 */
 	@Column(name = "NOMBRE")
 	private String nombre;
 	
-	/**
-	 * Atributo que representa un listado de las unidades habitacionales
-	 */
 	@Autowired
 	/*@OneToMany(mappedBy = "barrio" ,  fetch = FetchType.LAZY )*/
 	@OneToMany(mappedBy ="barrio", cascade = CascadeType.ALL)
 	private List<UnidadHabitacional> unidadHabitacional;
     
-	//----------CONSTRUCTORES----------
-	
 	/**
 	 * Constructor por defecto sin parametros.
 	 */
 	 public Barrio(){
 		
 	}
+	
+	 
 	 
 	/**
 	 * constructor sobrecargado
@@ -68,8 +52,6 @@ public class Barrio {
 		this.nombre = nombre;
 	}
 
-	//------------METODOS ACCESORES------------
-	
 	/**Método para acceder a la variable id;
 	* @return id.
 	*/
@@ -97,10 +79,7 @@ public class Barrio {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	/**
-	 * Metodo sobreescrito
-	 */
+
 	@Override
 	public String toString() {
 		return this.nombre;

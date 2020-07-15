@@ -27,39 +27,27 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 @Service
 public class LoginUsuarioServiceImp implements UserDetailsService {
 	
-	/**
-	 * Inyeccion de la interfaz repository del Usuario
-	 */
 	@Autowired
 	IUsuarioRepository iUsuario;
 	
 	private Logger log = Logger.getLogger("");
-	
-	/**
-	 * Se sobre escribe el metodo UserDetailService pasandole: nombre del usuario, una contraseña y una lista de autorizacion(roles) 
-	 * 
-	 * @param Recibe un nombre de Usuario.
-	 * 
-	 * @return Devuelve un UserDetails, es de Spring Security 
-	 */
 
+	//Se sobre escribe el metodo UserDetailService
 	@Override
 	public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
-
-		
+		// TODO Auto-generated method stub
 		// Busca al Usuario por el su nombre legueado en caso de no encontrarlo mostrar el mensaje Login Invalido..
 		
 		Usuario usuarioEncontrado = iUsuario.findByNombreUsuario(nombreUsuario).orElseThrow(()-> new UsernameNotFoundException("Login Invalido") );
 		
 		//Esta guardando la coleccion de roles que tienen los usuarios
-		
 		List<GrantedAuthority> tipos = new ArrayList<>();
 		
 		log.info(usuarioEncontrado.getTipoUsuario());
 		GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(usuarioEncontrado.getTipoUsuario());
 		tipos.add(grantedAuthority);
 		
-		//Declaro el objeto UserDetails que retornara el metodo, trabaja con ciertos datos del usuario que se pasaran como parametros, nombre de usuario-contraseña del usuario-rol
+		//Declaro el objeto UserDetails que retornara el metodo, trabaja con ciertos datos del usuario que se pasaran como parametros
 
 		UserDetails user = (UserDetails) new User(nombreUsuario, usuarioEncontrado.getPassword(),tipos);
 		log.info(user.getPassword() + user.getUsername());

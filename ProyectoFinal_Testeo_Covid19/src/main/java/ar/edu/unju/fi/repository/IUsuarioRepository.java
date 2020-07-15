@@ -16,12 +16,8 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 
 public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
 	
-	/**
-	 *Metodo para buscar el nombre del usuario en la capa repositorio. 
-	 * @param nombreUsuario
-	 * @return retorna un objeto tipo Optional que sera analizada para saber si contiene un resultado
-	 * valido
-	 */
+	//Metodo para buscar el nombre del usuario en la capa repositorio.
+	
 	public Optional<Usuario> findByNombreUsuario(String nombreUsuario);
 	
 }

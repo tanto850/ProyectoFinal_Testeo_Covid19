@@ -22,8 +22,7 @@ public class ProyectoFinalTesteoCovid19Aplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
-		
-		//Inicializacion de las variables del objeto usuario,permitira guardar un usuario directamente en la BD
+		// TODO Auto-generated method stub
 		
 		/*usuario.setApellidoReal("Apellido");
 		usuario.setNombreReal("Nombre");

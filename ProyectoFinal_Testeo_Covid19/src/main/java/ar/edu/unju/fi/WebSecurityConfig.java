@@ -23,24 +23,18 @@ import ar.edu.unju.fi.service.LoginUsuarioServiceImp;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
-		
-	/**
-	 * Se inyecta la clase AutenticacionSuccessHandler , redirecciona cada usuario segun su rol
-	 */
+	
+	
+	//Se inyecta la clase AutenticacionSuccessHandler , redirecciona cada usuario segun su rol
 	@Autowired
 	private AutenticacionSuccessHandler autenticacion;
 	
-	/**
-	 * Recursps que tiene el proyecto
-	 * @param Recibe una peticion de tipo HTTP que sera evaluada por el Authenticacion Manager
-	 */
+	//Recursps que tiene el proyecto
 	String [] resources = new String[] {
 			"/include/**","/css/**","/icons/**","/img/**","/js/**","/layer/**","/webjars/**"
 	};
 	
-	/**
-	 * Sobreescribimos el metodo configure
-	 */
+	//Sobreescribimos el metodo configure
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -81,6 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				//Al ingresar se direccionara segun el rol del usuario
 				.successHandler(autenticacion) 
 				//Pagina donde redireccionara cuando el logeo sea invalido
+				//.failureUrl("/inicio?error=true")
 				.failureUrl("/login?error=true")
 				
 				//Paramentros del usuario para login 
@@ -97,36 +92,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		//Permite redirigir los intentos de accesos denegados de los usuarios logueados..
 		http.exceptionHandling().accessDeniedPage("/noAutorizado");
-		
 	//	http.csrf().disable();
 	}
 				
 
 
-	//Encriptacion de la contraseña, variable que permite codificar la clave por metodo matematico. Pertenece a Spring Security
+	//Encriptacion de la contraseña
 	BCryptPasswordEncoder bCrypyPasswordEncoder;
 	
-	/**
-	 * Metodo para definir el nivel de encriptado de BCryptPasswordEncoder 
-	 * @return Un nivel de encriptado de nivel 4(bajo)
-	 */
+	//Metodo para definir el nivel de encriptado
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		bCrypyPasswordEncoder = new BCryptPasswordEncoder(4);
 		return bCrypyPasswordEncoder;
 	}
 	
-	//Se inyecta LoginUsuarioServiceImp que autentica al usuario
+	//Autentica al usuario
 	@Autowired
 	LoginUsuarioServiceImp userDetailsService;
 	
-	/**
-	 * Metodo que usa el AuthenticationManagerBuilder, recupera la informacion del usuario guardado.
-	 * userDetailsService recuperara la informacion del usuario que quiere entrar y crea un usuario UserDetail
-	 * Los datos recuperados son usados para la configuracion global
-	 * @param auth
-	 * @throws Exception
-	 */
+	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());		
