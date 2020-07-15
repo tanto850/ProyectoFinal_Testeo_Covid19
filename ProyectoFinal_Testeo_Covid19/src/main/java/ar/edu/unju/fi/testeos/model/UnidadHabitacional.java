@@ -24,7 +24,7 @@ import ar.edu.unju.fi.testeos.model.Barrio;
 /**
  * Clase que representa una unidad habitacional.
  * 
- * @author Jose
+ * Clase que corresponde a una tabla de la base de datos.
  *
  */
 

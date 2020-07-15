@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import ar.edu.unju.fi.testeos.model.Usuario;
 
 /**
- * @author Fabian
  * Se definiran que metodos se realizaran sobre el objeto con la que asociamos la interface
  */
 

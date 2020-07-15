@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Clase que representa los datos de una persona testeada
- * @author Jose
+ * Clase que corresponde a una tabla de la base de datos.
  *
  */
 @Component

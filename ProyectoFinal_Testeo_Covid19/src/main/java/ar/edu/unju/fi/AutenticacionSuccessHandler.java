@@ -2,7 +2,6 @@ package ar.edu.unju.fi;
 
 /**
  * Clase que permite controlar el exito del login de un usuario de forma que se rediriga de forma exitosa
- * @author Uzqueda,Jose G.
  */
 
 import java.io.IOException;

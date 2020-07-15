@@ -13,33 +13,11 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 
 @Controller
 public class LogueoController {
-
-	/*/@GetMapping("/login")
-	public String logCuenta() {
-		return "inicio";
-	}*/
 	
-	//@Autowired
-	//private IUsuarioService usuarioService;
-	
-	/*RequestMapping("/login")
-	public String getIndex(Model model) {
-		
-		model.addAttribute("usuariologueo", new Usuario());		
-		return "inicio";
-	}/*/
-	
-
-	/*@RequestMapping("/registroUsuario")
-	public String loginExitoso(Model model) {		
-		return "registroUsuario";
-	}*/
-	
-	@GetMapping("/formularioPersona")
-	public String formulario(Model model) {
-		
+/*	@GetMapping("/formularioPersona")
+	public String formulario(Model model) {	
 		return "formularioPersona";
-	}
+	}*/
 	
 
 	@GetMapping("/login")

@@ -8,8 +8,6 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 /**
  * Interfaz que permite desarrollar la logica del proyecto y a la vez conectarse 
  * con los datos de se encuentra en el repositorio de datos.
- * 
- * @author Aucachi Fabian
  *
  */
 public interface IUsuarioService {

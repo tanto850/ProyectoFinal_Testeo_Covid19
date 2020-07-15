@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import ar.edu.unju.fi.service.IBarrioService;
 import ar.edu.unju.fi.testeos.model.Barrio;
-
+/**
+ * Clase controladora del barrio, permite alta baja modificacion y tambien podemos ver la tabla
+ *
+ */
 @Controller
 public class BarrioController {
 
@@ -97,8 +100,11 @@ public class BarrioController {
 		return "registroBarrio";
 	}
 	
-	/*
+	/**
+	 * 
 	 * Metodo usado para eliminar un registro de barrio.
+	 * @param id del barrio
+	 * @return redirecciona la pagina de registroBarrio
 	 */
 	@GetMapping("/eliminarBarrio/{id}")
 	public String eliminarBarrio(Model model, @PathVariable(name="id") long id) {

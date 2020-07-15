@@ -9,8 +9,8 @@
 				<table id="myTable" class="table table-striped"  style="width:100%">
 					<thead class="thead-light">
 						<tr>
-						    <th scope="col">Registro-Barrio</th>
 						    <th scope="col">Direccion Unidad</th>
+						    <th scope="col">Registro-Barrio</th>
 							<th scope="col">DNI</th>
 							<th scope="col">Nombres</th>
 							<th scope="col">Apellido</th>
@@ -20,8 +20,8 @@
 					</thead>
 					<tbody>
 						<tr th:each="usuario : ${listaPersonas}">
-								<td th:text="${usuario.registroTesteo.id}+' : '+ ${usuario.registroTesteo.unidadHabitacional.barrio.nombre}"></td>
 								<td th:text="${usuario.registroTesteo.unidadHabitacional.direccion}"></td>
+								<td th:text="${usuario.registroTesteo.id}+' : '+ ${usuario.registroTesteo.unidadHabitacional.barrio.nombre}"></td>
 								<td th:text="${usuario.documento}"></td>
 								<td th:text="${usuario.nombres}"></td>
 								<td th:text="${usuario.apellido}"></td>

@@ -18,9 +18,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * Clase que representa un barrio 
- * 
- * @author Jose
+ * Clase que representa un Objeto barrio 
+ * Clase que corresponde a una tabla de la base de datos.
  *
  */
 
@@ -106,14 +105,19 @@ public class Barrio {
 		return this.nombre;
 	}
 
-
-
+/**
+ * metodo get, permite obtener la variable miembro del obj
+ * @return
+ */
 	public List<UnidadHabitacional> getUnidadHabitacional() {
 		return unidadHabitacional;
 	}
 
 
-
+/**
+ * metodo set, permite modificar la lista correspondiente a la variable miembro
+ * @param unidadHabitacional
+ */
 	public void setUnidadHabitacional(List<UnidadHabitacional> unidadHabitacional) {
 		this.unidadHabitacional = unidadHabitacional;
 	}

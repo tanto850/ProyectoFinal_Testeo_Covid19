@@ -15,9 +15,7 @@ import ar.edu.unju.fi.testeos.model.Usuario;
 
 /**
  * Clase que va a implementar la interfaz IUsuarioService
- * 
- * @author Aucachi Fabian
- *
+ *  definimos como va a actuar los metodos creados en IusuarioService
  */
 @Service
 public class UsuarioServiceImp implements IUsuarioService {

@@ -11,8 +11,7 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 
 /**
- * @author Aucachi Fabian
- *
+ * Se definen los metodos que tendremos que implementar sobre la clase PersonaTesteada
  */
 public interface IPersonaTesteadaService {
 	public void guardar(PersonaTesteada personaTesteada);

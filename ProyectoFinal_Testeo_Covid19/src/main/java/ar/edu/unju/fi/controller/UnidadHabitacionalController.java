@@ -15,6 +15,10 @@ import ar.edu.unju.fi.service.IBarrioService;
 import ar.edu.unju.fi.service.IUnidadHabitacionalService;
 import ar.edu.unju.fi.testeos.model.UnidadHabitacional;
 
+/**
+ * Clase controladora de la unidad habitacional, permite el alta unicamente.
+ *
+ */
 @Controller
 public class UnidadHabitacionalController {
 

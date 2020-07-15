@@ -6,8 +6,7 @@ import java.util.Optional;
 import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 /**
  * 
- * @author Aucachi Fabian
- *
+ * Se definen los metodos que tendremos que implementar sobre la clase RegistroTesteo
  */
 public interface IRegistroTesteoService {
 	public void guardar(RegistroTesteo resgistroTesteo);

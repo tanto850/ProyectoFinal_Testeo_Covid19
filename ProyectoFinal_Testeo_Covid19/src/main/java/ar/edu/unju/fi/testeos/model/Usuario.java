@@ -13,8 +13,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Clase que represente un objeto tipo Usuario
- * 
- * @author Jose
+ * Clase que corresponde a una tabla de la base de datos.
  *
  */
 
@@ -205,7 +204,7 @@ public class Usuario {
 		return result;
 	}
 
-
+/*
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -245,5 +244,5 @@ public class Usuario {
 		return true;
 	}
 
-	
+	*/
 }

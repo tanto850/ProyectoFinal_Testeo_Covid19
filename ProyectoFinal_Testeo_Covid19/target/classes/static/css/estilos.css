@@ -72,6 +72,13 @@
 }
 
 #cuerpoNoAutorizado{
-	background: url("../img/fondosalud.jpg");
-	background-size: 100% 100%;
+background-image: url("../img/fondosalud.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+#cuerpoNoAutorizado .container{
+background-color: rgb(132,140,200,0.5);
+margin-top: 50px;
 }

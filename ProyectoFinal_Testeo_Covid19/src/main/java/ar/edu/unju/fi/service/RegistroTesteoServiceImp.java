@@ -16,8 +16,7 @@ import ar.edu.unju.fi.repository.IRegistroTesteoRepository;
 import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 
 /**
- * @author Aucachi Fabian
- *
+ * definimos comp actuaran los metodos creados en IRegistroTesteoService
  */
 @Service
 public class RegistroTesteoServiceImp implements IRegistroTesteoService {
@@ -30,7 +29,7 @@ private Logger log = Logger.getLogger("");
 	public void guardar(RegistroTesteo registroTesteo) {
 		// TODO Auto-generated method stub
 		iRegistro.save(registroTesteo);
-		log.info("El registro fue guardado con id" + registroTesteo.getId());
+		log.info("El registro fue guardado con id" + registroTesteo.getId() + "hora: " + registroTesteo.getFechaHora());
 	}
 
 	@Override
@@ -43,7 +42,7 @@ private Logger log = Logger.getLogger("");
 	@Override
 	public Optional<RegistroTesteo> mostrar(long id) {
 		// TODO Auto-generated method stub
-		
+		log.info("buscando registro con id" + id +" ...");
 		return iRegistro.findById(id);
 	}
 	

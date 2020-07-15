@@ -16,8 +16,6 @@ import ar.edu.unju.fi.service.LoginUsuarioServiceImp;
  * Configuracion de las opciones por defecto al extender WebSecurityConfigurerAdapter
  *  Se define que acciones se puede permitir para cada usuario..
  * 
- * @author Uzqueda,Jose G.
- * 
  */
 
 @Configuration

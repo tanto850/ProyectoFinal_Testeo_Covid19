@@ -20,8 +20,6 @@ import ar.edu.unju.fi.testeos.model.Usuario;
  * Servicio especial que implementa la interfaz UserDetailsService de spring security que guarda el usuario con el que va a trabajar para su autenticacion
  * Permite 3 acciones : verificar/autenticar el usuario; redirigir/mostrar segun el tipo de usuario; Encriptacion de clave de usuario
  * 
- * @author Uzqueda, Jose G.
- *
  */
 
 @Service

@@ -6,8 +6,7 @@ package ar.edu.unju.fi.service;
 import ar.edu.unju.fi.testeos.model.Barrio;
 
 /**
- * @author Aucachi Fabian
- *
+ * Se definen los metodos que tendremos que implementar sobre la clase barrio.
  */
 public interface IBarrioService {
 	public void guardar(Barrio unBarrio);

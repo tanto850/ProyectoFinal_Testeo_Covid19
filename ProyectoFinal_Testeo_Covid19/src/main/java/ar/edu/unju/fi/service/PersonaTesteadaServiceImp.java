@@ -16,8 +16,7 @@ import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 
 /**
- * @author Aucachi fabian
- *
+ * implementacion de las personasTesteadas, metodos del IPersonaTesteadaService
  */
 @Service
 public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
@@ -67,7 +66,7 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	@Override
 	public List<PersonaTesteada> listarBarrioFechas(String barrio, LocalDateTime fecha1, LocalDateTime fecha2) {
 		// TODO Auto-generated method stub
-		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetweenOrderByRegistroTesteoUnidadHabitacional(barrio, fecha1, fecha2);
+		return ipersona.findByRegistroTesteoUnidadHabitacionalBarrioNombreAndRegistroTesteoFechaHoraBetweenOrderByRegistroTesteoUnidadHabitacionalDireccion(barrio, fecha1, fecha2);
 	}
 
 	@Override

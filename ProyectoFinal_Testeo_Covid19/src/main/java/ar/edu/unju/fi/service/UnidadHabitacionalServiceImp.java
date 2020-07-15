@@ -12,8 +12,7 @@ import ar.edu.unju.fi.repository.IUnidadHabitacionalRepository;
 import ar.edu.unju.fi.testeos.model.UnidadHabitacional;
 
 /**
- * @author Aucachi Fabian
- *
+ *implementador de la unidad habitacional, definimos como funcionaran los servicios creados en la interface de IUnidadHabitacionalService
  */
 @Service
 public class UnidadHabitacionalServiceImp implements IUnidadHabitacionalService {

@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * @author user
- *
+ * Clase auxiliar que usaremos para no rellenar tanto los controladores, son auxiliares.
+ * Clase que NO corresponde a una tabla de la base de datos.
  */
 public class ObjetoConsulta {
  public String barrio;

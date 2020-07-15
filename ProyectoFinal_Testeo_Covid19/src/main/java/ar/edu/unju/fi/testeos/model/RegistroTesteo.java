@@ -21,9 +21,7 @@ import org.springframework.stereotype.Component;
 /**
  * Clase que registra testeos con sus respectivos datos..
  * El registro lleva unidad habitacional, personas testeadas y hora del registro
- * 
- * @author Jose
- *
+ * Clase que corresponde a una tabla de la base de datos.
  */
 
 @Component

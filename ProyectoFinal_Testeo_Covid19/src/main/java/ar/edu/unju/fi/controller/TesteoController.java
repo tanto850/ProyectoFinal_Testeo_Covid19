@@ -20,6 +20,10 @@ import ar.edu.unju.fi.service.IUnidadHabitacionalService;
 import ar.edu.unju.fi.testeos.model.PersonaTesteada;
 import ar.edu.unju.fi.testeos.model.RegistroTesteo;
 
+/**
+ * Clase controladora del registroTesteo y registroPersonas...
+ *
+ */
 @Controller
 public class TesteoController {
 	
@@ -29,9 +33,16 @@ public class TesteoController {
 	private IUnidadHabitacionalService iunidadService;
 	@Autowired
 	private IPersonaTesteadaService ipersonaTesteadaService;
+	
 	public RegistroTesteo registroTesteo;
+	
 	public PersonaTesteada unaPersonaTesteada;
 	
+	/**
+	 * peticion que nos permitira seleccionar una unidad, o crear una.
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/seleccion")
 	public String getconsss(Model model) {
 		model.addAttribute("testeoformulario", new RegistroTesteo());
@@ -39,9 +50,10 @@ public class TesteoController {
 		return "seleccionarUnidad";
 	}
 	
-	/*
-	 * 
-	 */
+	/**
+	* En caso de que seleccionemos una unidad, continuamos con el dato de la unidad a registrar personas tambien se registra el testeo
+	* con su fecha y hora correspondiente, por mas que nos saltiemos y no registremos ninguna persona testeada
+	*/
 	@PostMapping("/continuar")
 	public String continuar(@ModelAttribute("testeoformulario") RegistroTesteo testeo ,Model model) {
 		testeo.setFechaHora(LocalDateTime.now());

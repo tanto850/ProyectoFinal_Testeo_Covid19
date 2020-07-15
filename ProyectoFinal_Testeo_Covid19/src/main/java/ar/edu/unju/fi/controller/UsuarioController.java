@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ar.edu.unju.fi.service.IUsuarioService;
 import ar.edu.unju.fi.testeos.model.Usuario;
 
+/**
+ * Clase controladora del usuario, permite alta baja modificacion.
+ *
+ */
 @Controller
 public class UsuarioController {
 	
