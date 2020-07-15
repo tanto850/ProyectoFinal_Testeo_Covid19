@@ -45,6 +45,7 @@ public class UsuarioController {
 	public String agregarUsuario(Model model) {
 		model.addAttribute("usuarioformulario", new Usuario());
 		//model.addAttribute("listaUsuario", iusuarioService.listarUsuario());
+		model.addAttribute("bandera", false);
 		return "registroUsuario";
 	}
 	
@@ -64,6 +65,7 @@ public class UsuarioController {
 		if (result.hasErrors() || iusuarioService.encontrarNombreUsuario(usuario)) {
 			model.addAttribute("usuarioformulario", usuario);
 			// model.addAttribute("formTab", "active");
+			model.addAttribute("bandera", true);
 			return "registroUsuario";
 		} else {
 			try {

@@ -119,6 +119,8 @@
 								<div class="form-group row">
 									<label for="iddni" class="col-md-3 col-form-label">N°
 										DNI</label>
+									<div th:if="${bandera==true}" class="alert alert-danger" role="alert">
+			                            Ya registraste una persona con este DNI en este mismo registro verifique los datos</div>
 									<div class="col-md-8">
 										<input type="number" class="form-control " id="iddni" required
 											th:field="*{documento}">

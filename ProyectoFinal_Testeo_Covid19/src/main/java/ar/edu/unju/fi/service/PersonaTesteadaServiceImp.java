@@ -82,9 +82,15 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	}
 
 	@Override
-	public boolean encontrarPersonaRegistro(PersonaTesteada unaPersonaTesteada) {
+	public boolean encontrarPersonaRegistro(PersonaTesteada unaPersonaTesteada, RegistroTesteo registroTesteo) {
 		// TODO Auto-generated method stub
-		List<PersonaTesteada> personaBuscada = ipersona.findByRegistroTesteoAndDocumento(unaPersonaTesteada.getRegistroTesteo(), unaPersonaTesteada.getDocumento());
+		List<PersonaTesteada> personaBuscada = ipersona.findByDocumentoAndRegistroTesteo(unaPersonaTesteada.getDocumento(), registroTesteo);
+		if(personaBuscada.isEmpty())
+		{
+			System.out.println("no existe");
+		}
+		else
+		{System.out.println("si existe");}
 		return personaBuscada.isEmpty();
 	}
 

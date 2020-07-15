@@ -40,6 +40,8 @@
 							</div>
 							<input style="background-color: rgb(0,0,255,0.5); height: 40px; margin-top: 40px; " type="submit" class="btn btn-sucess" th:value="${editMode}?'Guardar Barrio':'Crear Barrio'"/>
 						</div>
+						<div th:if="${bandera==true}" class="alert alert-danger" role="alert">
+			                            Ya registraste un barrio con el mismo nombre</div>
 					</form>
 
 				</div>

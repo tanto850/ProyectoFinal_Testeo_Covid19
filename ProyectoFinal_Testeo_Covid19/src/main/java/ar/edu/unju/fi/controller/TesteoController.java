@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.controller;
 
 import java.time.LocalDateTime;
+import java.util.logging.Logger;
 
 import javax.validation.Valid;
 
@@ -37,6 +38,8 @@ public class TesteoController {
 	public RegistroTesteo registroTesteo;
 	
 	public PersonaTesteada unaPersonaTesteada;
+	
+	private Logger log = Logger.getLogger("");
 	
 	/**
 	 * peticion que nos permitira seleccionar una unidad, o crear una.
@@ -83,6 +86,7 @@ public class TesteoController {
 		model.addAttribute("personaformulario", personaTesteada);
 		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));
 		model.addAttribute("formTab", "active");
+		model.addAttribute("bandera", false);
 		return "formularioPersona";
 	}
 	
@@ -100,8 +104,10 @@ public class TesteoController {
 	@PostMapping("/guardarPersona")
 	public String crearUsuario(@Valid @ModelAttribute("personaformulario") PersonaTesteada personaTesteada,
 			BindingResult result, ModelMap model) {
-		if (result.hasErrors() || !ipersonaTesteadaService.encontrarPersonaRegistro(personaTesteada)) {
+		if (result.hasErrors() || !ipersonaTesteadaService.encontrarPersonaRegistro(personaTesteada, registroTesteo)){
 			model.addAttribute("personaformulario", personaTesteada);
+			model.addAttribute("bandera", true);
+			log.info("Ya existe una persona con ese dni");
 			//model.addAttribute("formTab", "active");
 		} else {
 			try {

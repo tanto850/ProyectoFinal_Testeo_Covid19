@@ -46,6 +46,7 @@ public class BarrioController {
 	public String getIndex(Model model) {
 		model.addAttribute("barrioformulario", new Barrio());
 		model.addAttribute("listaBarrio", ibarrioService.listarBarrios());
+		model.addAttribute("bandera", false);
 		return "registroBarrio";
 	}
 	
@@ -65,17 +66,20 @@ public class BarrioController {
 		if (result.hasErrors() || ibarrioService.encontrarNombreBarrio(barrio)) {
 			model.addAttribute("barrioformulario", barrio);
 			// model.addAttribute("formTab", "active");
+			model.addAttribute("bandera", true);
 			model.addAttribute("listaBarrio", ibarrioService.listarBarrios());
 		} else {
 			try {
 				ibarrioService.guardar(barrio);
 				model.addAttribute("barrioformulario", new Barrio());
 				model.addAttribute("listaBarrio", ibarrioService.listarBarrios());
+				model.addAttribute("bandera", false);
 				// model.addAttribute("lisTab", "active");
 			} catch (Exception e) {
 				model.addAttribute("formBarrioErrorMessage", e.getMessage());
 				model.addAttribute("barrioformulario", barrio);
 				model.addAttribute("listaBarrio", ibarrioService.listarBarrios());
+				model.addAttribute("bandera", false);
 				// model.addAttribute("formTab", "active");
 			}
 		}
@@ -90,7 +94,8 @@ public class BarrioController {
 	 * @return retorna a la vista de RegistroBarrio.
 	 */
 	@GetMapping("/editarBarrio/{id}")
-	public String editarBarrio(Model model, @PathVariable(name="id") Long id) throws Exception {		
+	public String editarBarrio(Model model, @PathVariable(name="id") Long id) throws Exception {
+		model.addAttribute("bandera", false);
 		try {
 			Barrio barrioEncontrado = ibarrioService.encontrarBarrio(id);
 			model.addAttribute("barrioformulario", barrioEncontrado);
@@ -117,6 +122,7 @@ public class BarrioController {
 	 */
 	@PostMapping("/editarBarrio")
 	public String postEditarBarrio(@Valid @ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
+		model.addAttribute("bandera", false);
 		if(result.hasErrors()) {
 			model.addAttribute("barrioformulario", barrio);
 			model.addAttribute("editMode", "true");
@@ -146,6 +152,7 @@ public class BarrioController {
 	 */
 	@GetMapping("/eliminarBarrio/{id}")
 	public String eliminarBarrio(Model model, @PathVariable(name="id") long id) {
+		model.addAttribute("bandera", false);
 		try {
 			ibarrioService.eliminar(id);
 		}

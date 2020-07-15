@@ -64,6 +64,6 @@ public interface IPersonaTesteadaRepository extends JpaRepository<PersonaTestead
 	 * @param documento
 	 * @return
 	 */
-	public List<PersonaTesteada> findByRegistroTesteoAndDocumento(RegistroTesteo registroTesteo, String documento);
+	public List<PersonaTesteada> findByDocumentoAndRegistroTesteo(String documento, RegistroTesteo registroTesteo);
 	
 }
