@@ -14,42 +14,69 @@ import javax.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Clase que representa los datos de una persona testeada
+ * @author Jose
+ *
+ */
 @Component
 @Entity
 @Table(name = "persona_testeada")
 public class PersonaTesteada {
 
+	/**
+	 * Atributo para identificar cada registro de esta clase
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable=true)
 	private long id;
 	
+	/**
+	 * Atributp que representa el numero de documento de la persona
+	 */
 	@Column
     @NotBlank
 	private String documento;
 	
+	/**
+	 * Atributo que representa el apellido de la persona
+	 */
 	@Column
 	@NotBlank(message="El apellido no puede quedar en blanco")
 	private String apellido;
 	
+	/**
+	 * Atributo que representa el nombre de la persona
+	 */
 	@Column
 	@NotBlank
 	private String nombres;
 	
+	/**
+	 * Atributo que representa el resultado del testeo realizado a la persona
+	 */
 	@Column
 	private String resultadoTesteo;
 	
+	/**
+	 * Atributo de tipo registroTesteo, contiene el registro de los testeos
+	 */
 	@Autowired
 	@ManyToOne( fetch  = FetchType.LAZY )
 	@JoinColumn( name = "ID_REGISTRO")
 	private RegistroTesteo registroTesteo;
 	
+	//-----------CONSTRUCTORES--------
 	/**
 	 * constructor por defecto.
 	 */
-	 public PersonaTesteada() {}
+	 public PersonaTesteada() {
+		 
+	 }
 	
 	/**
+	 * Constructor parametrizado
 	 * @param id
 	 * @param documento
 	 * @param apellido
@@ -64,6 +91,7 @@ public class PersonaTesteada {
 		this.resultadoTesteo = resultadoTesteo;
 	}
 	
+	//----------METODOS ACCESORES--------------
 	/**Método para acceder a la variable id;
 	* @return id.
 	*/
@@ -133,7 +161,9 @@ public class PersonaTesteada {
 	public void setResultadoTesteo(String resultadoTesteo) {
 		this.resultadoTesteo = resultadoTesteo;
 	}
-
+	
+	//--------------METODO SOBREESCRITO-------------
+	
 	@Override
 	public String toString() {
 		return "PersonaTesteada [documento=" + documento + ", apellido=" + apellido + ", nombres=" + nombres

@@ -25,7 +25,9 @@ public class AutenticacionSuccessHandler implements AuthenticationSuccessHandler
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy(); 
 	
 	
-	  //Sobrescritura del metodo onAuthenticationSuccessque recibe una peticion, una respuesta y una autenticacion que son los roles del usuario
+	  /**
+	   * Sobrescritura del metodo onAuthenticationSuccessque recibe una peticion, una respuesta y una autenticacion que son los roles del usuario
+	   */
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
