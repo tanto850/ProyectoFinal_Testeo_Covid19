@@ -24,12 +24,24 @@ import ar.edu.unju.fi.testeos.model.Barrio;
 @Controller
 public class BarrioController {
 
+	/**
+	 * Variable de IBarrioService.
+	 */
 	@Autowired
 	private IBarrioService ibarrioService;
 	
+	/**
+	 * Variable de la clase Barrio.
+	 */
 	@Autowired
 	private Barrio unBarrio;
-
+	
+	/**
+	 * Este método envía a la vista, por medio del modelo, un objeto de tipo Barrio
+	 * para ser llenado por el usuario, también se envía la lista de barrios.
+	 * @param model
+	 * @return retorna a la vista de RegistroBarrio.
+	 */
 	@RequestMapping("/registroBarrio")
 	public String getIndex(Model model) {
 		model.addAttribute("barrioformulario", new Barrio());
@@ -37,6 +49,16 @@ public class BarrioController {
 		return "registroBarrio";
 	}
 	
+	/**
+	 * Este método recibe de la vista un objeto de tipo Barrio con todos los datos llenados por el usuario
+	 * para hacer el registro de un barrio, si este barrio ya se encuentra registrado el método no guarda
+	 * el barrio y lo envía nuevamente a la vista, si este no tiene errores lo guarda en la base de datos 
+	 * asignandole un id único. También envía la lista de barrios registrados.
+	 * @param barrio
+	 * @param result
+	 * @param model
+	 * @return retorna a la vista de RegistroBarrio. 
+	 */
 	@PostMapping("/agregarBarrio")
 	public String crearUsuario(@Valid @ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
 		
@@ -60,6 +82,13 @@ public class BarrioController {
 		return "registroBarrio";
 	}
 	
+	/**
+	 * Este método recibe el id del barrio a editar, el cual es buscado en la base de datos y guardado
+	 * en una variable, que por medio del modelo se envía a la vista para ser editado.
+	 * @param model
+	 * @param id
+	 * @return retorna a la vista de RegistroBarrio.
+	 */
 	@GetMapping("/editarBarrio/{id}")
 	public String editarBarrio(Model model, @PathVariable(name="id") Long id) throws Exception {		
 		try {
@@ -77,6 +106,15 @@ public class BarrioController {
 		return "registroBarrio";
 	}
 	
+	/**
+	 * Este método recibe de la vista un objeto de tipo Barrio con todos los datos actualizados por el usuario,
+	 * si este formulario no tiene errores lo guarda en la base de datos 
+	 * con el id ya asignado en el guardado. También envía la lista de barrios registrados.
+	 * @param barrio 
+	 * @param result
+	 * @param model 
+	 * @return retorna a la vista Registro Barrio.
+	 */
 	@PostMapping("/editarBarrio")
 	public String postEditarBarrio(@Valid @ModelAttribute("barrioformulario") Barrio barrio, BindingResult result, ModelMap model) {
 		if(result.hasErrors()) {

@@ -29,7 +29,7 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	@Override
 	public void guardar(PersonaTesteada personaTesteada) {
 		ipersona.save(personaTesteada);
-		log.info("La persona de apellido "+ personaTesteada.getApellido()+ " ha sido resgistrada en la base de datos.");
+		log.info("La persona de apellido "+ personaTesteada.getApellido()+ " ha sido registrada en la base de datos.");
 	}
 
 	@Override
@@ -84,8 +84,8 @@ public class PersonaTesteadaServiceImp implements IPersonaTesteadaService{
 	@Override
 	public boolean encontrarPersonaRegistro(PersonaTesteada unaPersonaTesteada) {
 		// TODO Auto-generated method stub
-		Optional<PersonaTesteada> personaBuscada = ipersona.findByDocumentoAndRegistroTesteo(unaPersonaTesteada.getRegistroTesteo(), unaPersonaTesteada.getDocumento());
-		return personaBuscada.isPresent();
+		List<PersonaTesteada> personaBuscada = ipersona.findByRegistroTesteoAndDocumento(unaPersonaTesteada.getRegistroTesteo(), unaPersonaTesteada.getDocumento());
+		return personaBuscada.isEmpty();
 	}
 
 

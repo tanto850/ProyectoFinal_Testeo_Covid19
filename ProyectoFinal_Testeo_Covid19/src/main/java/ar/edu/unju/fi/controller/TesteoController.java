@@ -41,7 +41,7 @@ public class TesteoController {
 	/**
 	 * peticion que nos permitira seleccionar una unidad, o crear una.
 	 * @param model
-	 * @return
+	 * @return a la vista SeleccionarUnidad.
 	 */
 	@GetMapping("/seleccion")
 	public String getconsss(Model model) {
@@ -53,22 +53,29 @@ public class TesteoController {
 	/**
 	* En caso de que seleccionemos una unidad, continuamos con el dato de la unidad a registrar personas tambien se registra el testeo
 	* con su fecha y hora correspondiente, por mas que nos saltiemos y no registremos ninguna persona testeada
+	* Aquí se guarda el Registro Testeo, asignando a su atributo FechaHora, el horario actual.
+	* @param testeo
+	* @param model
+	* @return a la vista formularioPersona.
 	*/
 	@PostMapping("/continuar")
 	public String continuar(@ModelAttribute("testeoformulario") RegistroTesteo testeo ,Model model) {
 		testeo.setFechaHora(LocalDateTime.now());
 		itesteoService.guardar(testeo);
-	    System.out.println(testeo.getId());
-		//model.addAttribute("testeoformulario", registroTesteo);
 		registroTesteo = testeo;
 		model.addAttribute("personaformulario", new PersonaTesteada());
-		//model.addAttribute("personaformulario", unaPersonaTesteada);
 		model.addAttribute("listaPersonaTesteada", ipersonaTesteadaService.listarPersonasTesteadasRegistro(registroTesteo));
 		model.addAttribute("formTab", "active");
 		return "formularioPersona";
 	}
-		
 	
+	/**
+	 * En este método se envía un formulario vacío de tipo PersonaTesteada para que sea llenado por el 
+	 * usuario Registrador. También se envía la lista de personas testeadas en el registro correspondiente.
+	 * @param model
+	 * @param registroTesteo
+	 * @return a la vista formularioPersona.
+	 */
 	@RequestMapping("/registroPersona")
 	public String getIndex(Model model, RegistroTesteo registroTesteo) {
 		PersonaTesteada personaTesteada =  new PersonaTesteada();
@@ -79,12 +86,23 @@ public class TesteoController {
 		return "formularioPersona";
 	}
 	
+	/**
+	 * En este método se recibe el objeto personaformulario, que contiene todos los datos ingresados
+	 * por el usuario, Verifica si contiene errores, si es así es enviado nuevamente a la vista
+	 * para que el usuario los corrija e ingresa nuevamente en este método
+	 * donde se le asigna el id del registro correspondiente y es guardada en la base de datos con un id 
+	 * único.
+	 * @param personaTesteada
+	 * @param result
+	 * @param model
+	 * @return a la vista formularioPersona.
+	 */
 	@PostMapping("/guardarPersona")
 	public String crearUsuario(@Valid @ModelAttribute("personaformulario") PersonaTesteada personaTesteada,
 			BindingResult result, ModelMap model) {
-		if (result.hasErrors() || ipersonaTesteadaService.encontrarPersonaRegistro(personaTesteada)) {
+		if (result.hasErrors() || !ipersonaTesteadaService.encontrarPersonaRegistro(personaTesteada)) {
 			model.addAttribute("personaformulario", personaTesteada);
-			model.addAttribute("formTab", "active");
+			//model.addAttribute("formTab", "active");
 		} else {
 			try {
 				personaTesteada.setRegistroTesteo(registroTesteo);

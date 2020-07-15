@@ -3,7 +3,6 @@
  */
 package ar.edu.unju.fi.testeos.model;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
