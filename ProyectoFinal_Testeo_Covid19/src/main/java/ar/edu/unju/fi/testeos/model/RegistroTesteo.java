@@ -18,28 +18,47 @@ import javax.persistence.Table;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Clase que registra testeos con sus respectivos datos..
+ * El registro lleva unidad habitacional, personas testeadas y hora del registro
+ * 
+ * @author Jose
+ *
+ */
 
 @Component
 @Entity
 @Table( name = "registro_testeo")
 public class RegistroTesteo {
-	
+	/**
+	 * Atributo para identificar cada registro de esta clase
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column( name = "ID")//, nullable=true)
 	private long id;
 	
+	/**
+	 * Atributo que representa la hora del registro
+	 */
 	@Column( name = "FECHAHORA")
 	private LocalDateTime fechaHora;
 	
+	/**
+	 * Atributo de tipo unidadHabitacional, contiene todos los datos de una unidad habitacional
+	 */
 	@Autowired
 	@ManyToOne( fetch  = FetchType.LAZY )//( mappedBy = "registroTesteo", cascade = CascadeType.ALL)
 	@JoinColumn( name = "unidadHabitacional_ID" )
 	private UnidadHabitacional unidadHabitacional;
 	
+	/**
+	 * Atributo que representa listado de las personas testeadas
+	 */
 	@OneToMany(mappedBy ="registroTesteo", cascade = CascadeType.ALL)
 	private List<PersonaTesteada> personasTesteadas;
 	
+	//-----------CONSTRUCTORES-------------
 	/**
 	 * constructor por defecto.
 	 */
@@ -60,6 +79,8 @@ public class RegistroTesteo {
 		//this.personasTesteadas = personasTesteadas;
 	}
 	 
+	 
+	 //------------METODOS ACCESORES-----------------
 	/**Método para acceder a la variable id;
 	* @return id.
 	*/

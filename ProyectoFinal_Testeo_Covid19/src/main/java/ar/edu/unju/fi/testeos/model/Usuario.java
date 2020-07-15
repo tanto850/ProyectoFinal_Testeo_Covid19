@@ -11,46 +11,74 @@ import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * Clase que represente un objeto tipo Usuario
+ * 
+ * @author Jose
+ *
+ */
+
 @Component
 @Entity
 @Table(name = "usuario")
 public class Usuario {
 	
+	
+	/**
+	 * Atributo para identificar cada registro de esta clase
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable=true)
 	private long id;
 	
+	/**
+	 * Atributo que representa el nombre del usuario
+	 */
 	@Column (unique = true)
 	@NotBlank
 	private String nombreUsuario;
 	
+	/**
+	 * Atributo que representa la contraseña del Usuario
+	 */
 	@Column
 	@NotBlank
 	@Size(min=8, message="Su contraseña debe tener como minimo 8 caracteres.")
 	private String password;
 	
+	/**
+	 * Atributo que representa el nombre real del Usuario
+	 */
 	@Column
 	@NotBlank
 	private String nombreReal;
 	
+	/**
+	 * Atributo que representa el apellido del Usuario
+	 */
 	@Column
 	@NotBlank
 	private String apellidoReal;
 	
+	/**
+	 * Atributo que representa el tipo de Usuario que es..(CONSULTOR-REGISTRADOR-BD)
+	 */
 	@Column
 	@NotBlank
-	private String tipoUsuario; //consultor-registrador-bd
+	private String tipoUsuario;
 	
+	// -------------- CONSTRUCTORES -------------
 	
 	/**
-	 * constructor por defecto.
+	 * Constructor por defecto.
 	 */
 	public Usuario() {}
 	
 	
 	/**
-	 * constructor sobrecarcado
+	 * Constructor parametrizado
+	 * 
 	 * @param id
 	 * @param nombreUsuario
 	 * @param password
@@ -66,6 +94,8 @@ public class Usuario {
 		this.apellidoReal = apellidoReal;
 		this.tipoUsuario = tipoUsuario;
 	}
+	 
+	 //------------- METODOS ACCESORES ---------------
 	 
 	 
 	/**Método para acceder a la variable id;
@@ -152,6 +182,8 @@ public class Usuario {
 	public void setTipoUsuario(String tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
+	
+	//-------------- METODO SOBREESCRITO --------------
 	
 	@Override
 	public String toString() {
